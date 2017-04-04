@@ -13,6 +13,7 @@
     <ClCompile Include="src\Window_Menu.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\Button.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -32,6 +33,7 @@
     <ClInclude Include="src\Window_Menu.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\Button.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />

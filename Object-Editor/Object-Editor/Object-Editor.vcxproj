@@ -175,12 +175,14 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Button.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
     <ClCompile Include="src\Window_Manager.cpp" />
     <ClCompile Include="src\Window_Menu.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Button.h" />
     <ClInclude Include="src\ofApp.h" />
     <ClInclude Include="src\Window_Manager.h" />
     <ClInclude Include="src\Window_Menu.h" />
