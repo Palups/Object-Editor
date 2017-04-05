@@ -1,11 +1,9 @@
 #include "Window_Manager.h"
 
-
-
-Window_Manager::Window_Manager()
+Window_Manager::Window_Manager(int state)
 {
+	m_state = state;
 }
-
 
 Window_Manager::~Window_Manager()
 {

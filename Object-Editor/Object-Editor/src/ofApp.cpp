@@ -2,8 +2,8 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-	window_manager = new Window_Manager();
-	window_menu = new Window_Menu();
+	window_manager = new Window_Manager(0); //criando window_manager iniciando pelo menu (0)
+	window_menu = new Window_Menu(); //criando o menu
 }
 
 //--------------------------------------------------------------
@@ -13,7 +13,11 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-	window_menu->Draw();
+	switch (window_manager->GetState()) {
+	case WINDOW_MENU:
+		window_menu->Draw();
+		break;
+	}
 }
 
 //--------------------------------------------------------------
@@ -38,7 +42,7 @@ void ofApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
-
+	window_menu->MousePressed(x, y, window_manager);
 }
 
 //--------------------------------------------------------------

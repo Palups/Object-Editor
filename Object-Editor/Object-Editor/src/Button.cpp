@@ -1,11 +1,12 @@
 #include "Button.h"
 
-Button::Button(int x, int y, int w, int h)
+Button::Button(int x, int y, int w, int h, std::string path)
 {
 	m_x = x;
 	m_y = y;
 	m_w = w;
 	m_h = h;
+	m_image.loadImage(path);
 }
 
 
@@ -15,13 +16,14 @@ Button::~Button()
 
 void Button::Draw()
 {
-	ofSetColor(0, 0, 0, 0);
-	ofDrawRectangle(m_x, m_y, m_w, m_h);
+	m_image.draw(m_x, m_y);
 }
 
 bool Button::TestClick(int x, int y)
 {
-	if (x >= m_x && x <= m_x + m_w && y >= m_y && y <= m_y + m_h)
+	if (x >= m_x && x <= m_x + m_w && y >= m_y && y <= m_y + m_h) {
+		std::cout << "cricou no grande boto" << std::endl;
 		return true;
+	}
 	return false;
 }
