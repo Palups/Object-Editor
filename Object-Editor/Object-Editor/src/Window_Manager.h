@@ -3,7 +3,9 @@
 #include "ofMain.h"
 #include "Button.h"
 
+//estados
 #define WINDOW_MENU 0
+#define WINDOW_EDITOR 1
 
 class Window_Manager
 {

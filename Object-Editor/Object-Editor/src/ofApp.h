@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "Window_Manager.h"
 #include "Window_Menu.h"
+#include "Window_Editor.h"
 
 class ofApp : public ofBaseApp{
 
@@ -23,7 +24,8 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 
-		Window_Manager *window_manager;
-		Window_Menu *window_menu;
+		Window_Manager *window_manager; //declarando window_manager
+		Window_Menu *window_menu; //declarando window_menu
+		Window_Editor *window_editor; //declarando window_editor
 		
 };

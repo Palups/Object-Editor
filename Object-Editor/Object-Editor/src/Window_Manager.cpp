@@ -18,3 +18,4 @@ void Window_Manager::SetState(int state)
 {
 	m_state = state;
 }
+

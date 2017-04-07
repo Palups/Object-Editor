@@ -6,7 +6,7 @@
 class Window_Menu
 {
 private:
-	Button *btn_newObject; //botão para criar novo objeto
+	Button *btn_newObject; //declarando botão NEW OBJECT
 public:
 	Window_Menu();
 	~Window_Menu();
