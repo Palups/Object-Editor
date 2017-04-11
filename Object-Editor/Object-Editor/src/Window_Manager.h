@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "Button.h"
+#include "Object.h"
 
 //estados
 #define WINDOW_MENU 0

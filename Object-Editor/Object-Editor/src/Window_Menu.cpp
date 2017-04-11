@@ -11,8 +11,8 @@ Window_Menu::~Window_Menu()
 
 void Window_Menu::MousePressed(int x, int y, Window_Manager *window_manager)
 {
-	if (btn_newObject->TestClick(x, y))  //checando se o click foi dentro do botão NEW OBJECT
-		window_manager->SetState(1);  //se sim, muda o estado para 1 (tela muda para editor de objetos)
+	if (btn_newObject->TestClick(x, y))  //se click dentro do botão NEW OBJECT, muda a tela para editor de objetos
+		window_manager->SetState(1);
 }
 
 void Window_Menu::Draw()

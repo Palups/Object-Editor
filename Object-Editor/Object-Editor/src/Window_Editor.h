@@ -8,11 +8,19 @@ class Window_Editor
 private:
 	Button *btn_cancel; //declarando botão CANCEL
 	Button *btn_loadSprite; //declarando botão LOAD SPRITE
+
+	Object *object; //objeto que será criado ao clicar em LOAD SPRITE
+
+	bool m_imageOnScreen; //checa se a imagem que representa o objeto está na tela
+
 public:
 	Window_Editor();
 	~Window_Editor();
 
 	void MousePressed(int x, int y, Window_Manager *window_manager); //faz o TestClick em botões
 	void Draw();
+
+	void SetImageOnScreen(bool imageOnScreen);
+	bool GetImageOnScreen();
 };
 
