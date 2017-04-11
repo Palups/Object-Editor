@@ -15,6 +15,7 @@
     </ClCompile>
     <ClCompile Include="src\Button.cpp" />
     <ClCompile Include="src\Window_Editor.cpp" />
+    <ClCompile Include="src\Object.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -36,6 +37,7 @@
     </ClInclude>
     <ClInclude Include="src\Button.h" />
     <ClInclude Include="src\Window_Editor.h" />
+    <ClInclude Include="src\Object.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />

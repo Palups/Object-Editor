@@ -7,6 +7,7 @@ class Window_Editor
 {
 private:
 	Button *btn_cancel; //declarando botão CANCEL
+	Button *btn_loadSprite; //declarando botão LOAD SPRITE
 public:
 	Window_Editor();
 	~Window_Editor();
