@@ -51,7 +51,6 @@ void Window_Editor::Draw()
 		if (object->GetH() < MAX_HEIGHT && object->GetW() < MAX_WIDTH) //se a imagem estiver dentro das medidas máximas
 			object->Draw();
 		else
-			//void ofSystemAlertDialog(string errorMessage);
 			std::cout << "Imagem grande d+++. escolha outra" << std::endl; //se for muito grande, escolher outra img
 }
 
