@@ -14,6 +14,7 @@ private:
 
 public:
 	Object(std::string path);
+
 	~Object();
 
 	void Draw();
