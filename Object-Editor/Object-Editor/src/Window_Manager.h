@@ -4,6 +4,10 @@
 #include "Button.h"
 #include "Object.h"
 
+//tamanho de tela
+#define WINDOW_WIDTH 1024
+#define WINDOW_HEIGHT 768
+
 //estados
 #define WINDOW_MENU 0
 #define WINDOW_EDITOR 1

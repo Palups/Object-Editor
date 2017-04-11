@@ -73,7 +73,7 @@ void ofApp::mouseExited(int x, int y){
 
 //--------------------------------------------------------------
 void ofApp::windowResized(int w, int h){
-
+	ofSetWindowShape(WINDOW_WIDTH, WINDOW_HEIGHT); //não deixa alterar o tamanho da tela
 }
 
 //--------------------------------------------------------------
