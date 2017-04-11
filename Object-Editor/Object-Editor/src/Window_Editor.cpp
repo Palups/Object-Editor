@@ -2,8 +2,8 @@
 
 Window_Editor::Window_Editor()
 {
-	btn_cancel = new Button(550, 100, 200, 50, "images/btn_cancel.png"); //criando botão CANCEL
-	btn_loadSprite = new Button(550, 300, 200, 50, "images/btn_loadSprite.png"); //criando botão LOAD SPRITE
+	btn_cancel = new Button(520, 700, 200, 50, "images/btn_cancel.png"); //criando botão CANCEL
+	btn_loadSprite = new Button(520, 25, 200, 50, "images/btn_loadSprite.png"); //criando botão LOAD SPRITE
 
 	m_imageOnScreen = false; //inicializando como falsa
 }
