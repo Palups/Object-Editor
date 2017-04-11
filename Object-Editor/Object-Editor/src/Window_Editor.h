@@ -3,6 +3,9 @@
 #include "ofMain.h"
 #include "Window_Manager.h"
 
+#define MAX_WIDTH 475
+#define MAX_HEIGHT 750
+
 class Window_Editor
 {
 private:

@@ -21,7 +21,7 @@ void Button::Draw()
 bool Button::TestClick(int x, int y)
 {
 	if (x >= m_x && x <= m_x + m_w && y >= m_y && y <= m_y + m_h) { //se o click do mouse foi dentro do botão, retorna verdadeiro
-		std::cout << "cricou no grande boto" << std::endl;
+		//std::cout << "cricou no grande boto" << std::endl;
 		return true;
 	}
 	else

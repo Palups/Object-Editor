@@ -13,10 +13,7 @@ Window_Editor::~Window_Editor()
 }
 
 void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
-{
-	if (btn_cancel->TestClick(x, y))  //se click dentro do botão CANCEL, muda a tela para menu
-		window_manager->SetState(0);  
-									  
+{									  
 	if (btn_loadSprite->TestClick(x, y)) { //se click dentro do botão LOAD SPRITE, novo objeto é criado (após selecionar imagem)
 		ofFileDialogResult result = ofSystemLoadDialog("Load file");
 		if (result.bSuccess) {
@@ -29,6 +26,16 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 			object->SetY(384 - object->GetH() / 2);
 		}
 	}
+
+	if (btn_cancel->TestClick(x, y)) {  //se click dentro do botão CANCEL
+		if (GetImageOnScreen()) {  //se tiver imagem de objeto na tela, deleta objeto e volta pro menu
+			delete object;
+			SetImageOnScreen(false);
+			window_manager->SetState(0);
+		}
+		else
+			window_manager->SetState(0);
+	}
 }
 
 void Window_Editor::Draw()
@@ -40,8 +47,12 @@ void Window_Editor::Draw()
 	btn_cancel->Draw(); //chamando função de desenho do botão CANCEL
 	btn_loadSprite->Draw(); //chamando função de desenho do botão LOAD SPRITE
 
-	if(GetImageOnScreen()) //se a imagem estiver na tela, chama a função de desenho do objeto
-		object->Draw();
+	if (GetImageOnScreen()) //se a imagem estiver na tela
+		if (object->GetH() < MAX_HEIGHT && object->GetW() < MAX_WIDTH) //se a imagem estiver dentro das medidas máximas
+			object->Draw();
+		else
+			//void ofSystemAlertDialog(string errorMessage);
+			std::cout << "Imagem grande d+++. escolha outra" << std::endl; //se for muito grande, escolher outra img
 }
 
 void Window_Editor::SetImageOnScreen(bool imageOnScreen)

@@ -7,6 +7,7 @@ Object::Object(std::string path)
 
 Object::~Object()
 {
+	std::cout << "objeto deletado" << std::endl;
 }
 
 void Object::Draw()
