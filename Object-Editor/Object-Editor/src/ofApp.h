@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
+//add include do UI novamente (acho)
 #include "Window_Manager.h"
 #include "Window_Menu.h"
 #include "Window_Editor.h"
@@ -27,5 +28,5 @@ class ofApp : public ofBaseApp{
 		Window_Manager *window_manager; //declarando window_manager
 		Window_Menu *window_menu; //declarando window_menu
 		Window_Editor *window_editor; //declarando window_editor
-		
+
 };

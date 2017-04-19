@@ -16,6 +16,9 @@ class Window_Manager
 {
 private:
 	int m_state; //estado em que o editor se encontra (menu ou edição de objeto)
+
+	//ofFile m_file;
+
 public:
 	Window_Manager(int state); //passando o estado como parâmetro para o programa saber em que estado começar
 	~Window_Manager();

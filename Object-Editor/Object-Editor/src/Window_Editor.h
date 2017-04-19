@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
+#include "ofxUI.h"
 #include "Window_Manager.h"
 
 #define MAX_WIDTH 475
@@ -16,6 +17,8 @@ private:
 
 	bool m_imageOnScreen; //checa se a imagem que representa o objeto está na tela
 
+	//ofxUISuperCanvas *gui; //declarando canvas
+
 public:
 	Window_Editor();
 	~Window_Editor();
@@ -25,5 +28,9 @@ public:
 
 	void SetImageOnScreen(bool imageOnScreen);
 	bool GetImageOnScreen();
+
+	//funções canvas
+	void exit();
+	void guiEvent(ofxUIEventArgs &e);
 };
 

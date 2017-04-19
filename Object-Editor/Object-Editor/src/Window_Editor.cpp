@@ -6,6 +6,8 @@ Window_Editor::Window_Editor()
 	btn_loadSprite = new Button(520, 25, 200, 50, "images/btn_loadSprite.png"); //criando botão LOAD SPRITE
 
 	m_imageOnScreen = false; //inicializando como falsa
+
+	//gui = new ofxUISuperCanvas("tela de edicao"); //Creates a canvas at (0,0) using the default width	
 }
 
 Window_Editor::~Window_Editor()
@@ -62,4 +64,14 @@ void Window_Editor::SetImageOnScreen(bool imageOnScreen)
 bool Window_Editor::GetImageOnScreen()
 {
 	return m_imageOnScreen;
+}
+
+void Window_Editor::exit()
+{
+	/*gui->saveSettings("settings.xml");
+	delete gui;*/
+}
+
+void Window_Editor::guiEvent(ofxUIEventArgs & e)
+{
 }
