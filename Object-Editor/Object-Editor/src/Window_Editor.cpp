@@ -20,6 +20,12 @@ void Window_Editor::KeyPressed(int key)
 	switch (key)
 	{
 	case 'b':
+		object->PlusColor();
+		object->ChangeColor();
+		break;
+
+	case 'n':
+		object->SubColor();
 		object->ChangeColor();
 		break;
 	}
