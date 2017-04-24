@@ -24,5 +24,8 @@ public:
 
 	void SetX(int x);
 	void SetY(int y);
+
+	void ChangeColor();
+	float CheckHue(float hue, float n);
 };
 

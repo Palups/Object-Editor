@@ -96,7 +96,8 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <CompileAs>CompileAsCpp</CompileAs>
-      <AdditionalIncludeDirectories>C:\of_v0.9.8_vs_release\addons\ofxXmlSettings\src;C:\of_v0.9.8_vs_release\addons\ofxXmlSettings\libs;
+      <AdditionalIncludeDirectories>C:\of_v0.9.8_vs_release\addons\ofxXmlSettings\src;
+C:\of_v0.9.8_vs_release\addons\ofxXmlSettings\libs;
 C:\of_v0.9.8_vs_release\addons\ofxUI-master\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -117,7 +118,8 @@ C:\of_v0.9.8_vs_release\addons\ofxUI-master\src;%(AdditionalIncludeDirectories)<
       <WarningLevel>Level3</WarningLevel>
       <CompileAs>CompileAsCpp</CompileAs>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>C:\of_v0.9.8_vs_release\addons\ofxXmlSettings\src;C:\of_v0.9.8_vs_release\addons\ofxXmlSettings\libs;
+      <AdditionalIncludeDirectories>C:\of_v0.9.8_vs_release\addons\ofxXmlSettings\src;
+C:\of_v0.9.8_vs_release\addons\ofxXmlSettings\libs;
 C:\of_v0.9.8_vs_release\addons\ofxUI-master\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -137,7 +139,8 @@ C:\of_v0.9.8_vs_release\addons\ofxUI-master\src;%(AdditionalIncludeDirectories)<
       <WarningLevel>Level3</WarningLevel>
       <CompileAs>CompileAsCpp</CompileAs>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>C:\of_v0.9.8_vs_release\addons\ofxXmlSettings\src;C:\of_v0.9.8_vs_release\addons\ofxXmlSettings\libs;
+      <AdditionalIncludeDirectories>C:\of_v0.9.8_vs_release\addons\ofxXmlSettings\src;
+C:\of_v0.9.8_vs_release\addons\ofxXmlSettings\libs;
 C:\of_v0.9.8_vs_release\addons\ofxUI-master\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -159,7 +162,8 @@ C:\of_v0.9.8_vs_release\addons\ofxUI-master\src;%(AdditionalIncludeDirectories)<
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <CompileAs>CompileAsCpp</CompileAs>
-      <AdditionalIncludeDirectories>C:\of_v0.9.8_vs_release\addons\ofxXmlSettings\src;C:\of_v0.9.8_vs_release\addons\ofxXmlSettings\libs;
+      <AdditionalIncludeDirectories>C:\of_v0.9.8_vs_release\addons\ofxXmlSettings\src;
+C:\of_v0.9.8_vs_release\addons\ofxXmlSettings\libs;
 C:\of_v0.9.8_vs_release\addons\ofxUI-master\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>

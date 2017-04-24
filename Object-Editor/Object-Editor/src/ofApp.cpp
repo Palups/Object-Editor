@@ -26,7 +26,11 @@ void ofApp::draw(){
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-
+	switch (window_manager->GetState()) {
+	case WINDOW_EDITOR:
+		window_editor->KeyPressed(key);
+		break;
+	}
 }
 
 //--------------------------------------------------------------

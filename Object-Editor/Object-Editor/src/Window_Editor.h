@@ -12,6 +12,7 @@ class Window_Editor
 private:
 	Button *btn_cancel; //declarando botão CANCEL
 	Button *btn_loadSprite; //declarando botão LOAD SPRITE
+	Button *btn_changeObjectColor; //teste pra mudar a cor
 
 	Object *object; //objeto que será criado ao clicar em LOAD SPRITE
 
@@ -22,6 +23,8 @@ private:
 public:
 	Window_Editor();
 	~Window_Editor();
+
+	void KeyPressed(int key); //testa botoes, por questao de facilitar o debug 
 
 	void MousePressed(int x, int y, Window_Manager *window_manager); //faz o TestClick em botões
 	void Draw();

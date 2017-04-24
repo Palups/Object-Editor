@@ -4,6 +4,7 @@ Window_Editor::Window_Editor()
 {
 	btn_cancel = new Button(520, 700, 200, 50, "images/btn_cancel.png"); //criando botão CANCEL
 	btn_loadSprite = new Button(520, 25, 200, 50, "images/btn_loadSprite.png"); //criando botão LOAD SPRITE
+	btn_changeObjectColor = new Button(600, 300, 200, 50, "meep.png"); //criando botão CHANGE
 
 	m_imageOnScreen = false; //inicializando como falsa
 
@@ -12,6 +13,16 @@ Window_Editor::Window_Editor()
 
 Window_Editor::~Window_Editor()
 {
+}
+
+void Window_Editor::KeyPressed(int key)
+{
+	switch (key)
+	{
+	case 'b':
+		object->ChangeColor();
+		break;
+	}
 }
 
 void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
@@ -38,6 +49,11 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 		else
 			window_manager->SetState(0);
 	}
+
+	if (btn_changeObjectColor->TestClick(x, y) && m_imageOnScreen) //se click for no botão CHANGE e objeto estiver na tela
+	{
+		object->ChangeColor();
+	}
 }
 
 void Window_Editor::Draw()
@@ -50,10 +66,13 @@ void Window_Editor::Draw()
 	btn_loadSprite->Draw(); //chamando função de desenho do botão LOAD SPRITE
 
 	if (GetImageOnScreen()) //se a imagem estiver na tela
+	{
+		btn_changeObjectColor->Draw();
 		if (object->GetH() < MAX_HEIGHT && object->GetW() < MAX_WIDTH) //se a imagem estiver dentro das medidas máximas
 			object->Draw();
 		else
 			std::cout << "Imagem grande d+++. escolha outra" << std::endl; //se for muito grande, escolher outra img
+	}
 }
 
 void Window_Editor::SetImageOnScreen(bool imageOnScreen)
