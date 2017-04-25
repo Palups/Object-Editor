@@ -4,7 +4,7 @@ Window_Editor::Window_Editor()
 {
 	btn_cancel = new Button(520, 700, 200, 50, "images/btn_cancel.png"); //criando botão CANCEL
 	btn_loadSprite = new Button(520, 25, 200, 50, "images/btn_loadSprite.png"); //criando botão LOAD SPRITE
-	btn_changeObjectColor = new Button(600, 300, 200, 50, "images/meep.png"); //criando botão CHANGE
+	btn_changeObjectColor = new Button(600, 300, 200, 50, "meep.png"); //criando botão CHANGE
 
 	m_imageOnScreen = false; //inicializando como falsa
 
@@ -27,16 +27,6 @@ void Window_Editor::KeyPressed(int key)
 	case 'n':
 		object->SubColor();
 		object->ChangeColor();
-		break;
-
-	case 'q':
-		object->SubSatu();
-		object->ChangeSatu();
-		break;
-
-	case 'w':
-		object->PlusSatu();
-		object->ChangeSatu();
 		break;
 	}
 }
@@ -68,7 +58,6 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 
 	if (btn_changeObjectColor->TestClick(x, y) && m_imageOnScreen) //se click for no botão CHANGE e objeto estiver na tela
 	{
-		object->PlusColor();
 		object->ChangeColor();
 	}
 }
