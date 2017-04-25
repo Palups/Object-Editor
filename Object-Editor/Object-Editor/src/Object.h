@@ -8,6 +8,7 @@ class Object
 private:
 	int m_x, m_y; //posições x e y do objeto (no editor)
 	float inc = 1.0f; //incremento pra mudar cor da imagem
+	float inc_s = 125.0f; //incremento pra mudar saturação
 
 	std::string m_name; //nome do objeto (é o que o usuário digitará para salvar o objeto)
 
@@ -28,8 +29,10 @@ public:
 	void SetY(int y);
 
 	void PlusColor();
-	void SubColor();
 	void ChangeColor();
 	float CheckHue(float hue, float n);
+
+	void PlusSatu();
+	void ChangeSatu();
 };
 

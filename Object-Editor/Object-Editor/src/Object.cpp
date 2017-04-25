@@ -39,14 +39,7 @@ void Object::SetY(int y)
 void Object::PlusColor()
 {
 	inc += 1.0f;
-	if (inc > 5.0f)
-		inc = 5.0f;
-}
-
-void Object::SubColor()
-{
-	inc -= 1.0f;
-	if (inc < 0.0f)
+	if (inc > 12.0f)
 		inc = 0.0f;
 }
 
@@ -61,11 +54,9 @@ void Object::ChangeColor()
 			h = color.getHue();
 			color.setHue(CheckHue(h, inc));
 			m_image.setColor(x, y, color);
-			std::cout << "boop" << std::endl;
 		}
 	}
 	m_image.update();
-	std::cout << "meep" << std::endl;
 }
 
 float Object::CheckHue(float hue, float n)
@@ -77,4 +68,30 @@ float Object::CheckHue(float hue, float n)
 	if (m > 360)
 		return 360;
 	return m;
+}
+
+void Object::PlusSatu()
+{
+	inc_s += 25.0f;
+	if (inc_s > 250.0f)
+		inc_s = 50.0f;
+}
+
+
+void Object::ChangeSatu()
+{
+	for (int y = 0; y < m_image.getHeight(); y++)
+	{
+		for (int x = 0; x < m_image.getWidth(); x++)
+		{
+			float s;
+			ofColor color = m_image.getColor(x, y);
+			if (color != 255)
+			{
+				color.setSaturation(inc_s);
+				m_image.setColor(x, y, color);
+			}
+		}
+	}
+	m_image.update();
 }

@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "ofxUI.h"
+
 #include "Window_Manager.h"
 
 #define MAX_WIDTH 475
@@ -13,6 +14,7 @@ private:
 	Button *btn_cancel; //declarando botão CANCEL
 	Button *btn_loadSprite; //declarando botão LOAD SPRITE
 	Button *btn_changeObjectColor; //teste pra mudar a cor
+	Button *btn_changeObjectSat; //teste pra mudar a saturação
 
 	Object *object; //objeto que será criado ao clicar em LOAD SPRITE
 
