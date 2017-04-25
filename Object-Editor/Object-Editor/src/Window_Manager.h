@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "Button.h"
 #include "Object.h"
+#include "UI_Slider.h"
 
 //tamanho de tela
 #define WINDOW_WIDTH 1024

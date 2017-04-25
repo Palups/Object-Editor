@@ -35,7 +35,6 @@ void ofApp::keyPressed(int key){
 
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
-	
 }
 
 //--------------------------------------------------------------
@@ -45,7 +44,11 @@ void ofApp::mouseMoved(int x, int y ){
 
 //--------------------------------------------------------------
 void ofApp::mouseDragged(int x, int y, int button){
-
+	switch (window_manager->GetState()) {
+	case WINDOW_EDITOR:
+		window_editor->MouseDragged(x, y);
+		break;
+	}
 }
 
 //--------------------------------------------------------------
@@ -61,6 +64,7 @@ void ofApp::mouseReleased(int x, int y, int button){
 		break;
 	case WINDOW_EDITOR:
 		window_editor->MousePressed(x, y, window_manager);
+		window_editor->MouseReleased(x, y);
 		break;
 	}
 }

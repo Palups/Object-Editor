@@ -2,8 +2,9 @@
 
 #include "ofMain.h"
 #include "ofxUI.h"
-
+#include "ofxGui.h"
 #include "Window_Manager.h"
+
 
 #define MAX_WIDTH 475
 #define MAX_HEIGHT 750
@@ -17,8 +18,12 @@ private:
 	Button *btn_changeObjectSat; //teste pra mudar a saturação
 
 	Object *object; //objeto que será criado ao clicar em LOAD SPRITE
+	UI_Slider *s_hp; //slider pra hp do objeto
 
-	bool m_imageOnScreen; //checa se a imagem que representa o objeto está na tela
+	bool m_imageOnScreen; //checa se a imagem que representa o objeto está na tela	 
+
+	//ofxIntSlider m_hp;
+	//ofxPanel gui;
 
 	//ofxUISuperCanvas *gui; //declarando canvas
 
@@ -27,7 +32,8 @@ public:
 	~Window_Editor();
 
 	void KeyPressed(int key); //testa botoes, por questao de facilitar o debug 
-
+	void MouseReleased(int x, int y);
+	void MouseDragged(int x, int y);
 	void MousePressed(int x, int y, Window_Manager *window_manager); //faz o TestClick em botões
 	void Draw();
 

@@ -4,4 +4,7 @@
     <IsMinified>0</IsMinified>
     <XPosition>527.000000000</XPosition>
     <YPosition>11.000000000</YPosition>
+<group>
+		<HP>21</HP>
+	</group>
 </Canvas>

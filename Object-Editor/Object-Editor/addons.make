@@ -1,2 +1,3 @@
+ofxGui
 ofxXmlSettings
 ofxUI-master

@@ -4,12 +4,16 @@ Window_Editor::Window_Editor()
 {
 	btn_cancel = new Button(520, 700, 200, 50, "images/btn_cancel.png"); //criando botão CANCEL
 	btn_loadSprite = new Button(520, 25, 200, 50, "images/btn_loadSprite.png"); //criando botão LOAD SPRITE
-	btn_changeObjectColor = new Button(600, 300, 200, 50, "images/meep.png"); //criando botão CHANGE
-	btn_changeObjectSat = new Button(600, 250, 200, 50, "images/meep2.png");
+	btn_changeObjectColor = new Button(600, 300, 200, 50, "images/meep.png"); // -> mexe na cor do objeto
+	btn_changeObjectSat = new Button(600, 250, 200, 50, "images/meep2.png"); // -> mexe na saturação do objeto
+
+	s_hp = new UI_Slider(600, 450, 100, 25, 100); //slider pra representar hp do objeto
 
 	m_imageOnScreen = false; //inicializando como falsa
 
 	//gui = new ofxUISuperCanvas("tela de edicao"); //Creates a canvas at (0,0) using the default width	
+	//gui.setup();
+	//gui.add(m_hp.setup("HP", 0, 0, 100));
 }
 
 Window_Editor::~Window_Editor()
@@ -19,6 +23,16 @@ Window_Editor::~Window_Editor()
 void Window_Editor::KeyPressed(int key)
 {
 
+}
+
+void Window_Editor::MouseReleased(int x, int y)
+{
+	s_hp->MouseReleased(x, y);
+}
+
+void Window_Editor::MouseDragged(int x, int y)
+{
+	s_hp->MouseDragged(x, y);
 }
 
 void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
@@ -57,6 +71,8 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 		object->PlusSatu();
 		object->ChangeSatu();
 	}
+
+	s_hp->MouseClicked(x, y);
 }
 
 void Window_Editor::Draw()
@@ -76,6 +92,9 @@ void Window_Editor::Draw()
 			object->Draw();
 		else
 			std::cout << "Imagem grande d+++. escolha outra" << std::endl; //se for muito grande, escolher outra img
+
+		//gui.draw();
+		s_hp->Draw();
 	}
 }
 

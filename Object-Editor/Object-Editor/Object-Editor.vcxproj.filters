@@ -13,9 +13,6 @@
     <ClCompile Include="src\Window_Menu.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\Button.cpp" />
-    <ClCompile Include="src\Window_Editor.cpp" />
-    <ClCompile Include="src\Object.cpp" />
     <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxXmlSettings\src\ofxXmlSettings.cpp">
       <Filter>addons\ofxXmlSettings\src</Filter>
     </ClCompile>
@@ -160,6 +157,42 @@
     <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIWidgetWithLabel.cpp">
       <Filter>addons\ofxUI-master\src</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxGui\src\ofxBaseGui.cpp">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxGui\src\ofxButton.cpp">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxGui\src\ofxGuiGroup.cpp">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxGui\src\ofxLabel.cpp">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxGui\src\ofxPanel.cpp">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxGui\src\ofxSlider.cpp">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxGui\src\ofxSliderGroup.cpp">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxGui\src\ofxToggle.cpp">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Button.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Object.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UI_Slider.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Window_Editor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -183,6 +216,12 @@
     <Filter Include="addons\ofxUI-master\src">
       <UniqueIdentifier>{7b814e55-b2fc-4d83-bcc0-0e445f7e6886}</UniqueIdentifier>
     </Filter>
+    <Filter Include="addons\ofxGui">
+      <UniqueIdentifier>{66970e9c-3ba0-4fd0-96a8-c96f65809308}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxGui\src">
+      <UniqueIdentifier>{5e8e6dde-7bb1-471f-a777-c278c31c2dd3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ofApp.h">
@@ -194,9 +233,6 @@
     <ClInclude Include="src\Window_Menu.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\Button.h" />
-    <ClInclude Include="src\Window_Editor.h" />
-    <ClInclude Include="src\Object.h" />
     <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxXmlSettings\src\ofxXmlSettings.h">
       <Filter>addons\ofxXmlSettings\src</Filter>
     </ClInclude>
@@ -353,8 +389,49 @@
     <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIWrapper.h">
       <Filter>addons\ofxUI-master\src</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxGui\src\ofxBaseGui.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxGui\src\ofxButton.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxGui\src\ofxGui.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxGui\src\ofxGuiGroup.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxGui\src\ofxLabel.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxGui\src\ofxPanel.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxGui\src\ofxSlider.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxGui\src\ofxSliderGroup.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxGui\src\ofxToggle.h">
+      <Filter>addons\ofxGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Button.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Object.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UI_Slider.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Window_Editor.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="icon.rc" />
+    <ResourceCompile Include="icon.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
