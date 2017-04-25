@@ -6,6 +6,7 @@ Window_Editor::Window_Editor()
 	btn_loadSprite = new Button(520, 25, 200, 50, "images/btn_loadSprite.png"); //criando botão LOAD SPRITE
 	btn_changeObjectColor = new Button(600, 300, 200, 50, "images/meep.png"); // -> mexe na cor do objeto
 	btn_changeObjectSat = new Button(600, 250, 200, 50, "images/meep2.png"); // -> mexe na saturação do objeto
+	btn_saveObject = new Button(800, 700, 200, 50, "images/btn_save.png"); // salva
 
 	s_hp = new UI_Slider(600, 450, 100, 25, 100); //slider pra representar hp do objeto
 
@@ -60,6 +61,15 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 			window_manager->SetState(0);
 	}
 
+	if (btn_saveObject->TestClick(x, y))
+	{
+		//fopen_s(&m_file, "objects.txt", "a"); //abre o arquivo
+		//abrir algo para ler o nome da imagem e salvar em uma string
+		//ofSaveImage(object->m_image.getPixelsRef(), "objetos/" + stringnomedoarquivo); //salva a imagem na pasta
+		//fprintf(m_file, m_imgPath); //salva no arquivo
+		//fclose(m_file); //fecha o arquivo		
+	}
+
 	if (btn_changeObjectColor->TestClick(x, y) && m_imageOnScreen) //se click for no botão CHANGE e objeto estiver na tela
 	{
 		object->PlusColor();
@@ -71,6 +81,8 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 		object->PlusSatu();
 		object->ChangeSatu();
 	}
+	
+	
 
 	s_hp->MouseClicked(x, y);
 }
@@ -82,6 +94,7 @@ void Window_Editor::Draw()
 	ofSetColor(255, 255, 255); //voltando cores ao normal
 
 	btn_cancel->Draw(); //chamando função de desenho do botão CANCEL
+	btn_saveObject->Draw();
 	btn_loadSprite->Draw(); //chamando função de desenho do botão LOAD SPRITE
 
 	if (GetImageOnScreen()) //se a imagem estiver na tela

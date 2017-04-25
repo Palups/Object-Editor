@@ -16,6 +16,11 @@ Window_Manager::~Window_Manager()
 {
 }
 
+//FILE* Window_Manager::GetFile()
+//{
+//	return m_file;
+//}
+
 int Window_Manager::GetState()
 {
 	return m_state;

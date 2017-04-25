@@ -12,13 +12,15 @@ private:
 
 	std::string m_name; //nome do objeto (é o que o usuário digitará para salvar o objeto)
 
-	ofImage m_image; //imagem que representa o objeto
+	 //imagem que representa o objeto
 	ofImage backup; //imagem com as cores originais
 
 public:
 	Object(std::string path);
 
 	~Object();
+
+	ofImage m_image;
 
 	void Draw();
 

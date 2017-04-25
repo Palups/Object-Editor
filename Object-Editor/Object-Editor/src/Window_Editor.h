@@ -16,6 +16,7 @@ private:
 	Button *btn_loadSprite; //declarando botão LOAD SPRITE
 	Button *btn_changeObjectColor; //teste pra mudar a cor
 	Button *btn_changeObjectSat; //teste pra mudar a saturação
+	Button *btn_saveObject; //salva o objeto criado
 
 	Object *object; //objeto que será criado ao clicar em LOAD SPRITE
 	UI_Slider *s_hp; //slider pra hp do objeto
@@ -39,6 +40,9 @@ public:
 
 	void SetImageOnScreen(bool imageOnScreen);
 	bool GetImageOnScreen();
+
+	string m_imgPath;
+	FILE *m_file;
 
 	//funções canvas
 	void exit();
