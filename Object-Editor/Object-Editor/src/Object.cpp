@@ -86,7 +86,7 @@ void Object::ChangeSatu()
 		{
 			float s;
 			ofColor color = m_image.getColor(x, y);
-			if (color != 255)
+			if (color.getBrightness() < 220)
 			{
 				color.setSaturation(inc_s);
 				m_image.setColor(x, y, color);
@@ -95,3 +95,4 @@ void Object::ChangeSatu()
 	}
 	m_image.update();
 }
+
