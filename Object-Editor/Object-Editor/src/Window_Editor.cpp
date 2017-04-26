@@ -12,6 +12,7 @@ Window_Editor::Window_Editor()
 
 	m_imageOnScreen = false; //inicializando como falsa
 
+
 	//gui = new ofxUISuperCanvas("tela de edicao"); //Creates a canvas at (0,0) using the default width	
 	//gui.setup();
 	//gui.add(m_hp.setup("HP", 0, 0, 100));
@@ -108,6 +109,7 @@ void Window_Editor::Draw()
 
 		//gui.draw();
 		s_hp->Draw();
+
 	}
 }
 

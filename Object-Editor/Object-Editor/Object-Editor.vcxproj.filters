@@ -25,138 +25,6 @@
     <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxXmlSettings\libs\tinyxmlparser.cpp">
       <Filter>addons\ofxXmlSettings\libs</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUI2DGraph.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUI2DPad.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIBaseDraws.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIBiLabelSlider.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIButton.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUICanvas.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUICircleSlider.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIDragableLabelButton.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIDropDownList.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIEventArgs.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIFPS.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIFPSSlider.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIImage.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIImageButton.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIImageSampler.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIImageSlider.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIImageToggle.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUILabel.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUILabelButton.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUILabelToggle.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIMinimalSlider.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIMovingGraph.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIMultiImageButton.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIMultiImageToggle.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUINumberDialer.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIRadio.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIRangeSlider.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIRectangle.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIRotarySlider.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIScrollableCanvas.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUISlider.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUISortableList.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUISpacer.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUISpectrum.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUISuperCanvas.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUITabBar.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUITextArea.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUITextInput.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIToggle.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIToggleMatrix.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIValuePlotter.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIWaveform.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIWidget.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIWidgetWithLabel.cpp">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxGui\src\ofxBaseGui.cpp">
       <Filter>addons\ofxGui\src</Filter>
     </ClCompile>
@@ -193,6 +61,18 @@
     <ClCompile Include="src\Window_Editor.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\src\ofxAssimpAnimation.cpp">
+      <Filter>addons\ofxAssimpModelLoader\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\src\ofxAssimpMeshHelper.cpp">
+      <Filter>addons\ofxAssimpModelLoader\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\src\ofxAssimpModelLoader.cpp">
+      <Filter>addons\ofxAssimpModelLoader\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\src\ofxAssimpTexture.cpp">
+      <Filter>addons\ofxAssimpModelLoader\src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -210,17 +90,32 @@
     <Filter Include="addons\ofxXmlSettings\libs">
       <UniqueIdentifier>{0b03a2db-1c2a-4622-bd14-04277aa692fa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="addons\ofxUI-master">
-      <UniqueIdentifier>{a85a96c8-db54-4421-8b22-8a729041793a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="addons\ofxUI-master\src">
-      <UniqueIdentifier>{7b814e55-b2fc-4d83-bcc0-0e445f7e6886}</UniqueIdentifier>
-    </Filter>
     <Filter Include="addons\ofxGui">
       <UniqueIdentifier>{66970e9c-3ba0-4fd0-96a8-c96f65809308}</UniqueIdentifier>
     </Filter>
     <Filter Include="addons\ofxGui\src">
       <UniqueIdentifier>{5e8e6dde-7bb1-471f-a777-c278c31c2dd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxAssimpModelLoader">
+      <UniqueIdentifier>{1b9b8ed5-8ddb-4680-be31-df83ea5cf3b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxAssimpModelLoader\src">
+      <UniqueIdentifier>{8dfd38bc-0bc8-4d2a-89eb-fc077e256142}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxAssimpModelLoader\libs">
+      <UniqueIdentifier>{2da5de4d-e253-4440-af9b-23668831ec68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxAssimpModelLoader\libs\assimp">
+      <UniqueIdentifier>{42a4ca74-6204-463f-b091-a427063dcb15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxAssimpModelLoader\libs\assimp\include">
+      <UniqueIdentifier>{5a2f5418-6946-47a6-871a-026efd29c773}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxAssimpModelLoader\libs\assimp\include\assimp">
+      <UniqueIdentifier>{a1494c9d-3c23-4392-a7a8-5e2dd3957df0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxAssimpModelLoader\libs\assimp\include\assimp\Compiler">
+      <UniqueIdentifier>{cab1dc86-4c82-49d0-af8f-af305085bd3b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -238,156 +133,6 @@
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxXmlSettings\libs\tinyxml.h">
       <Filter>addons\ofxXmlSettings\libs</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUI.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUI2DGraph.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUI2DPad.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIBaseDraws.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIBiLabelSlider.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIButton.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUICanvas.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUICircleSlider.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIDefines.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIDragableLabelButton.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIDropDownList.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIEventArgs.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIFPS.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIFPSSlider.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIImage.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIImageButton.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIImageSampler.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIImageSlider.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIImageToggle.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUILabel.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUILabelButton.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUILabelToggle.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIMinimalSlider.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIMovingGraph.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIMultiImageButton.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIMultiImageToggle.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUINumberDialer.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIOFWrapper.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIRadio.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIRangeSlider.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIRectangle.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIRotarySlider.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIScrollableCanvas.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUISlider.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUISortableList.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUISpacer.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUISpectrum.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUISuperCanvas.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUITabBar.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUITextArea.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUITextInput.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIToggle.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIToggleMatrix.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIUtils.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIValuePlotter.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIWaveform.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIWidget.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIWidgets.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIWidgetWithLabel.h">
-      <Filter>addons\ofxUI-master\src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxUI-master\src\ofxUIWrapper.h">
-      <Filter>addons\ofxUI-master\src</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxGui\src\ofxBaseGui.h">
       <Filter>addons\ofxGui\src</Filter>
@@ -427,6 +172,129 @@
     </ClInclude>
     <ClInclude Include="src\Window_Editor.h">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\src\ofxAssimpAnimation.h">
+      <Filter>addons\ofxAssimpModelLoader\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\src\ofxAssimpMeshHelper.h">
+      <Filter>addons\ofxAssimpModelLoader\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\src\ofxAssimpModelLoader.h">
+      <Filter>addons\ofxAssimpModelLoader\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\src\ofxAssimpTexture.h">
+      <Filter>addons\ofxAssimpModelLoader\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\src\ofxAssimpUtils.h">
+      <Filter>addons\ofxAssimpModelLoader\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\ai_assert.h">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\anim.h">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\camera.h">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\cexport.h">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\cfileio.h">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\cimport.h">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\color4.h">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\config.h">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\defs.h">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\importerdesc.h">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\light.h">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\material.h">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\matrix3x3.h">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\matrix4x4.h">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\mesh.h">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\metadata.h">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\postprocess.h">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\quaternion.h">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\scene.h">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\texture.h">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\types.h">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\vector2.h">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\vector3.h">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\version.h">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\DefaultLogger.hpp">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\Exporter.hpp">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\Importer.hpp">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\IOStream.hpp">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\IOSystem.hpp">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\Logger.hpp">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\LogStream.hpp">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\NullLogger.hpp">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\ProgressHandler.hpp">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\Compiler\poppack1.h">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp\Compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\Compiler\pstdint.h">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp\Compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\Compiler\pushpack1.h">
+      <Filter>addons\ofxAssimpModelLoader\libs\assimp\include\assimp\Compiler</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
