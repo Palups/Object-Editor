@@ -1,3 +1,3 @@
-ofxAssimpModelLoader
 ofxGui
 ofxXmlSettings
+ofxUI-master

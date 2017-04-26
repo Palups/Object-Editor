@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
+#include "ofxUI.h"
 #include "ofxGui.h"
 #include "Window_Manager.h"
 
@@ -22,6 +23,8 @@ private:
 
 	bool m_imageOnScreen; //checa se a imagem que representa o objeto está na tela	 
 
+	//ofxIntSlider m_hp;
+	//ofxPanel gui;
 
 	//ofxUISuperCanvas *gui; //declarando canvas
 
@@ -42,7 +45,7 @@ public:
 	FILE *m_file;
 
 	//funções canvas
-
-	void InputText();
+	void exit();
+	void guiEvent(ofxUIEventArgs &e);
 };
 
