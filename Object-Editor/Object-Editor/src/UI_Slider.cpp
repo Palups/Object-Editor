@@ -10,8 +10,6 @@ UI_Slider::UI_Slider(int x, int y, int w, int h, int d)
 	m_data = d;
 	isActive = false;
 
-	//label = "beep boop";
-
 	ResetSlider();
 }
 
@@ -19,14 +17,10 @@ UI_Slider::UI_Slider(int x, int y, int w, int h, int d)
 
 void UI_Slider::Draw()
 {
-	ofSetColor(0);
-	//ofDrawBitmapString("meep", m_x + 10, m_y - 10);
-	ofSetColor(15, 130, 130);
-	ofDrawRectangle(r_total);
 	ofSetColor(15, 190, 190);
 	ofDrawRectangle(r_data);
-
-	ofSetColor(255);
+	ofSetColor(15, 130, 130);
+	ofDrawRectangle(r_total);
 }
 
 void UI_Slider::ResetSlider()
@@ -51,11 +45,9 @@ void UI_Slider::MouseClicked(int x, int y)
 
 void UI_Slider::MouseDragged(int x, int y)
 {
-
-	if (TestClick(x, y))
+	if (isActive)
 	{
 		int aux_x = x - r_data.x;
-		//std::cout << "meep beep : " << aux_x << std::endl;
 		if (aux_x < 0)
 			aux_x = 0;
 		r_data.setWidth(aux_x);
@@ -66,7 +58,11 @@ void UI_Slider::MouseDragged(int x, int y)
 
 void UI_Slider::MouseReleased(int x, int y)
 {
-	m_data = m_data * (r_data.width / m_w);
+	if (isActive)
+	{
+		isActive = false;
+		m_data = m_data * (r_data.width / m_w);
+	}
 
 
 	std::cout << m_data << std::endl;
@@ -77,9 +73,7 @@ bool UI_Slider::TestClick(int x, int y)
 	if (x >= m_x && x <= m_x + m_w &&
 		y >= m_y && y <= m_y + m_h)
 	{
-		//std::cout << "beep boop" << std::endl;
 		return true;
-
 	}
 	
 	return false;

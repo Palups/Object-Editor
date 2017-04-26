@@ -2,7 +2,6 @@
 
 #include "ofMain.h"
 #include "Window_Manager.h"
-#include "Strings.h"
 
 class UI_Slider
 {
@@ -17,8 +16,6 @@ private:
 		m_h;
 
 	bool isActive;
-
-	//std::string label;
 
 public:
 	UI_Slider(int x, int y, int w, int h, int d);

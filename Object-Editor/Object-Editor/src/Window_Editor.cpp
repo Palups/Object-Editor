@@ -34,7 +34,6 @@ void Window_Editor::MouseReleased(int x, int y)
 void Window_Editor::MouseDragged(int x, int y)
 {
 	s_hp->MouseDragged(x, y);
-	//std::cout << "meep" << std::endl;
 }
 
 void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)

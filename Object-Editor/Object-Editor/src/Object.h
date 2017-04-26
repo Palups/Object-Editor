@@ -34,10 +34,7 @@ public:
 	void ChangeColor();
 	float CheckHue(float hue, float n);
 
-
 	void PlusSatu();
 	void ChangeSatu();
-
-	void ResetColor();
 };
 
