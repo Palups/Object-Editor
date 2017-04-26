@@ -9,6 +9,7 @@ class UI_Slider
 private:
 	ofRectangle r_data, r_total;
 	int m_data; //Dado que o slider vai representar
+	int data_backup;
 
 	int m_x, //Coordenadas e dimensoes
 		m_y,

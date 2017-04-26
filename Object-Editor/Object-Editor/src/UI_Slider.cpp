@@ -8,6 +8,7 @@ UI_Slider::UI_Slider(int x, int y, int w, int h, int d)
 	m_h = h;
 
 	m_data = d;
+	data_backup = m_data;
 	isActive = false;
 
 	ResetSlider();
@@ -17,10 +18,11 @@ UI_Slider::UI_Slider(int x, int y, int w, int h, int d)
 
 void UI_Slider::Draw()
 {
-	ofSetColor(15, 190, 190);
-	ofDrawRectangle(r_data);
 	ofSetColor(15, 130, 130);
 	ofDrawRectangle(r_total);
+	ofSetColor(15, 190, 190);
+	ofDrawRectangle(r_data);
+	ofSetColor(255);
 }
 
 void UI_Slider::ResetSlider()
@@ -40,31 +42,34 @@ void UI_Slider::ResetSlider()
 void UI_Slider::MouseClicked(int x, int y)
 {
 	if (TestClick(x, y))
-		isActive = true;
-}
-
-void UI_Slider::MouseDragged(int x, int y)
-{
-	if (isActive)
 	{
 		int aux_x = x - r_data.x;
 		if (aux_x < 0)
 			aux_x = 0;
 		r_data.setWidth(aux_x);
+	}
+}
 
-		//m_data = m_data * (aux_x / m_w);
+void UI_Slider::MouseDragged(int x, int y)
+{
+	if (TestClick(x, y))
+	{
+		int aux_x = x - r_data.x;
+		if (aux_x < 0)
+			aux_x = 0;
+		r_data.setWidth(aux_x);
 	}
 }
 
 void UI_Slider::MouseReleased(int x, int y)
 {
-	if (isActive)
-	{
-		isActive = false;
-		m_data = m_data * (r_data.width / m_w);
-	}
+	//if (isActive)
+	//{
+	//	isActive = false;
+	//	m_data = m_data * (r_data.width / m_w);
+	//}
 
-
+	m_data = data_backup * (r_data.width / m_w);
 	std::cout << m_data << std::endl;
 }
 
