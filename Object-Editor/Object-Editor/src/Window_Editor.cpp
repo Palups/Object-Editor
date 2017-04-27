@@ -9,6 +9,7 @@ Window_Editor::Window_Editor()
 	btn_saveObject = new Button(800, 700, 200, 50, "images/btn_save.png"); // salva
 
 	s_hp = new UI_Slider(600, 450, 100, 25, 100); //slider pra representar hp do objeto
+	s_hp->SetLabel("HP");
 
 	m_imageOnScreen = false; //inicializando como falsa
 

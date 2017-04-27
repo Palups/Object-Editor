@@ -16,6 +16,8 @@ private:
 		m_w,
 		m_h;
 
+	std::string label;
+
 	bool isActive;
 
 public:
@@ -24,6 +26,7 @@ public:
 	void Draw();
 	void ResetSlider(); //Reseta os valores do slider pro inicial (dados do construtor)
 
+	void SetLabel(std::string label);
 	void MouseClicked(int x, int y); 
 	void MouseDragged(int x, int y);
 	void MouseReleased(int x, int y);
