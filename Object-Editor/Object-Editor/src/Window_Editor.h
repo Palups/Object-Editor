@@ -21,7 +21,8 @@ private:
 	Object *object; //objeto que será criado ao clicar em LOAD SPRITE
 	UI_Slider *s_hp; //slider pra hp do objeto
 
-	bool m_imageOnScreen; //checa se a imagem que representa o objeto está na tela	 
+	bool m_imageOnScreen; //checa se a imagem que representa o objeto está na tela	
+	string input;
 
 	//ofxIntSlider m_hp;
 	//ofxPanel gui;
@@ -40,6 +41,8 @@ public:
 
 	void SetImageOnScreen(bool imageOnScreen);
 	bool GetImageOnScreen();
+
+	void InputText();
 
 	string m_imgPath;
 	FILE *m_file;

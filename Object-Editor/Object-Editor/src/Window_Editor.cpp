@@ -23,7 +23,12 @@ Window_Editor::~Window_Editor()
 
 void Window_Editor::KeyPressed(int key)
 {
-
+	switch (key)
+	{
+	case 'k':
+		InputText();
+		break;
+	}
 }
 
 void Window_Editor::MouseReleased(int x, int y)
@@ -119,6 +124,11 @@ void Window_Editor::SetImageOnScreen(bool imageOnScreen)
 bool Window_Editor::GetImageOnScreen()
 {
 	return m_imageOnScreen;
+}
+
+void Window_Editor::InputText()
+{
+	input = ofSystemTextBoxDialog("Nome", input);
 }
 
 void Window_Editor::exit()
