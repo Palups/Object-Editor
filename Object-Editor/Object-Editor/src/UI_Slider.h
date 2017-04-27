@@ -20,6 +20,7 @@ private:
 
 public:
 	UI_Slider(int x, int y, int w, int h, int d);
+	int GetValue();
 	void Draw();
 	void ResetSlider(); //Reseta os valores do slider pro inicial (dados do construtor)
 

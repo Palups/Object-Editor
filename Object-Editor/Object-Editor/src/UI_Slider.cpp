@@ -14,6 +14,11 @@ UI_Slider::UI_Slider(int x, int y, int w, int h, int d)
 	ResetSlider();
 }
 
+int UI_Slider::GetValue()
+{
+	return m_data;
+}
+
 
 
 void UI_Slider::Draw()

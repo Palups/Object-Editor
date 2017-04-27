@@ -129,6 +129,7 @@ bool Window_Editor::GetImageOnScreen()
 void Window_Editor::InputText()
 {
 	input = ofSystemTextBoxDialog("Nome", input);
+	std::cout << input << std::endl;
 }
 
 void Window_Editor::exit()
