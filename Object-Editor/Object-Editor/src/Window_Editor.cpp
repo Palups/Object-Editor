@@ -68,12 +68,16 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 	}
 
 	if (btn_saveObject->TestClick(x, y))
-	{
-		//fopen_s(&m_file, "objects.txt", "a"); //abre o arquivo
-		//abrir algo para ler o nome da imagem e salvar em uma string
-		//ofSaveImage(object->m_image.getPixelsRef(), "objetos/" + stringnomedoarquivo); //salva a imagem na pasta
-		//fprintf(m_file, m_imgPath); //salva no arquivo
-		//fclose(m_file); //fecha o arquivo		
+	{		
+		ofFileDialogResult result = ofSystemSaveDialog("default.png", "Save");
+		if (result.bSuccess) {
+			string imgPath = result.getPath();
+			ofstream arquivo(imgPath + ".txt"); //cria um novo arquivo com o nome que o usuario der pro objeto
+			ofSaveImage(object->m_image.getPixelsRef(),imgPath +".png");
+			arquivo << imgPath +".png" << endl; //salva o path da imagem no arquivo
+			arquivo.close(); //fecha o arquivo
+			// save your file to `path`
+		}				
 	}
 
 	if (btn_changeObjectColor->TestClick(x, y) && m_imageOnScreen) //se click for no botão CHANGE e objeto estiver na tela

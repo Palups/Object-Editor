@@ -45,7 +45,7 @@ public:
 	void InputText();
 
 	string m_imgPath;
-	FILE *m_file;
+	ofstream m_file;
 
 	//funções canvas
 	void exit();
