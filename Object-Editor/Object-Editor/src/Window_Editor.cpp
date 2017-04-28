@@ -55,21 +55,6 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 			object->SetY(384 - object->GetH() / 2);
 		}
 	}
-	if (btn_saveObject->TestClick(x, y))
-	{
-		ofFileDialogResult result = ofSystemSaveDialog("default.png", "Save");
-		if (result.bSuccess) {
-			string path = result.getPath();
-			ofSaveImage(object->m_image.getPixelsRef(), path+".png");
-			//std::cout << path << endl;
-			// save your file to `path`
-		}
-		//fopen_s(&m_file, "objects.txt", "a"); //abre o arquivo
-		//abrir algo para ler o nome da imagem e salvar em uma string
-		//ofSaveImage(object->m_image.getPixelsRef(), "objetos/" + stringnomedoarquivo); //salva a imagem na pasta
-		//fprintf(m_file, m_imgPath); //salva no arquivo
-		//fclose(m_file); //fecha o arquivo		
-	}
 
 	if (btn_cancel->TestClick(x, y)) {  //se click dentro do botão CANCEL
 		if (GetImageOnScreen()) {  //se tiver imagem de objeto na tela, deleta objeto e volta pro menu
@@ -81,7 +66,14 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 			window_manager->SetState(0);
 	}
 
-	
+	if (btn_saveObject->TestClick(x, y))
+	{
+		//fopen_s(&m_file, "objects.txt", "a"); //abre o arquivo
+		//abrir algo para ler o nome da imagem e salvar em uma string
+		//ofSaveImage(object->m_image.getPixelsRef(), "objetos/" + stringnomedoarquivo); //salva a imagem na pasta
+		//fprintf(m_file, m_imgPath); //salva no arquivo
+		//fclose(m_file); //fecha o arquivo		
+	}
 
 	if (btn_changeObjectColor->TestClick(x, y) && m_imageOnScreen) //se click for no botão CHANGE e objeto estiver na tela
 	{
