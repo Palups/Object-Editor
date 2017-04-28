@@ -10,6 +10,7 @@ UI_Slider::UI_Slider(int x, int y, int w, int h, int d)
 	m_data = d;
 	data_backup = m_data;
 	isActive = false;
+	label = "";
 
 	ResetSlider();
 }
@@ -23,6 +24,8 @@ int UI_Slider::GetValue()
 
 void UI_Slider::Draw()
 {
+	ofSetColor(0, 0, 0);
+	ofDrawBitmapString(label + ": " + ofToString(m_data), m_x, m_y - 5);
 	ofSetColor(15, 130, 130);
 	ofDrawRectangle(r_total);
 	ofSetColor(15, 190, 190);
@@ -42,6 +45,11 @@ void UI_Slider::ResetSlider()
 	r_total.y = m_y;
 	r_total.width = m_w;
 	r_total.height = m_h;
+}
+
+void UI_Slider::SetLabel(std::string label)
+{
+	this->label = label;
 }
 
 void UI_Slider::MouseClicked(int x, int y)
