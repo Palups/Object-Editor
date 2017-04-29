@@ -6,7 +6,14 @@ Object::Object(std::string path)
 	backup.loadImage(path);
 
 	isDestructable = true;
-	m_hp = 0;
+	isPushable = true;
+	isHealing = true;
+	isDamaging = true;
+
+	m_hp = 1000;
+	m_kg = 1000;
+	m_heal = 500;
+	m_dmg = 500;
 }
 
 Object::~Object()
@@ -46,8 +53,26 @@ void Object::SetHp(bool destructable, int hp)
 		m_hp = hp;
 	else
 		m_hp = 0;
+}
 
-	//std::cout << "meep :" + ofToString(isDestructable) + " - " + ofToString(m_hp) << std::endl;
+void Object::SetKg(bool pushable, int kg)
+{
+	isPushable = pushable;
+	m_kg = kg;
+}
+
+void Object::SetHeal(bool healing, int heal)
+{
+	isHealing = healing;
+	m_heal = heal;
+}
+
+void Object::SetDamage(bool damaging, int dmg)
+{
+	isDamaging = damaging;
+	m_dmg = dmg;
+	std::cout << "meep dmg:" + ofToString(isDamaging) + " - " + ofToString(m_dmg) << std::endl;
+
 }
 
 void Object::PlusColor()

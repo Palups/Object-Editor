@@ -17,7 +17,14 @@ private:
 
 	/*Dados pra exportar do objeto*/
 	bool isDestructable;
-	int m_hp;
+	bool isPushable;
+	bool isHealing;
+	bool isDamaging;
+
+	int m_hp; //hp do objeto *destrutivel*
+	int m_kg; //peso do objeto *empurravel*
+	int m_heal; //qdade de heal *healable*
+	int m_dmg; //qdade de dmg *damaging*
 
 public:
 	Object(std::string path);
@@ -35,6 +42,9 @@ public:
 	void SetY(int y);
 
 	void SetHp(bool destructable, int hp);
+	void SetKg(bool pushable, int kg);
+	void SetHeal(bool healing, int heal);
+	void SetDamage(bool damaging, int dmg);
 
 	void PlusColor();
 	void ChangeColor();

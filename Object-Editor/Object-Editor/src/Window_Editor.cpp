@@ -8,10 +8,26 @@ Window_Editor::Window_Editor()
 	btn_changeObjectSat = new Button(600, 250, 200, 50, "images/meep2.png"); // -> mexe na saturação do objeto
 	btn_saveObject = new Button(800, 700, 200, 50, "images/btn_save.png"); // salva
 
+
 	sw_breakable = new UI_Switch(520, 450, 80, 20); //switch pra objetos destrutiveis
 	sw_breakable->SetLabel("Is destructable");
 	s_hp = new UI_Slider(700, 450, 300, 25, 1000); //slider pra representar hp do objeto
 	s_hp->SetLabel("Initial HP");
+
+	sw_pushable = new UI_Switch(520, 500, 80, 20);
+	sw_pushable->SetLabel("Is pushable");
+	s_kg = new UI_Slider(700, 500, 300, 25, 1000);
+	s_kg->SetLabel("Initial weight");
+
+	sw_healing = new UI_Switch(520, 550, 80, 20);
+	sw_healing->SetLabel("Healing object");
+	s_heal = new UI_Slider(700, 550, 300, 25, 500);
+	s_heal->SetLabel("Healing amount");
+
+	sw_damaging = new UI_Switch(520, 600, 80, 20);
+	sw_damaging->SetLabel("Damaging object");
+	s_dmg = new UI_Slider(700, 600, 300, 25, 500);
+	s_dmg->SetLabel("Damage amount");
 
 	m_imageOnScreen = false; //inicializando como falsa
 
@@ -36,17 +52,41 @@ void Window_Editor::KeyPressed(int key)
 
 void Window_Editor::MouseReleased(int x, int y)
 {
-	if (sw_breakable->GetStatus()) //se o switch de objeto destrutivel estiver ativo
+	if (s_hp->TestClick(x, y) && sw_breakable->GetStatus()) //se o switch de objeto destrutivel estiver ativo
 		s_hp->MouseReleased(x, y);
 
-	if(m_imageOnScreen)
-		object->SetHp(sw_breakable->GetStatus(), s_hp->GetValue()); //atualiza o atributo do objeto com o valor do switch e do slider
+	else if (s_kg->TestClick(x, y) && sw_pushable->GetStatus())
+		s_kg->MouseReleased(x, y);
+
+	else if (s_heal->TestClick(x, y) && sw_healing->GetStatus())
+		s_heal->MouseReleased(x, y);
+
+	else if (s_dmg->TestClick(x, y) && sw_damaging->GetStatus())
+		s_dmg->MouseReleased(x, y);
+
+	if (m_imageOnScreen) //atualiza o atributo do objeto com o valor do switch e do slider
+	{
+		object->SetHp(sw_breakable->GetStatus(), s_hp->GetValue()); 
+		object->SetKg(sw_pushable->GetStatus(), s_kg->GetValue());
+		object->SetHeal(sw_healing->GetStatus(), s_heal->GetValue());
+		object->SetDamage(sw_damaging->GetStatus(), s_dmg->GetValue());
+	}
+		
 }
 
 void Window_Editor::MouseDragged(int x, int y)
 {
-	if (sw_breakable->GetStatus()) //se o switch de objeto destrutivel estiver ativo
+	if (s_hp->TestClick(x, y) && sw_breakable->GetStatus()) //se o switch de objeto destrutivel estiver ativo
 		s_hp->MouseDragged(x, y);
+
+	else if (s_kg->TestClick(x, y) && sw_pushable->GetStatus())
+		s_kg->MouseDragged(x, y);
+
+	else if (s_heal->TestClick(x, y) && sw_healing->GetStatus())
+		s_heal->MouseDragged(x, y);
+
+	else if (s_dmg->TestClick(x, y) && sw_damaging->GetStatus())
+		s_dmg->MouseDragged(x, y);
 }
 
 void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
@@ -87,25 +127,75 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 		}				
 	}
 
-	if (btn_changeObjectColor->TestClick(x, y) && m_imageOnScreen) //se click for no botão CHANGE e objeto estiver na tela
+	if (m_imageOnScreen) //TODAS AS CONFIG DE IMAGEM AQUI!!!!!!!
 	{
-		object->PlusColor();
-		object->ChangeColor();
-	}
+		/*-----  APARENCIA DO OBJETO  -----*/
+		if (btn_changeObjectColor->TestClick(x, y)) //se click for no botão CHANGE e objeto estiver na tela
+		{
+			object->PlusColor();
+			object->ChangeColor();
+		}
 
-	if (btn_changeObjectSat->TestClick(x, y) && m_imageOnScreen) //se click for no botão CHANGE e objeto estiver na tela
-	{
-		object->PlusSatu();
-		object->ChangeSatu();
-	}
-	
-	
-	sw_breakable->MouseClicked(x, y);
-	if (sw_breakable->GetStatus()) //se o switch de objeto destrutivel estiver ativo
-		s_hp->MouseClicked(x, y);
-	else
-		s_hp->DeactivateSlider();
-	
+		if (btn_changeObjectSat->TestClick(x, y)) //se click for no botão CHANGE e objeto estiver na tela
+		{
+			object->PlusSatu();
+			object->ChangeSatu();
+		}
+
+		/*-----  ATRIBUTOS  -----*/
+		if (sw_breakable->TestClick(x, y)) // Se o click for no botao 
+		{
+			sw_breakable->MouseClicked(x, y);
+			if(!sw_breakable->GetStatus())
+				s_hp->DeactivateSlider(); 
+		}
+		else if (s_hp->TestClick(x, y)) //se o click for no slider...
+		{
+			if (sw_breakable->GetStatus()) //...e o switch de objeto destrutivel estiver ativo
+				s_hp->MouseClicked(x, y);			
+		}
+		//EMPURRAVEL
+		else if (sw_pushable->TestClick(x, y)) 
+		{
+			sw_pushable->MouseClicked(x, y);
+			if(!sw_pushable->GetStatus())
+				s_kg->DeactivateSlider();
+		}
+		//PESO
+		else if (s_kg->TestClick(x, y)) 
+		{
+			if (sw_pushable->GetStatus()) //...e o switch de objeto destrutivel estiver ativo
+				s_kg->MouseClicked(x, y);
+		}
+
+		//DA HEAL
+		else if (sw_healing->TestClick(x, y))
+		{
+			sw_healing->MouseClicked(x, y);
+			if (!sw_healing->GetStatus())
+				s_heal->DeactivateSlider();
+		}
+		//QUANTO DE HEAL
+		else if (s_heal->TestClick(x, y))
+		{
+			if (sw_healing->GetStatus()) //...e o switch de objeto destrutivel estiver ativo
+				s_heal->MouseClicked(x, y);
+		}
+
+		//MACHUCA PORRA
+		else if (sw_damaging->TestClick(x, y))
+		{
+			sw_damaging->MouseClicked(x, y);
+			if (!sw_damaging->GetStatus())
+				s_dmg->DeactivateSlider();
+		}
+		//QUANTO DE DMG
+		else if (s_dmg->TestClick(x, y))
+		{
+			if (sw_damaging->GetStatus()) //...e o switch de objeto destrutivel estiver ativo
+				s_dmg->MouseClicked(x, y);
+		}
+	}	
 }
 
 void Window_Editor::Draw()
@@ -129,6 +219,12 @@ void Window_Editor::Draw()
 
 		s_hp->Draw();
 		sw_breakable->Draw();
+		s_kg->Draw();
+		sw_pushable->Draw();
+		s_heal->Draw();
+		sw_healing->Draw();
+		s_dmg->Draw();
+		sw_damaging->Draw();
 	}
 }
 

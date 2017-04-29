@@ -60,25 +60,20 @@ void UI_Slider::SetLabel(std::string label)
 
 void UI_Slider::MouseClicked(int x, int y)
 {
-	if (TestClick(x, y))
-	{
 		int aux_x = x - r_data.x;
 		if (aux_x < 0)
 			aux_x = 0;
 		r_data.setWidth(aux_x);
-	}
 }
 
 void UI_Slider::MouseDragged(int x, int y)
 {
-	if (TestClick(x, y))
-	{
 		int aux_x = x - r_data.x;
 		if (aux_x < 0)
 			aux_x = 0;
 		r_data.setWidth(aux_x);
 		m_data = data_backup * (r_data.width / m_w);
-	}
+
 }
 
 void UI_Slider::MouseReleased(int x, int y)

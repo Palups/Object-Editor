@@ -45,8 +45,7 @@ void UI_Switch::Draw() //Desenha
 
 void UI_Switch::MouseClicked(int x, int y) //Chama no mouseclicked 
 {
-	if (TestClick(x, y))
-		ClickSwitch();
+	ClickSwitch();
 }
 
 void UI_Switch::ClickSwitch() //Muda o estado do switch
