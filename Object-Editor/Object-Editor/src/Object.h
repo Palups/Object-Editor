@@ -12,15 +12,19 @@ private:
 
 	std::string m_name; //nome do objeto (é o que o usuário digitará para salvar o objeto)
 
-	 //imagem que representa o objeto
+	
 	ofImage backup; //imagem com as cores originais
+
+	/*Dados pra exportar do objeto*/
+	bool isDestructable;
+	int m_hp;
 
 public:
 	Object(std::string path);
 
 	~Object();
 
-	ofImage m_image;
+	ofImage m_image;  //imagem que representa o objeto
 
 	void Draw();
 
@@ -29,6 +33,8 @@ public:
 
 	void SetX(int x);
 	void SetY(int y);
+
+	void SetHp(bool destructable, int hp);
 
 	void PlusColor();
 	void ChangeColor();

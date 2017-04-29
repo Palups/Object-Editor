@@ -4,6 +4,9 @@ Object::Object(std::string path)
 {
 	m_image.loadImage(path);
 	backup.loadImage(path);
+
+	isDestructable = true;
+	m_hp = 0;
 }
 
 Object::~Object()
@@ -34,6 +37,17 @@ void Object::SetX(int x)
 void Object::SetY(int y)
 {
 	m_y = y;
+}
+
+void Object::SetHp(bool destructable, int hp)
+{
+	isDestructable = destructable;
+	if (isDestructable) // I.e. o objeto é destrutivel
+		m_hp = hp;
+	else
+		m_hp = 0;
+
+	//std::cout << "meep :" + ofToString(isDestructable) + " - " + ofToString(m_hp) << std::endl;
 }
 
 void Object::PlusColor()

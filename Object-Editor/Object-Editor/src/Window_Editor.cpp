@@ -38,6 +38,9 @@ void Window_Editor::MouseReleased(int x, int y)
 {
 	if (sw_breakable->GetStatus()) //se o switch de objeto destrutivel estiver ativo
 		s_hp->MouseReleased(x, y);
+
+	if(m_imageOnScreen)
+		object->SetHp(sw_breakable->GetStatus(), s_hp->GetValue()); //atualiza o atributo do objeto com o valor do switch e do slider
 }
 
 void Window_Editor::MouseDragged(int x, int y)

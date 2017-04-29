@@ -84,7 +84,7 @@ void UI_Slider::MouseDragged(int x, int y)
 void UI_Slider::MouseReleased(int x, int y)
 {
 	m_data = data_backup * (r_data.width / m_w);
-	std::cout << m_data << std::endl;
+	//std::cout << m_data << std::endl;
 }
 
 bool UI_Slider::TestClick(int x, int y)
