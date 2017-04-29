@@ -1,0 +1,60 @@
+#include "UI_Switch.h"
+
+
+
+UI_Switch::UI_Switch(int x, int y, int w, int h)
+{
+	m_x = x;
+	m_y = y;
+	m_w = w;
+	m_h = h;
+
+	status = false;
+	image_on.loadImage("images/swt_on.png");
+	image_off.loadImage("images/swt_off.png");
+	image_status = image_on;
+}
+
+bool UI_Switch::GetStatus()
+{
+	return status;
+}
+
+bool UI_Switch::TestClick(int x, int y) //Testa o click do mouse
+{
+	if (x >= m_x && x <= m_x + m_w &&
+		y >= m_y && y <= m_y + m_h)
+		return true;
+	return false;
+}
+ 
+void UI_Switch::Draw() //Desenha	
+{
+	image_status.draw(m_x, m_y, m_w, m_h);
+}
+
+void UI_Switch::MouseClicked(int x, int y) //Chama no mouseclicked 
+{
+	if (TestClick(x, y))
+		ClickSwitch();
+}
+
+void UI_Switch::ClickSwitch() //Muda o estado do switch
+{
+	status = !status;
+	if (status) //Está ligado
+	{
+		image_status = image_on;
+		image_status.update();
+	}
+	else //Está desligado
+	{
+		image_status = image_off;
+		image_status.update();
+	}
+}
+
+
+UI_Switch::~UI_Switch()
+{
+}

@@ -8,6 +8,7 @@ Window_Editor::Window_Editor()
 	btn_changeObjectSat = new Button(600, 250, 200, 50, "images/meep2.png"); // -> mexe na saturação do objeto
 	btn_saveObject = new Button(800, 700, 200, 50, "images/btn_save.png"); // salva
 
+	sw_breakable = new UI_Switch(500, 450, 80, 20); //switch pra objetos destrutiveis
 	s_hp = new UI_Slider(600, 450, 100, 25, 100); //slider pra representar hp do objeto
 	s_hp->SetLabel("HP");
 
@@ -93,7 +94,7 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 	}
 	
 	
-
+	sw_breakable->MouseClicked(x, y);
 	s_hp->MouseClicked(x, y);
 }
 
@@ -116,8 +117,8 @@ void Window_Editor::Draw()
 		else
 			std::cout << "Imagem grande d+++. escolha outra" << std::endl; //se for muito grande, escolher outra img
 
-		//gui.draw();
 		s_hp->Draw();
+		sw_breakable->Draw();
 	}
 }
 

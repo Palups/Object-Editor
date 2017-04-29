@@ -193,6 +193,9 @@
     <ClCompile Include="src\Window_Editor.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\UI_Switch.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -426,6 +429,9 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="src\Window_Editor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UI_Switch.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

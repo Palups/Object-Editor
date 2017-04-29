@@ -239,6 +239,7 @@ C:\of_v0.9.8_vs_release\addons\ofxGui\src;%(AdditionalIncludeDirectories)</Addit
     <ClCompile Include="src\Window_Menu.cpp" />
     <ClCompile Include="src\Window_Editor.cpp" />
     <ClCompile Include="src\UI_Slider.cpp" />
+    <ClCompile Include="src\UI_Switch.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxGui\src\ofxBaseGui.h" />
@@ -309,6 +310,7 @@ C:\of_v0.9.8_vs_release\addons\ofxGui\src;%(AdditionalIncludeDirectories)</Addit
     <ClInclude Include="src\Window_Menu.h" />
     <ClInclude Include="src\Window_Editor.h" />
     <ClInclude Include="src\UI_Slider.h" />
+    <ClInclude Include="src\UI_Switch.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">

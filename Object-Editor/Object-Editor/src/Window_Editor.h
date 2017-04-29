@@ -19,15 +19,13 @@ private:
 	Button *btn_saveObject; //salva o objeto criado
 
 	Object *object; //objeto que será criado ao clicar em LOAD SPRITE
+
+	UI_Switch *sw_breakable; //slider pra objeto destrutivel
 	UI_Slider *s_hp; //slider pra hp do objeto
 
 	bool m_imageOnScreen; //checa se a imagem que representa o objeto está na tela	
 	string input;
 
-	//ofxIntSlider m_hp;
-	//ofxPanel gui;
-
-	//ofxUISuperCanvas *gui; //declarando canvas
 
 public:
 	Window_Editor();
