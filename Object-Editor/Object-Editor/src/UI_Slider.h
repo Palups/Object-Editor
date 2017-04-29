@@ -18,14 +18,15 @@ private:
 
 	std::string label;
 
-	bool isActive;
 
 public:
+	bool isActive;
+
 	UI_Slider(int x, int y, int w, int h, int d);
 	int GetValue();
 	void Draw();
 	void ResetSlider(); //Reseta os valores do slider pro inicial (dados do construtor)
-
+	void DeactivateSlider(); 
 	void SetLabel(std::string label);
 	void MouseClicked(int x, int y); 
 	void MouseDragged(int x, int y);

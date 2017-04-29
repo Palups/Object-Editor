@@ -9,7 +9,7 @@ UI_Slider::UI_Slider(int x, int y, int w, int h, int d)
 
 	m_data = d;
 	data_backup = m_data;
-	isActive = false;
+	isActive = true;
 	label = "";
 
 	ResetSlider();
@@ -47,6 +47,12 @@ void UI_Slider::ResetSlider()
 	r_total.height = m_h;
 }
 
+void UI_Slider::DeactivateSlider()
+{
+	r_data.setWidth(0);
+	m_data = 0;
+}
+
 void UI_Slider::SetLabel(std::string label)
 {
 	this->label = label;
@@ -71,17 +77,12 @@ void UI_Slider::MouseDragged(int x, int y)
 		if (aux_x < 0)
 			aux_x = 0;
 		r_data.setWidth(aux_x);
+		m_data = data_backup * (r_data.width / m_w);
 	}
 }
 
 void UI_Slider::MouseReleased(int x, int y)
 {
-	//if (isActive)
-	//{
-	//	isActive = false;
-	//	m_data = m_data * (r_data.width / m_w);
-	//}
-
 	m_data = data_backup * (r_data.width / m_w);
 	std::cout << m_data << std::endl;
 }

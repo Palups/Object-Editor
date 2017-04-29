@@ -16,11 +16,15 @@ private:
 		image_on, 
 		image_off;
 
+	std::string label;
+
 public:
 	UI_Switch(int x, int y, int w, int h);
 	void Draw();
 	void MouseClicked(int x, int y);
 
+	void SetLabel(std::string name);
+	bool GetStatus();
 	bool TestClick(int x, int y);
 	void ClickSwitch();
 	~UI_Switch();

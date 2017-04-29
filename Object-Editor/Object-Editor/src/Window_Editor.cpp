@@ -8,9 +8,10 @@ Window_Editor::Window_Editor()
 	btn_changeObjectSat = new Button(600, 250, 200, 50, "images/meep2.png"); // -> mexe na saturação do objeto
 	btn_saveObject = new Button(800, 700, 200, 50, "images/btn_save.png"); // salva
 
-	sw_breakable = new UI_Switch(500, 450, 80, 20); //switch pra objetos destrutiveis
-	s_hp = new UI_Slider(600, 450, 100, 25, 100); //slider pra representar hp do objeto
-	s_hp->SetLabel("HP");
+	sw_breakable = new UI_Switch(520, 450, 80, 20); //switch pra objetos destrutiveis
+	sw_breakable->SetLabel("Is destructable");
+	s_hp = new UI_Slider(700, 450, 300, 25, 1000); //slider pra representar hp do objeto
+	s_hp->SetLabel("Initial HP");
 
 	m_imageOnScreen = false; //inicializando como falsa
 
@@ -35,12 +36,14 @@ void Window_Editor::KeyPressed(int key)
 
 void Window_Editor::MouseReleased(int x, int y)
 {
-	s_hp->MouseReleased(x, y);
+	if (sw_breakable->GetStatus()) //se o switch de objeto destrutivel estiver ativo
+		s_hp->MouseReleased(x, y);
 }
 
 void Window_Editor::MouseDragged(int x, int y)
 {
-	s_hp->MouseDragged(x, y);
+	if (sw_breakable->GetStatus()) //se o switch de objeto destrutivel estiver ativo
+		s_hp->MouseDragged(x, y);
 }
 
 void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
@@ -95,7 +98,11 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 	
 	
 	sw_breakable->MouseClicked(x, y);
-	s_hp->MouseClicked(x, y);
+	if (sw_breakable->GetStatus()) //se o switch de objeto destrutivel estiver ativo
+		s_hp->MouseClicked(x, y);
+	else
+		s_hp->DeactivateSlider();
+	
 }
 
 void Window_Editor::Draw()
