@@ -57,7 +57,7 @@ void ofApp::setup(){
 		arquivo.close();
 	/*Criar objetos usando as variaveis acima como parametros*/
 		bau = new Object(healing, heal, breakable, hp, damaging, dmg, pushable, kg);
-		//AQUI MYLLA
+		// Call me senpai
 	//Object ...;
 	ofSetFrameRate(60);
 	//definindo um lugar aleatório e criando inimigo nesse lugar
