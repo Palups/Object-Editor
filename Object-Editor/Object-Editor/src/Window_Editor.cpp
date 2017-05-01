@@ -121,7 +121,15 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 			string imgPath = result.getPath();
 			ofstream arquivo(imgPath + ".txt"); //cria um novo arquivo com o nome que o usuario der pro objeto
 			ofSaveImage(object->m_image.getPixelsRef(),imgPath +".png");
-			arquivo << imgPath +".png" << endl; //salva o path da imagem no arquivo
+			arquivo << imgPath + ".png" << endl //salva o path da imagem no arquivo
+				<< sw_healing->GetStatus() << endl //salva o status de healing no arquivo
+				<< s_heal->GetValue() << endl // salva o valor de heal
+				<< sw_breakable->GetStatus() << endl // status de quebravel
+				<< s_hp->GetValue() << endl //hp do objeto
+				<< sw_damaging->GetStatus() << endl //status de causador de dano
+				<< s_dmg->GetValue() << endl //dano causado
+				<< sw_pushable->GetStatus() << endl //status de empurravel
+				<< s_kg->GetValue() << endl; //peso
 			arquivo.close(); //fecha o arquivo
 			// save your file to `path`
 		}				
