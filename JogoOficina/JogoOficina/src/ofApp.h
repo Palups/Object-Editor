@@ -47,7 +47,7 @@ class ofApp : public ofBaseApp{
 		}
 
 		
-		//Object *bau;
+		Object *bau;
 		
 		
 		

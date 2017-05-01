@@ -10,6 +10,8 @@ private:
 	float inc = 1.0f; //incremento pra mudar cor da imagem
 	float inc_s = 125.0f; //incremento pra mudar saturação
 
+	ofVec2f m_position; //posição no jogo
+
 	std::string m_name; //nome do objeto (é o que o usuário digitará para salvar o objeto)
 
 	
@@ -27,13 +29,20 @@ private:
 	int m_dmg; //qdade de dmg *damaging*
 
 public:
-	Object(std::string path);
+	Object(std::string path); //construtor para editor
+	Object(bool healing, int heal, bool breakable, int hp,
+		bool damaging, int dmg, bool pushable, int kg); //construtor pro jogo
+	
 
 	~Object();
 
 	ofImage m_image;  //imagem que representa o objeto
 
 	void Draw();
+
+	void Destruct(bool breakable, ofVec2f positionShot);
+	void SetPosition(ofVec2f position);
+	ofVec2f GetPosition();
 
 	int GetW();
 	int GetH();

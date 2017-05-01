@@ -16,6 +16,18 @@ Object::Object(std::string path)
 	m_dmg = 500;
 }
 
+Object::Object(bool healing, int heal, bool breakable, int hp, bool damaging, int dmg, bool pushable, int kg)
+{
+	isHealing = healing;
+	m_heal = heal;
+	isDestructable = breakable;
+	m_hp = hp;
+	isDamaging = damaging;
+	m_dmg = dmg;
+	isPushable = pushable;
+	m_kg = kg;
+}
+
 Object::~Object()
 {
 	std::cout << "objeto deletado" << std::endl;
@@ -24,6 +36,27 @@ Object::~Object()
 void Object::Draw()
 {
 	m_image.draw(m_x, m_y);
+}
+
+void Object::Destruct(bool breakable, ofVec2f positionShot)
+{
+	if (breakable)
+	{
+		if (positionShot.distance(GetPosition()) <= 3)
+		{
+			m_hp = 0;
+		}
+	}
+}
+
+void Object::SetPosition(ofVec2f position)
+{
+	m_position = position;
+}
+
+ofVec2f Object::GetPosition()
+{
+	return m_position;
 }
 
 int Object::GetW()
