@@ -8,15 +8,8 @@ void ofApp::setup(){
 	/*LEITURA DE ARQUIVO*/
 	//variaveis para salvar conteudo do arquivo
 		string path = "C:\\Users\\maiki\\Source\\Repos\\Object-Editor\\Object-Editor\\Object-Editor\\bin\\data\\grafeno.txt"; 
-		string imgPath;
-		bool healing;
-		int heal;
-		bool breakable;
-		int hp;
-		bool damaging;
-		int dmg;
-		bool pushable;
-		int kg;
+		
+		
 		ifstream arquivo(path);
 		//arquivo.open("grafeno.txt");
 		for (int i = 1; i < 10; i++)
@@ -56,7 +49,8 @@ void ofApp::setup(){
 
 		arquivo.close();
 	/*Criar objetos usando as variaveis acima como parametros*/
-		bau = new Object(healing, heal, breakable, hp, damaging, dmg, pushable, kg);
+		bau = new ObjectJogo(imgPath,healing, heal, breakable, hp, damaging, dmg, pushable, kg);
+		bau->SetPosition(ofVec2f( 400, 400));
 		// Call me senpai
 	//Object ...;
 	ofSetFrameRate(60);
@@ -97,9 +91,27 @@ void ofApp::update(){
 				delete(e[j]);
 				e.erase(e.begin() + j);
 			}
+				/*else if (bau->Destruct(breakable, shots[i]->GetPos()))
+				{
+					delete(shots[i]);
+					shots.erase(shots.begin() + i);
+					shot_dir.erase(shot_dir.begin() + i);
+					//delete(bau);
+				}*/
+
 		}
 	}
-
+	//delete a bala e o bau porem, n sai mais tiro
+	for (int i = 0; i < shots.size(); i++)
+	{
+		if (bau->Destruct(breakable, shots[i]->GetPos()))
+		{
+			delete(shots[i]);
+			shots.erase(shots.begin() + i);
+			shot_dir.erase(shot_dir.begin() + i);
+			//delete(bau);
+		}
+	}
 
 
 }
@@ -110,6 +122,9 @@ void ofApp::draw(){
 	//desenhando heroi
 	ofSetColor(255);
 	ofDrawCircle(h->GetPos(), 20);
+
+	//ofDrawCircle(bau->GetPosition(), 20);
+	bau->Draw(bau->GetPosition());
 
 	//desenhando inimigos
 	for (int i = 0; i < e.size(); i++) {

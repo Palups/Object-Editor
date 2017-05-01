@@ -39,6 +39,7 @@ public:
 	ofImage m_image;  //imagem que representa o objeto
 
 	void Draw();
+	void Draw(ofVec2f position);
 
 	void Destruct(bool breakable, ofVec2f positionShot);
 	void SetPosition(ofVec2f position);

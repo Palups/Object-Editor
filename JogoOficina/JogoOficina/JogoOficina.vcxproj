@@ -175,21 +175,21 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Object-Editor\Object-Editor\src\Object.cpp" />
     <ClCompile Include="src\Character.cpp" />
     <ClCompile Include="src\Enemy.cpp" />
     <ClCompile Include="src\Hero.cpp" />
     <ClCompile Include="src\HeroBullet.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\ObjectJogo.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
     <ClCompile Include="src\Projectile.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Object-Editor\Object-Editor\src\Object.h" />
     <ClInclude Include="src\Character.h" />
     <ClInclude Include="src\Enemy.h" />
     <ClInclude Include="src\Hero.h" />
     <ClInclude Include="src\HeroBullet.h" />
+    <ClInclude Include="src\ObjectJogo.h" />
     <ClInclude Include="src\ofApp.h" />
     <ClInclude Include="src\Projectile.h" />
   </ItemGroup>

@@ -5,7 +5,7 @@
 #include "Projectile.h"
 #include "HeroBullet.h"
 #include <time.h>
-#include "Object.h"
+#include "ObjectJogo.h"
 #include "ofMain.h"
 #include <fstream>
 #include <math.h>
@@ -47,7 +47,17 @@ class ofApp : public ofBaseApp{
 		}
 
 		
-		Object *bau;
+		ObjectJogo *bau;
+		//variaveis pro arquivo
+		bool healing;
+		int heal;
+		bool breakable;
+		int hp;
+		bool damaging;
+		int dmg;
+		bool pushable;
+		int kg;
+		string imgPath;
 		
 		
 		

@@ -37,7 +37,10 @@ void Object::Draw()
 {
 	m_image.draw(m_x, m_y);
 }
+void Object::Draw(ofVec2f position)
+{
 
+}
 void Object::Destruct(bool breakable, ofVec2f positionShot)
 {
 	if (breakable)
