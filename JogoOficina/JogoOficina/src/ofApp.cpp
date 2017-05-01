@@ -1,57 +1,56 @@
 #include "ofApp.h"
 
 //--------------------------------------------------------------
-void ofApp::setup(){
-	//ofFileDialogResult result = ofSystemLoadDialog("Load file");
-	//if (result.bSuccess)
-	//{
+void ofApp::setup() {
+	string path; //string que recebe path do arquivo
+	//abre o arquivo pelo explorer e salva o caminho na path
+	ofFileDialogResult result = ofSystemLoadDialog("Load file");
+	if (result.bSuccess)
+	{
+		path = result.getPath();
+	}
 	/*LEITURA DE ARQUIVO*/
-	//variaveis para salvar conteudo do arquivo
-		string path = "C:\\Users\\maiki\\Source\\Repos\\Object-Editor\\Object-Editor\\Object-Editor\\bin\\data\\grafeno.txt"; 
-		
-		
-		ifstream arquivo(path);
-		//arquivo.open("grafeno.txt");
-		for (int i = 1; i < 10; i++)
-		{//seta o conteudo do arquivo nas variaveis
-			switch (i)
-			{
-			case 1:
-				getline(arquivo, imgPath);
-				break;
-			case 2:
-				arquivo >> healing;
-				break;
-			case 3:
-				arquivo >> heal;
-				break;
-			case 4:
-				arquivo >> breakable;
-				break;
-			case 5:
-				arquivo >> hp;
-				break;
-			case 6:
-				arquivo >> damaging;
-				break;
-			case 7:
-				arquivo >> dmg;
-				break;
-			case 8:
-				arquivo >> pushable;
-				break;
-			case 9:
-				arquivo >> kg;
-			default:
-				break;
-			}
+	ifstream arquivo(path); //inicia e abre o arquivo
+	for (int i = 1; i < 10; i++)
+	{
+		//seta o conteudo do arquivo nas variaveis
+		switch (i)
+		{
+		case 1:
+			getline(arquivo, imgPath);
+			break;
+		case 2:
+			arquivo >> healing;
+			break;
+		case 3:
+			arquivo >> heal;
+			break;
+		case 4:
+			arquivo >> breakable;
+			break;
+		case 5:
+			arquivo >> hp;
+			break;
+		case 6:
+			arquivo >> damaging;
+			break;
+		case 7:
+			arquivo >> dmg;
+			break;
+		case 8:
+			arquivo >> pushable;
+			break;
+		case 9:
+			arquivo >> kg;
+		default:
+			break;
 		}
-
-		arquivo.close();
+	}
+	arquivo.close();
 	/*Criar objetos usando as variaveis acima como parametros*/
-		bau = new ObjectJogo(imgPath,healing, heal, breakable, hp, damaging, dmg, pushable, kg);
-		bau->SetPosition(ofVec2f( 400, 400));
-		// Call me senpai
+	bau = new ObjectJogo(imgPath, healing, heal, breakable, hp, damaging, dmg, pushable, kg);
+	bau->SetPosition(ofVec2f(400, 400));
+	// Call me senpai
 	//Object ...;
 	ofSetFrameRate(60);
 	//definindo um lugar aleatório e criando inimigo nesse lugar
@@ -64,7 +63,7 @@ void ofApp::setup(){
 }
 
 //--------------------------------------------------------------
-void ofApp::update(){
+void ofApp::update() {
 
 	//update da posição do personagem, mantendo-o preso às bordas
 	h->SetPos(destination, limit);
@@ -84,21 +83,13 @@ void ofApp::update(){
 
 	for (int i = 0; i < shots.size(); i++) {
 		for (int j = 0; j < e.size(); j++) {
-                if (Module(shots[i]->GetPos(), e[j]->GetPos()) < 5) {
+			if (Module(shots[i]->GetPos(), e[j]->GetPos()) < 5) {
 				delete(shots[i]);
 				shots.erase(shots.begin() + i);
 				shot_dir.erase(shot_dir.begin() + i);
 				delete(e[j]);
 				e.erase(e.begin() + j);
 			}
-				/*else if (bau->Destruct(breakable, shots[i]->GetPos()))
-				{
-					delete(shots[i]);
-					shots.erase(shots.begin() + i);
-					shot_dir.erase(shot_dir.begin() + i);
-					//delete(bau);
-				}*/
-
 		}
 	}
 	//delete a bala e o bau porem, n sai mais tiro
@@ -112,18 +103,16 @@ void ofApp::update(){
 			//delete(bau);
 		}
 	}
-
-
 }
 
 //--------------------------------------------------------------
-void ofApp::draw(){
+void ofApp::draw() {
 
 	//desenhando heroi
 	ofSetColor(255);
 	ofDrawCircle(h->GetPos(), 20);
 
-	//ofDrawCircle(bau->GetPosition(), 20);
+	//desenha o objeto
 	bau->Draw(bau->GetPosition());
 
 	//desenhando inimigos
@@ -137,11 +126,11 @@ void ofApp::draw(){
 		ofSetColor(0, 0, 255);
 		ofDrawCircle(shots[i]->GetPos(), 5);
 	}
-	
+
 }
 
 //--------------------------------------------------------------
-void ofApp::keyPressed(int key){
+void ofApp::keyPressed(int key) {
 
 	//fazendo heroi se movimentar enquanto a tecla se manter pressionada
 	if (key == 'W' || key == 'w')
@@ -156,7 +145,7 @@ void ofApp::keyPressed(int key){
 }
 
 //--------------------------------------------------------------
-void ofApp::keyReleased(int key){
+void ofApp::keyReleased(int key) {
 
 	//fazendo heroi parar se a tecla for solta
 	if (key == 'W' || key == 'w')
@@ -170,22 +159,22 @@ void ofApp::keyReleased(int key){
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseMoved(int x, int y ){
+void ofApp::mouseMoved(int x, int y) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseDragged(int x, int y, int button){
+void ofApp::mouseDragged(int x, int y, int button) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::mousePressed(int x, int y, int button){
+void ofApp::mousePressed(int x, int y, int button) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseReleased(int x, int y, int button){
+void ofApp::mouseReleased(int x, int y, int button) {
 
 	//instanciando um novo tiro e definindo sua posição
 	shot_dir.push_back(ofVec2f(x, y) - h->GetPos());
@@ -193,26 +182,26 @@ void ofApp::mouseReleased(int x, int y, int button){
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseEntered(int x, int y){
+void ofApp::mouseEntered(int x, int y) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseExited(int x, int y){
+void ofApp::mouseExited(int x, int y) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::windowResized(int w, int h){
+void ofApp::windowResized(int w, int h) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::gotMessage(ofMessage msg){
+void ofApp::gotMessage(ofMessage msg) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::dragEvent(ofDragInfo dragInfo){ 
+void ofApp::dragEvent(ofDragInfo dragInfo) {
 
 }
