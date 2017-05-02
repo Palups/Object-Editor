@@ -42,8 +42,11 @@ void ObjectJogo::Draw()
 
 void ObjectJogo::Draw(ofVec2f position)
 {
-	if(onScreen)
+	if (onScreen)
+	{
+		m_image.resize(40, 40);
 		m_image.draw(position);
+	}
 }
 
 bool ObjectJogo::Destruct(bool breakable, ofVec2f positionShot)
