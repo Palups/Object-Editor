@@ -4,8 +4,8 @@ Window_Editor::Window_Editor()
 {
 	btn_cancel = new Button(520, 700, 200, 50, "images/btn_cancel.png"); //criando botão CANCEL
 	btn_loadSprite = new Button(520, 25, 200, 50, "images/btn_loadSprite.png"); //criando botão LOAD SPRITE
-	btn_changeObjectColor = new Button(600, 300, 200, 50, "images/meep.png"); // -> mexe na cor do objeto
-	btn_changeObjectSat = new Button(600, 250, 200, 50, "images/meep2.png"); // -> mexe na saturação do objeto
+	btn_changeObjectColor = new Button(520, 300, 200, 50, "images/meep.png"); // -> mexe na cor do objeto
+	btn_changeObjectSat = new Button(800, 300, 200, 50, "images/meep2.png"); // -> mexe na saturação do objeto
 	btn_saveObject = new Button(800, 700, 200, 50, "images/btn_save.png"); // salva
 
 
