@@ -59,17 +59,17 @@ void UI_Slider::SetLabel(std::string label)
 }
 
 void UI_Slider::MouseClicked(int x, int y)
-{
+{		//aux_x vai auxiliar para atualizar o valor do slider
 		int aux_x = x - r_data.x;
-		if (aux_x < 0)
+		if (aux_x < 0) //caso for menor que 0, não vai deixar passar do valor mínimo
 			aux_x = 0;
 		r_data.setWidth(aux_x);
 }
 
 void UI_Slider::MouseDragged(int x, int y)
-{
+{		//aux_x vai auxiliar para atualizar o valor do slider
 		int aux_x = x - r_data.x;
-		if (aux_x < 0)
+		if (aux_x < 0) //caso for menor que 0, não vai deixar passar do valor mínimo
 			aux_x = 0;
 		r_data.setWidth(aux_x);
 		m_data = data_backup * (r_data.width / m_w);

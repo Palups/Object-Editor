@@ -17,6 +17,11 @@ void Window_Menu::MousePressed(int x, int y, Window_Manager *window_manager)
 
 void Window_Menu::Draw()
 {
+	ofSetBackgroundColor(173, 255, 47);
+
 	btn_newObject->Draw(); //chamando função de desenho do botão NEW OBJECT
+
+	ofSetColor(154, 205, 50);
 	ofDrawRectangle(10, 10, 502, 748); //retangulo branco representando onde os objetos aparecerão na tela de menu
+	ofSetColor(255, 255, 255);
 }

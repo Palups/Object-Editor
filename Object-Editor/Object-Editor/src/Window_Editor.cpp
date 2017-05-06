@@ -132,6 +132,8 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 				<< s_kg->GetValue() << endl; //peso
 			arquivo.close(); //fecha o arquivo
 			// save your file to `path`
+			ofSystemAlertDialog("Objeto salvo com sucesso!");
+			window_manager->SetState(0);
 		}				
 	}
 
@@ -211,6 +213,8 @@ void Window_Editor::Draw()
 	ofSetColor(0, 0, 0); //setando cor para preto
 	ofDrawRectangle(0, 0, 502, 768); //retangulo preto representando onde o desenho do objeto ficará
 	ofSetColor(255, 255, 255); //voltando cores ao normal
+
+	ofSetBackgroundColor(173, 255, 47);
 
 	btn_cancel->Draw(); //chamando função de desenho do botão CANCEL
 	btn_saveObject->Draw();
