@@ -66,12 +66,12 @@ void Window_Editor::MouseReleased(int x, int y)
 
 	if (m_imageOnScreen) //atualiza o atributo do objeto com o valor do switch e do slider
 	{
-		object->SetHp(sw_breakable->GetStatus(), s_hp->GetValue()); 
+		object->SetHp(sw_breakable->GetStatus(), s_hp->GetValue());
 		object->SetKg(sw_pushable->GetStatus(), s_kg->GetValue());
 		object->SetHeal(sw_healing->GetStatus(), s_heal->GetValue());
 		object->SetDamage(sw_damaging->GetStatus(), s_dmg->GetValue());
 	}
-		
+
 }
 
 void Window_Editor::MouseDragged(int x, int y)
@@ -90,7 +90,7 @@ void Window_Editor::MouseDragged(int x, int y)
 }
 
 void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
-{									  
+{
 	if (btn_loadSprite->TestClick(x, y)) { //se click dentro do botão LOAD SPRITE, novo objeto é criado (após selecionar imagem)
 		ofFileDialogResult result = ofSystemLoadDialog("Load file");
 		if (result.bSuccess) {
@@ -105,39 +105,47 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 	}
 
 	if (btn_cancel->TestClick(x, y)) {  //se click dentro do botão CANCEL
-		if (GetImageOnScreen()) {  //se tiver imagem de objeto na tela, deleta objeto e volta pro menu
-			delete object;
-			SetImageOnScreen(false);
-			window_manager->SetState(0);
+		bool result = ofSystemYesNoDialoge("Boop", "Are you sure you want to cancel?");
+		if (result) {
+			if (GetImageOnScreen()) {  //se tiver imagem de objeto na tela, deleta objeto e volta pro menu
+				delete object;
+				SetImageOnScreen(false);
+				window_manager->SetState(0);
+				cout << result;
+			}
+			else
+				window_manager->SetState(0);
 		}
-		else
-			window_manager->SetState(0);
 	}
 
-	if (btn_saveObject->TestClick(x, y))
-	{		
-		ofFileDialogResult result = ofSystemSaveDialog("default.png", "Save");
-		if (result.bSuccess) {
-			string imgPath = result.getPath();
-			ofstream arquivo(imgPath + ".txt"); //cria um novo arquivo com o nome que o usuario der pro objeto
-			ofSaveImage(object->m_image.getPixelsRef(),imgPath +".png");
-			arquivo << imgPath + ".png" << endl //salva o path da imagem no arquivo
-				<< sw_healing->GetStatus() << endl //salva o status de healing no arquivo
-				<< s_heal->GetValue() << endl // salva o valor de heal
-				<< sw_breakable->GetStatus() << endl // status de quebravel
-				<< s_hp->GetValue() << endl //hp do objeto
-				<< sw_damaging->GetStatus() << endl //status de causador de dano
-				<< s_dmg->GetValue() << endl //dano causado
-				<< sw_pushable->GetStatus() << endl //status de empurravel
-				<< s_kg->GetValue() << endl; //peso
-			arquivo.close(); //fecha o arquivo
-			// save your file to `path`
-			ofSystemAlertDialog("Objeto salvo com sucesso!");
-			window_manager->SetState(0);
+	if (btn_saveObject->TestClick(x, y)) {
+		if (GetImageOnScreen()) {
+			ofFileDialogResult result = ofSystemSaveDialog("default.png", "Save");
+			if (result.bSuccess) {
+				string imgPath = result.getPath();
+				ofstream arquivo(imgPath + ".txt"); //cria um novo arquivo com o nome que o usuario der pro objeto
+				ofSaveImage(object->m_image.getPixelsRef(), imgPath + ".png");
+				arquivo << imgPath + ".png" << endl //salva o path da imagem no arquivo
+					<< sw_healing->GetStatus() << endl //salva o status de healing no arquivo
+					<< s_heal->GetValue() << endl // salva o valor de heal
+					<< sw_breakable->GetStatus() << endl // status de quebravel
+					<< s_hp->GetValue() << endl //hp do objeto
+					<< sw_damaging->GetStatus() << endl //status de causador de dano
+					<< s_dmg->GetValue() << endl //dano causado
+					<< sw_pushable->GetStatus() << endl //status de empurravel
+					<< s_kg->GetValue() << endl; //peso
+				arquivo.close(); //fecha o arquivo
+				// save your file to `path`
+				ofSystemAlertDialog("Object saved successfully!");
+				SetImageOnScreen(false);
+				window_manager->SetState(0);
+			}
+			else {
+				ofSystemAlertDialog("Could not save current object!");
+			}
 		}
-		else {
-			ofSystemAlertDialog("Não foi possível salvar o objeto!");
-		}
+		else
+			ofSystemAlertDialog("There is no image!");
 	}
 
 	if (m_imageOnScreen) //TODAS AS CONFIG DE IMAGEM AQUI!!!!!!!
@@ -159,23 +167,23 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 		if (sw_breakable->TestClick(x, y)) // Se o click for no botao 
 		{
 			sw_breakable->MouseClicked(x, y);
-			if(!sw_breakable->GetStatus())
-				s_hp->DeactivateSlider(); 
+			if (!sw_breakable->GetStatus())
+				s_hp->DeactivateSlider();
 		}
 		else if (s_hp->TestClick(x, y)) //se o click for no slider...
 		{
 			if (sw_breakable->GetStatus()) //...e o switch de objeto destrutivel estiver ativo
-				s_hp->MouseClicked(x, y);			
+				s_hp->MouseClicked(x, y);
 		}
 		//EMPURRAVEL
-		else if (sw_pushable->TestClick(x, y)) 
+		else if (sw_pushable->TestClick(x, y))
 		{
 			sw_pushable->MouseClicked(x, y);
-			if(!sw_pushable->GetStatus())
+			if (!sw_pushable->GetStatus())
 				s_kg->DeactivateSlider();
 		}
 		//PESO
-		else if (s_kg->TestClick(x, y)) 
+		else if (s_kg->TestClick(x, y))
 		{
 			if (sw_pushable->GetStatus()) //...e o switch de objeto destrutivel estiver ativo
 				s_kg->MouseClicked(x, y);
@@ -208,7 +216,7 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 			if (sw_damaging->GetStatus()) //...e o switch de objeto destrutivel estiver ativo
 				s_dmg->MouseClicked(x, y);
 		}
-	}	
+	}
 }
 
 void Window_Editor::Draw()
@@ -229,8 +237,11 @@ void Window_Editor::Draw()
 		btn_changeObjectSat->Draw();
 		if (object->GetH() < MAX_HEIGHT && object->GetW() < MAX_WIDTH) //se a imagem estiver dentro das medidas máximas
 			object->Draw();
-		else
+		else {
+			//ofSystemAlertDialog("Too big u fcking dumb. Please choose another.");
 			std::cout << "Imagem grande d+++. escolha outra" << std::endl; //se for muito grande, escolher outra img
+			//SetImageOnScreen(false);
+		}
 
 		s_hp->Draw();
 		sw_breakable->Draw();
