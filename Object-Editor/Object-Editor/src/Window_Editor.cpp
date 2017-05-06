@@ -134,7 +134,10 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 			// save your file to `path`
 			ofSystemAlertDialog("Objeto salvo com sucesso!");
 			window_manager->SetState(0);
-		}				
+		}
+		else {
+			ofSystemAlertDialog("Não foi possível salvar o objeto!");
+		}
 	}
 
 	if (m_imageOnScreen) //TODAS AS CONFIG DE IMAGEM AQUI!!!!!!!
