@@ -8,7 +8,6 @@ Window_Editor::Window_Editor()
 	btn_changeObjectSat = new Button(800, 300, 200, 50, "images/meep2.png"); // -> mexe na saturação do objeto
 	btn_saveObject = new Button(800, 700, 200, 50, "images/btn_save.png"); // salva
 
-
 	sw_breakable = new UI_Switch(520, 450, 80, 20); //switch pra objetos destrutiveis
 	sw_breakable->SetLabel("Is destructable");
 	s_hp = new UI_Slider(700, 450, 300, 25, 1000); //slider pra representar hp do objeto
@@ -225,7 +224,7 @@ void Window_Editor::Draw()
 	ofDrawRectangle(0, 0, 502, 768); //retangulo preto representando onde o desenho do objeto ficará
 	ofSetColor(255, 255, 255); //voltando cores ao normal
 
-	ofSetBackgroundColor(173, 255, 47);
+	ofSetBackgroundColor(255, 228, 225);
 
 	btn_cancel->Draw(); //chamando função de desenho do botão CANCEL
 	btn_saveObject->Draw();
