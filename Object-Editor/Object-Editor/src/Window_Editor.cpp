@@ -104,17 +104,17 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 	}
 
 	if (btn_cancel->TestClick(x, y)) {  //se click dentro do botão CANCEL
-		bool result = ofSystemYesNoDialoge("Boop", "Are you sure you want to cancel?");
-		if (result) {
+		//bool result = ofSystemYesNoDialoge("Boop", "Are you sure you want to cancel?");
+		//if (result) {
 			if (GetImageOnScreen()) {  //se tiver imagem de objeto na tela, deleta objeto e volta pro menu
 				delete object;
 				SetImageOnScreen(false);
 				window_manager->SetState(0);
-				cout << result;
+				//cout << result;
 			}
-			else
-				window_manager->SetState(0);
-		}
+			/*else
+				window_manager->SetState(0);*/
+		//}
 	}
 
 	if (btn_saveObject->TestClick(x, y)) {
