@@ -100,6 +100,8 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 			object = new Object(path); //criando novo objeto e setando posições para imagem ficar no meio da tela preta
 			object->SetX(251 - object->GetW() / 2);
 			object->SetY(384 - object->GetH() / 2);
+
+
 		}
 	}
 
