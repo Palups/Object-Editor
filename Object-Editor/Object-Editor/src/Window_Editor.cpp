@@ -100,8 +100,6 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 			object = new Object(path); //criando novo objeto e setando posições para imagem ficar no meio da tela preta
 			object->SetX(251 - object->GetW() / 2);
 			object->SetY(384 - object->GetH() / 2);
-
-
 		}
 	}
 
@@ -239,9 +237,9 @@ void Window_Editor::Draw()
 		if (object->GetH() < MAX_HEIGHT && object->GetW() < MAX_WIDTH) //se a imagem estiver dentro das medidas máximas
 			object->Draw();
 		else {
-			//ofSystemAlertDialog("Too big u fcking dumb. Please choose another.");
+			ofSystemAlertDialog("The selected image is too large. Please choose another.");
 			std::cout << "Imagem grande d+++. escolha outra" << std::endl; //se for muito grande, escolher outra img
-			//SetImageOnScreen(false);
+			SetImageOnScreen(false);
 		}
 
 		s_hp->Draw();
