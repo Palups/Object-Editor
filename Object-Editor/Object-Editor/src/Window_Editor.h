@@ -4,6 +4,7 @@
 #include "ofxUI.h"
 #include "ofxGui.h"
 #include "Window_Manager.h"
+#include "ofxColorPicker.h"
 
 
 #define MAX_WIDTH 475
@@ -36,6 +37,10 @@ private:
 	bool m_imageOnScreen; //checa se a imagem que representa o objeto está na tela	
 	string input;
 
+	/* Paleta de cores */
+	ofxColorPicker colorPicker0;
+	ofMesh meshGradient;
+
 
 public:
 	Window_Editor();
@@ -46,6 +51,7 @@ public:
 	void MouseDragged(int x, int y);
 	void MousePressed(int x, int y, Window_Manager *window_manager); //faz o TestClick em botões
 	void Draw();
+	void Update();
 
 	void SetImageOnScreen(bool imageOnScreen);
 	bool GetImageOnScreen();

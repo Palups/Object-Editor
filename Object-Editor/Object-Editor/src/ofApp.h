@@ -5,6 +5,7 @@
 #include "Window_Manager.h"
 #include "Window_Menu.h"
 #include "Window_Editor.h"
+#include "ofxColorPicker.h"
 
 class ofApp : public ofBaseApp{
 

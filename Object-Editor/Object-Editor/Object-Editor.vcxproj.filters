@@ -28,6 +28,10 @@
     <ClCompile Include="src\UI_Switch.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\ofxColorPicker.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxMSAInteractiveObject\src\ofxMSAInteractiveObject.cpp">
+      <Filter>addons\ofxMSAInteractiveObject\src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -45,17 +49,23 @@
     <Filter Include="addons\ofxXmlSettings\libs">
       <UniqueIdentifier>{0b03a2db-1c2a-4622-bd14-04277aa692fa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="addons\ofxUI-master">
-      <UniqueIdentifier>{a85a96c8-db54-4421-8b22-8a729041793a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="addons\ofxUI-master\src">
-      <UniqueIdentifier>{7b814e55-b2fc-4d83-bcc0-0e445f7e6886}</UniqueIdentifier>
-    </Filter>
     <Filter Include="addons\ofxGui">
       <UniqueIdentifier>{66970e9c-3ba0-4fd0-96a8-c96f65809308}</UniqueIdentifier>
     </Filter>
     <Filter Include="addons\ofxGui\src">
       <UniqueIdentifier>{5e8e6dde-7bb1-471f-a777-c278c31c2dd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxMSAInteractiveObject">
+      <UniqueIdentifier>{ba8a2809-762f-45ec-9424-82acd35f4507}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxMSAInteractiveObject\src">
+      <UniqueIdentifier>{5a9bee41-38de-4f12-8fc7-697e16349426}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxUI-master">
+      <UniqueIdentifier>{f671a29a-6a60-49df-a5d6-566ba2e6881d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxUI-master\src">
+      <UniqueIdentifier>{547e620f-e948-4add-bb59-2e1b27f734bd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -82,6 +92,10 @@
     </ClInclude>
     <ClInclude Include="src\UI_Switch.h">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ofxColorPicker.h" />
+    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxMSAInteractiveObject\src\ofxMSAInteractiveObject.h">
+      <Filter>addons\ofxMSAInteractiveObject\src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -9,7 +9,14 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-
+	switch (window_manager->GetState()) {
+	case WINDOW_MENU:
+		//window_menu->Draw();
+		break;
+	case WINDOW_EDITOR:
+		window_editor->Update();
+		break;
+	}
 }
 
 //--------------------------------------------------------------

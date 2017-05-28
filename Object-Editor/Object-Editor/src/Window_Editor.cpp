@@ -33,6 +33,34 @@ Window_Editor::Window_Editor()
 	//gui = new ofxUISuperCanvas("tela de edicao"); //Creates a canvas at (0,0) using the default width	
 	//gui.setup();
 	//gui.add(m_hp.setup("HP", 0, 0, 100));
+
+	/* PALETA DE CORES */
+	colorPicker0.setColorRadius(1.0);
+	colorPicker0.setColorAngle(0.5);
+
+	int x = 20;
+	int y = 0;
+	int w = 150;
+	int h = 300;
+	int g = (int)((ofGetHeight() - h * 2) / 3); // gap.
+	y = g;
+
+	colorPicker0.setSize(x, y, w, h);
+
+	y = y + h + g; //PRA QUE QUE SERVE? N SEI
+
+	//----------------------------------------------------------
+	meshGradient.setMode(OF_PRIMITIVE_TRIANGLE_FAN);
+
+	meshGradient.addVertex(ofVec3f(0, 0));
+	meshGradient.addVertex(ofVec3f(ofGetWidth(), 0));
+	meshGradient.addVertex(ofVec3f(ofGetWidth(), ofGetHeight()));
+	meshGradient.addVertex(ofVec3f(0, ofGetHeight()));
+
+	meshGradient.addColor(ofColor::white); //ISSO AQUI SEPA FAZ O GRANDIENTE DA COR ESCOLHIDA PRO BRANCO. SE TIVER COMO
+	meshGradient.addColor(ofColor::white); //COLOCAR NO LUGAR DO white UM getColor DA COR QUE FOI SELECIONADA SEPA DA BOA
+	meshGradient.addColor(ofColor::white);
+	meshGradient.addColor(ofColor::white);
 }
 
 Window_Editor::~Window_Editor()
@@ -251,6 +279,21 @@ void Window_Editor::Draw()
 		s_dmg->Draw();
 		sw_damaging->Draw();
 	}
+
+	/* DRAW DA PALETA DE CORES */
+	meshGradient.draw();
+	colorPicker0.draw();
+}
+
+void Window_Editor::Update()
+{
+	/*update da paleta de cores*/
+	colorPicker0.update();
+
+	ofColor colorTop = colorPicker0.getColor();
+
+	meshGradient.setColor(0, colorTop);
+	meshGradient.setColor(1, colorTop);
 }
 
 void Window_Editor::SetImageOnScreen(bool imageOnScreen)

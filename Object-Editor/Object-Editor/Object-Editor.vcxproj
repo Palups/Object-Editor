@@ -96,8 +96,8 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <CompileAs>CompileAsCpp</CompileAs>
-      <AdditionalIncludeDirectories>C:\of_v0.9.8_vs_release\addons\ofxXmlSettings\src;C:\of_v0.9.8_vs_release\addons\ofxXmlSettings\libs;C:\of_v0.9.8_vs_release\addons\ofxUI-master\src;
-C:\of_v0.9.8_vs_release\addons\ofxGui\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\of_v0.9.8_vs_release\addons\ofxXmlSettings\src;C:\of_v0.9.8_vs_release\addons\ofxXmlSettings\libs;C:\of_v0.9.8_vs_release\addons\ofxGui\src;C:\of_v0.9.8_vs_release\addons\ofxMSAInteractiveObject\src;
+C:\of_v0.9.8_vs_release\addons\ofxUI-master\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -117,8 +117,8 @@ C:\of_v0.9.8_vs_release\addons\ofxGui\src;%(AdditionalIncludeDirectories)</Addit
       <WarningLevel>Level3</WarningLevel>
       <CompileAs>CompileAsCpp</CompileAs>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>C:\of_v0.9.8_vs_release\addons\ofxXmlSettings\src;C:\of_v0.9.8_vs_release\addons\ofxXmlSettings\libs;C:\of_v0.9.8_vs_release\addons\ofxUI-master\src;
-C:\of_v0.9.8_vs_release\addons\ofxGui\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\of_v0.9.8_vs_release\addons\ofxMSAInteractiveObject\src;
+C:\of_v0.9.8_vs_release\addons\ofxUI-master\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -137,8 +137,8 @@ C:\of_v0.9.8_vs_release\addons\ofxGui\src;%(AdditionalIncludeDirectories)</Addit
       <WarningLevel>Level3</WarningLevel>
       <CompileAs>CompileAsCpp</CompileAs>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>C:\of_v0.9.8_vs_release\addons\ofxXmlSettings\src;C:\of_v0.9.8_vs_release\addons\ofxXmlSettings\libs;C:\of_v0.9.8_vs_release\addons\ofxUI-master\src;
-C:\of_v0.9.8_vs_release\addons\ofxGui\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\of_v0.9.8_vs_release\addons\ofxXmlSettings\src;C:\of_v0.9.8_vs_release\addons\ofxXmlSettings\libs;C:\of_v0.9.8_vs_release\addons\ofxGui\src;C:\of_v0.9.8_vs_release\addons\ofxMSAInteractiveObject\src;
+C:\of_v0.9.8_vs_release\addons\ofxUI-master\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
@@ -159,8 +159,8 @@ C:\of_v0.9.8_vs_release\addons\ofxGui\src;%(AdditionalIncludeDirectories)</Addit
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <CompileAs>CompileAsCpp</CompileAs>
-      <AdditionalIncludeDirectories>C:\of_v0.9.8_vs_release\addons\ofxXmlSettings\src;C:\of_v0.9.8_vs_release\addons\ofxXmlSettings\libs;C:\of_v0.9.8_vs_release\addons\ofxUI-master\src;
-C:\of_v0.9.8_vs_release\addons\ofxGui\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\of_v0.9.8_vs_release\addons\ofxXmlSettings\src;C:\of_v0.9.8_vs_release\addons\ofxXmlSettings\libs;C:\of_v0.9.8_vs_release\addons\ofxGui\src;C:\of_v0.9.8_vs_release\addons\ofxMSAInteractiveObject\src;
+C:\of_v0.9.8_vs_release\addons\ofxUI-master\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
@@ -175,10 +175,12 @@ C:\of_v0.9.8_vs_release\addons\ofxGui\src;%(AdditionalIncludeDirectories)</Addit
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxMSAInteractiveObject\src\ofxMSAInteractiveObject.cpp" />
     <ClCompile Include="src\Object.cpp" />
     <ClCompile Include="src\Button.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
+    <ClCompile Include="src\ofxColorPicker.cpp" />
     <ClCompile Include="src\Window_Manager.cpp" />
     <ClCompile Include="src\Window_Menu.cpp" />
     <ClCompile Include="src\Window_Editor.cpp" />
@@ -186,9 +188,11 @@ C:\of_v0.9.8_vs_release\addons\ofxGui\src;%(AdditionalIncludeDirectories)</Addit
     <ClCompile Include="src\UI_Switch.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\..\of_v0.9.8_vs_release\addons\ofxMSAInteractiveObject\src\ofxMSAInteractiveObject.h" />
     <ClInclude Include="src\Object.h" />
     <ClInclude Include="src\Button.h" />
     <ClInclude Include="src\ofApp.h" />
+    <ClInclude Include="src\ofxColorPicker.h" />
     <ClInclude Include="src\Window_Manager.h" />
     <ClInclude Include="src\Window_Menu.h" />
     <ClInclude Include="src\Window_Editor.h" />
