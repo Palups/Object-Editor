@@ -4,8 +4,8 @@ Window_Editor::Window_Editor()
 {
 	btn_cancel = new Button(520, 700, 200, 50, "images/btn_cancel.png"); //criando botão CANCEL
 	btn_loadSprite = new Button(520, 25, 200, 50, "images/btn_loadSprite.png"); //criando botão LOAD SPRITE
-	btn_changeObjectColor = new Button(520, 300, 200, 50, "images/meep.png"); // -> mexe na cor do objeto
-	btn_changeObjectSat = new Button(800, 300, 200, 50, "images/meep2.png"); // -> mexe na saturação do objeto
+	btn_changeObjectColor = new Button(520, 250, 200, 50, "images/meep.png"); // -> mexe na cor do objeto
+	btn_changeObjectSat = new Button(520, 300, 200, 50, "images/meep2.png"); // -> mexe na saturação do objeto
 	btn_saveObject = new Button(800, 700, 200, 50, "images/btn_save.png"); // salva
 
 	sw_breakable = new UI_Switch(520, 450, 80, 20); //switch pra objetos destrutiveis
@@ -38,7 +38,7 @@ Window_Editor::Window_Editor()
 	colorPicker0.setColorRadius(1.0);
 	colorPicker0.setColorAngle(0.5);
 
-	int x = 20;
+	int x = 800;
 	int y = 0;
 	int w = 150;
 	int h = 300;
@@ -50,7 +50,7 @@ Window_Editor::Window_Editor()
 	y = y + h + g; //PRA QUE QUE SERVE? N SEI
 
 	//----------------------------------------------------------
-	meshGradient.setMode(OF_PRIMITIVE_TRIANGLE_FAN);
+	/*meshGradient.setMode(OF_PRIMITIVE_TRIANGLE_FAN);
 
 	meshGradient.addVertex(ofVec3f(0, 0));
 	meshGradient.addVertex(ofVec3f(ofGetWidth(), 0));
@@ -60,7 +60,7 @@ Window_Editor::Window_Editor()
 	meshGradient.addColor(ofColor::white); //ISSO AQUI SEPA FAZ O GRANDIENTE DA COR ESCOLHIDA PRO BRANCO. SE TIVER COMO
 	meshGradient.addColor(ofColor::white); //COLOCAR NO LUGAR DO white UM getColor DA COR QUE FOI SELECIONADA SEPA DA BOA
 	meshGradient.addColor(ofColor::white);
-	meshGradient.addColor(ofColor::white);
+	meshGradient.addColor(ofColor::white);*/
 }
 
 Window_Editor::~Window_Editor()
@@ -281,7 +281,7 @@ void Window_Editor::Draw()
 	}
 
 	/* DRAW DA PALETA DE CORES */
-	meshGradient.draw();
+	//meshGradient.draw();
 	colorPicker0.draw();
 }
 
@@ -292,8 +292,8 @@ void Window_Editor::Update()
 
 	ofColor colorTop = colorPicker0.getColor();
 
-	meshGradient.setColor(0, colorTop);
-	meshGradient.setColor(1, colorTop);
+	/*meshGradient.setColor(0, colorTop);
+	meshGradient.setColor(1, colorTop);*/
 }
 
 void Window_Editor::SetImageOnScreen(bool imageOnScreen)
