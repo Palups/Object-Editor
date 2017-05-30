@@ -37,10 +37,6 @@ private:
 	bool m_imageOnScreen; //checa se a imagem que representa o objeto está na tela	
 	string input;
 
-	/* Paleta de cores */
-	ofxColorPicker colorPicker0;
-	ofMesh meshGradient;
-
 
 public:
 	Window_Editor();
@@ -64,5 +60,11 @@ public:
 	//funções canvas
 	void exit();
 	void guiEvent(ofxUIEventArgs &e);
+
+	ofColor boop;
+
+	/* Paleta de cores */
+	ofxColorPicker colorPicker;
+	ofMesh meshGradient;
 };
 

@@ -35,8 +35,8 @@ Window_Editor::Window_Editor()
 	//gui.add(m_hp.setup("HP", 0, 0, 100));
 
 	/* PALETA DE CORES */
-	colorPicker0.setColorRadius(1.0);
-	colorPicker0.setColorAngle(0.5);
+	colorPicker.setColorRadius(1.0);
+	colorPicker.setColorAngle(0.5);
 
 	int x = 800;
 	int y = 0;
@@ -45,7 +45,7 @@ Window_Editor::Window_Editor()
 	int g = (int)((ofGetHeight() - h * 2) / 3); // gap.
 	y = g;
 
-	colorPicker0.setSize(x, y, w, h);
+	colorPicker.setSize(x, y, w, h);
 
 	y = y + h + g; //PRA QUE QUE SERVE? N SEI
 
@@ -180,8 +180,8 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 		/*-----  APARENCIA DO OBJETO  -----*/
 		if (btn_changeObjectColor->TestClick(x, y)) //se click for no botão CHANGE e objeto estiver na tela
 		{
-			object->PlusColor();
-			object->ChangeColor();
+			// object->PlusColor();
+			object->ChangeColor(colorPicker.getColor());
 		}
 
 		if (btn_changeObjectSat->TestClick(x, y)) //se click for no botão CHANGE e objeto estiver na tela
@@ -282,15 +282,15 @@ void Window_Editor::Draw()
 
 	/* DRAW DA PALETA DE CORES */
 	//meshGradient.draw();
-	colorPicker0.draw();
+	colorPicker.draw();
 }
 
 void Window_Editor::Update()
 {
 	/*update da paleta de cores*/
-	colorPicker0.update();
+	colorPicker.update();
 
-	ofColor colorTop = colorPicker0.getColor();
+	ofColor colorTop = colorPicker.getColor();
 
 	/*meshGradient.setColor(0, colorTop);
 	meshGradient.setColor(1, colorTop);*/

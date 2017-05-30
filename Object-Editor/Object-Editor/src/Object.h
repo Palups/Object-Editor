@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "Window_Manager.h"
+#include "ofxColorPicker.h"
 
 class Object
 {
@@ -57,7 +58,7 @@ public:
 	void SetDamage(bool damaging, int dmg);
 
 	void PlusColor();
-	void ChangeColor();
+	void ChangeColor(ofColor color);
 	float CheckHue(float hue, float n);
 
 	void PlusSatu();

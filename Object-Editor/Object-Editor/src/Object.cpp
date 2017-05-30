@@ -118,16 +118,19 @@ void Object::PlusColor()
 		inc = 0.0f;
 }
 
-void Object::ChangeColor()
+void Object::ChangeColor(ofColor color)
 {
 	for (int y = 0; y < m_image.getHeight(); y++)
 	{
 		for (int x = 0; x < m_image.getWidth(); x++)
 		{
-			float h;
+			/* float h;
 			ofColor color = backup.getColor(x, y);
 			h = color.getHue();
 			color.setHue(CheckHue(h, inc));
+			m_image.setColor(x, y, color);
+			//m_image.setColor(x, y, boop);*/
+
 			m_image.setColor(x, y, color);
 		}
 	}

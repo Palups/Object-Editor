@@ -551,7 +551,7 @@ void ofxColorPicker::drawColorRect() const {
     int bx, by;
     
     bx = by = 0;
-    ofSetColor(149, 255);
+    ofSetColor(149, 255); //149
     ofDrawRectangle(x + bx, y + by, w - bx * 2, h - by * 2);
     
     bx = by = 1;
