@@ -5,19 +5,24 @@ Object::Object(std::string path)
 	m_image.loadImage(path);
 	backup.loadImage(path);
 
+	isProtec = true;
 	isDestructable = true;
 	isPushable = true;
 	isHealing = true;
 	isDamaging = true;
 
+	m_protection = 1000;
 	m_hp = 1000;
 	m_kg = 1000;
 	m_heal = 500;
 	m_dmg = 500;
 }
 
-Object::Object(bool healing, int heal, bool breakable, int hp, bool damaging, int dmg, bool pushable, int kg)
+Object::Object(bool protec, int protection, bool healing, int heal, bool breakable, int hp, bool damaging, int dmg, bool pushable, int kg)
 {
+	isProtec = protec;
+	m_protection = protection;
+
 	isHealing = healing;
 	m_heal = heal;
 	isDestructable = breakable;
@@ -37,10 +42,12 @@ void Object::Draw()
 {
 	m_image.draw(m_x, m_y);
 }
+
 void Object::Draw(ofVec2f position)
 {
 
 }
+
 void Object::Destruct(bool breakable, ofVec2f positionShot)
 {
 	if (breakable)
@@ -80,6 +87,15 @@ void Object::SetX(int x)
 void Object::SetY(int y)
 {
 	m_y = y;
+}
+
+void Object::SetProtection(bool protec, int protection)
+{
+	isProtec = protec;
+	if (isProtec)
+		m_protection = protection;
+	else
+		m_protection = 0;
 }
 
 void Object::SetHp(bool destructable, int hp)
@@ -154,7 +170,6 @@ void Object::PlusSatu()
 	if (inc_s > 250.0f)
 		inc_s = 50.0f;
 }
-
 
 void Object::ChangeSatu()
 {

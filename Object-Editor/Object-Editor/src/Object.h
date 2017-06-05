@@ -19,11 +19,13 @@ private:
 	ofImage backup; //imagem com as cores originais
 
 	/*Dados pra exportar do objeto*/
+	bool isProtec;
 	bool isDestructable;
 	bool isPushable;
 	bool isHealing;
 	bool isDamaging;
 
+	int m_protection; //qtde de protecao
 	int m_hp; //hp do objeto *destrutivel*
 	int m_kg; //peso do objeto *empurravel*
 	int m_heal; //qdade de heal *healable*
@@ -31,7 +33,7 @@ private:
 
 public:
 	Object(std::string path); //construtor para editor
-	Object(bool healing, int heal, bool breakable, int hp,
+	Object(bool protec, int protection, bool healing, int heal, bool breakable, int hp,
 		bool damaging, int dmg, bool pushable, int kg); //construtor pro jogo
 	
 
@@ -52,6 +54,7 @@ public:
 	void SetX(int x);
 	void SetY(int y);
 
+	void SetProtection(bool protec, int protection);
 	void SetHp(bool destructable, int hp);
 	void SetKg(bool pushable, int kg);
 	void SetHeal(bool healing, int heal);

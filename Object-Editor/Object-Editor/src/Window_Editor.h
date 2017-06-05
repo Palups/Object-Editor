@@ -22,17 +22,20 @@ private:
 	Object *object; //objeto que será criado ao clicar em LOAD SPRITE
 
 	/*User interface -- Atributos*/
-	UI_Switch *sw_breakable; //switch pra objeto destrutivel
-	UI_Slider *s_hp; //slider pra hp do objeto
+	UI_Switch *sw_protection;
+	UI_Slider *s_protection;
 
-	UI_Switch *sw_pushable; //objeto empurravel
-	UI_Slider *s_kg; //slider pro peso do objeto
+	//UI_Switch *sw_breakable; //switch pra objeto destrutivel
+	//UI_Slider *s_hp; //slider pra hp do objeto
 
-	UI_Switch *sw_healing; //objeto que da heal
-	UI_Slider *s_heal; //slide pro heal
+	//UI_Switch *sw_pushable; //objeto empurravel
+	//UI_Slider *s_kg; //slider pro peso do objeto
 
-	UI_Switch *sw_damaging; //objeto que da dmg
-	UI_Slider *s_dmg;
+	//UI_Switch *sw_healing; //objeto que da heal
+	//UI_Slider *s_heal; //slide pro heal
+
+	//UI_Switch *sw_damaging; //objeto que da dmg
+	//UI_Slider *s_dmg;
 
 	bool m_imageOnScreen; //checa se a imagem que representa o objeto está na tela	
 	string input;
