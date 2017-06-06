@@ -6,13 +6,17 @@
 #include "Window_Manager.h"
 #include "ofxColorPicker.h"
 
-
 #define MAX_WIDTH 475
 #define MAX_HEIGHT 750
 
 class Window_Editor
 {
 private:
+
+	bool m_imageOnScreen; //checa se a imagem que representa o objeto está na tela
+
+	string input;
+
 	Button *btn_cancel; //declarando botão CANCEL
 	Button *btn_loadSprite; //declarando botão LOAD SPRITE
 	Button *btn_changeObjectColor; //teste pra mudar a cor
@@ -22,24 +26,22 @@ private:
 	Object *object; //objeto que será criado ao clicar em LOAD SPRITE
 
 	/*User interface -- Atributos*/
-	UI_Switch *sw_protection;
+	// -- Buffers
+	UI_Switch *sw_protection; //objeto que da proteção
 	UI_Slider *s_protection;
 
-	//UI_Switch *sw_breakable; //switch pra objeto destrutivel
-	//UI_Slider *s_hp; //slider pra hp do objeto
+	UI_Switch *sw_healing; //objeto que da heal
+	UI_Slider *s_heal;
 
-	//UI_Switch *sw_pushable; //objeto empurravel
-	//UI_Slider *s_kg; //slider pro peso do objeto
+	UI_Switch *sw_speed; //objeto que da velocidade
+	UI_Slider *s_speed;
 
-	//UI_Switch *sw_healing; //objeto que da heal
-	//UI_Slider *s_heal; //slide pro heal
+	UI_Switch *sw_attack; //objeto que aumenta ataque
+	UI_Slider *s_attack;
 
-	//UI_Switch *sw_damaging; //objeto que da dmg
-	//UI_Slider *s_dmg;
+	// -- Debuffers
 
-	bool m_imageOnScreen; //checa se a imagem que representa o objeto está na tela	
-	string input;
-
+	// -- Obstáculos
 
 public:
 	Window_Editor();

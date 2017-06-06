@@ -20,23 +20,19 @@ private:
 
 	/*Dados pra exportar do objeto*/
 	bool isProtec;
-	bool isDestructable;
-	bool isPushable;
 	bool isHealing;
-	bool isDamaging;
+	bool isSpeed;
+	bool isAttack;
 
 	int m_protection; //qtde de protecao
-	int m_hp; //hp do objeto *destrutivel*
-	int m_kg; //peso do objeto *empurravel*
-	int m_heal; //qdade de heal *healable*
-	int m_dmg; //qdade de dmg *damaging*
+	int m_heal; //qtde de heal
+	int m_speed; //qtde de velocidade
+	int m_attack; //qtde de ataque
 
 public:
 	Object(std::string path); //construtor para editor
-	Object(bool protec, int protection, bool healing, int heal, bool breakable, int hp,
-		bool damaging, int dmg, bool pushable, int kg); //construtor pro jogo
+	Object(bool protec, int protection, bool healing, int heal, bool spd, int speed, bool atk, int attack); //construtor pro jogo
 	
-
 	~Object();
 
 	ofImage m_image;  //imagem que representa o objeto
@@ -44,7 +40,7 @@ public:
 	void Draw();
 	void Draw(ofVec2f position);
 
-	void Destruct(bool breakable, ofVec2f positionShot);
+	//void Destruct(bool breakable, ofVec2f positionShot);
 	void SetPosition(ofVec2f position);
 	ofVec2f GetPosition();
 
@@ -56,6 +52,9 @@ public:
 
 	void SetProtection(bool protec, int protection);
 	void SetHp(bool destructable, int hp);
+	void SetSpeed(bool spd, int speed);
+	void SetAttack(bool atk, int attack);
+
 	void SetKg(bool pushable, int kg);
 	void SetHeal(bool healing, int heal);
 	void SetDamage(bool damaging, int dmg);

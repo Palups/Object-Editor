@@ -11,7 +11,7 @@ void ofApp::setup(){
 void ofApp::update(){
 	switch (window_manager->GetState()) {
 	case WINDOW_MENU:
-		//window_menu->Draw();
+		//window_menu->Update();
 		break;
 	case WINDOW_EDITOR:
 		window_editor->Update();

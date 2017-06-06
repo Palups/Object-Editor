@@ -2,19 +2,37 @@
 
 Window_Editor::Window_Editor()
 {
-	btn_cancel = new Button(520, 700, 200, 50, "images/btn_cancel.png"); //criando botão CANCEL
-	btn_loadSprite = new Button(520, 25, 200, 50, "images/btn_loadSprite.png"); //criando botão LOAD SPRITE
-	btn_changeObjectColor = new Button(520, 250, 200, 50, "images/meep.png"); // -> mexe na cor do objeto
-	btn_changeObjectSat = new Button(520, 300, 200, 50, "images/meep2.png"); // -> mexe na saturação do objeto
-	btn_saveObject = new Button(800, 700, 200, 50, "images/btn_save.png"); // salva
+	m_imageOnScreen = false; //se imagem está na tela
+
+	//-----------------------------------------------------------------------------------------
+
+	btn_cancel = new Button(520, 700, 200, 50, "images/btn_cancel.png"); //cancela
+	btn_loadSprite = new Button(520, 25, 200, 50, "images/btn_loadSprite.png"); //carrega sprite
+	btn_changeObjectColor = new Button(520, 250, 200, 50, "images/meep.png"); //mexe na cor do objeto
+	btn_changeObjectSat = new Button(520, 300, 200, 50, "images/meep2.png"); //mexe na saturação do objeto
+	btn_saveObject = new Button(800, 700, 200, 50, "images/btn_save.png"); //salva
 
 	/* --------------------------- AS PORRA DOS SLIDERS PODE CRE --------------------------- */
-	/* BUFFERS */
+	/* -- BUFFERS -- */
 	sw_protection = new UI_Switch(520, 450, 80, 20);
 	sw_protection->SetLabel("Protection");
 	s_protection = new UI_Slider(700, 450, 300, 25, 1000);
 	s_protection->SetLabel("Amount of protection");
 
+	sw_healing = new UI_Switch(520, 500, 80, 20);
+	sw_healing->SetLabel("Healing object");
+	s_heal = new UI_Slider(700, 500, 300, 25, 1000);
+	s_heal->SetLabel("Healing amount");
+
+	sw_speed = new UI_Switch(520, 550, 80, 20);
+	sw_speed->SetLabel("Speed");
+	s_speed = new UI_Slider(700, 550, 300, 25, 1000);
+	s_speed->SetLabel("Speed amount");
+
+	sw_attack = new UI_Switch(520, 600, 80, 20);
+	sw_attack->SetLabel("Increase attack");
+	s_attack = new UI_Slider(700, 600, 300, 25, 500);
+	s_attack->SetLabel("Attack value");
 
 	/*sw_breakable = new UI_Switch(520, 450, 80, 20); //switch pra objetos destrutiveis
 	sw_breakable->SetLabel("Is destructable");
@@ -24,27 +42,11 @@ Window_Editor::Window_Editor()
 	/*sw_pushable = new UI_Switch(520, 500, 80, 20);
 	sw_pushable->SetLabel("Is pushable");
 	s_kg = new UI_Slider(700, 500, 300, 25, 1000);
-	s_kg->SetLabel("Initial weight");
-
-	sw_healing = new UI_Switch(520, 550, 80, 20);
-	sw_healing->SetLabel("Healing object");
-	s_heal = new UI_Slider(700, 550, 300, 25, 500);
-	s_heal->SetLabel("Healing amount");
-
-	sw_damaging = new UI_Switch(520, 600, 80, 20);
-	sw_damaging->SetLabel("Damaging object");
-	s_dmg = new UI_Slider(700, 600, 300, 25, 500);
-	s_dmg->SetLabel("Damage amount");*/
+	s_kg->SetLabel("Initial weight");*/
 
 	/* ---------------------------  ---------------------------  --------------------------- */
 
-	m_imageOnScreen = false; //inicializando como falsa
-
-	//gui = new ofxUISuperCanvas("tela de edicao"); //Creates a canvas at (0,0) using the default width	
-	//gui.setup();
-	//gui.add(m_hp.setup("HP", 0, 0, 100));
-
-	/* PALETA DE CORES */
+	/* ---------------------------- PALETA DE CORES ---------------------------- */
 	colorPicker.setColorRadius(1.0);
 	colorPicker.setColorAngle(0.5);
 
@@ -58,19 +60,11 @@ Window_Editor::Window_Editor()
 	colorPicker.setSize(x, y, w, h);
 
 	y = y + h + g; //PRA QUE QUE SERVE? N SEI
+	//---------------------------------------------------------------------------
 
-	//----------------------------------------------------------
-	/*meshGradient.setMode(OF_PRIMITIVE_TRIANGLE_FAN);
-
-	meshGradient.addVertex(ofVec3f(0, 0));
-	meshGradient.addVertex(ofVec3f(ofGetWidth(), 0));
-	meshGradient.addVertex(ofVec3f(ofGetWidth(), ofGetHeight()));
-	meshGradient.addVertex(ofVec3f(0, ofGetHeight()));
-
-	meshGradient.addColor(ofColor::white); //ISSO AQUI SEPA FAZ O GRANDIENTE DA COR ESCOLHIDA PRO BRANCO. SE TIVER COMO
-	meshGradient.addColor(ofColor::white); //COLOCAR NO LUGAR DO white UM getColor DA COR QUE FOI SELECIONADA SEPA DA BOA
-	meshGradient.addColor(ofColor::white);
-	meshGradient.addColor(ofColor::white);*/
+	//gui = new ofxUISuperCanvas("tela de edicao"); //Creates a canvas at (0,0) using the default width	
+	//gui.setup();
+	//gui.add(m_hp.setup("HP", 0, 0, 100));
 }
 
 Window_Editor::~Window_Editor()
@@ -89,48 +83,42 @@ void Window_Editor::KeyPressed(int key)
 
 void Window_Editor::MouseReleased(int x, int y)
 {
-	if (s_protection->TestClick(x, y) && sw_protection->GetStatus())
+	if (s_protection->TestClick(x, y) && sw_protection->GetStatus()) //se o switch de objeto destrutivel estiver ativo
 		s_protection->MouseReleased(x, y);
 
-	/*if (s_hp->TestClick(x, y) && sw_breakable->GetStatus()) //se o switch de objeto destrutivel estiver ativo
-		s_hp->MouseReleased(x, y);
-
-	else if (s_kg->TestClick(x, y) && sw_pushable->GetStatus())
-		s_kg->MouseReleased(x, y);
-
-	else if (s_heal->TestClick(x, y) && sw_healing->GetStatus())
+	if (s_heal->TestClick(x, y) && sw_healing->GetStatus())
 		s_heal->MouseReleased(x, y);
 
-	else if (s_dmg->TestClick(x, y) && sw_damaging->GetStatus())
-		s_dmg->MouseReleased(x, y);*/
+	if (s_speed->TestClick(x, y) && sw_speed->GetStatus())
+		s_speed->MouseReleased(x, y);
 
-	if (m_imageOnScreen) //atualiza o atributo do objeto com o valor do switch e do slider
-	{
+	if (s_attack->TestClick(x, y) && sw_attack->GetStatus()) 
+		s_attack->MouseReleased(x, y);
+
+	//----------------------------------------------------------------------
+
+	if (m_imageOnScreen) { //atualiza o atributo do objeto com o valor do switch e do slider
 		object->SetProtection(sw_protection->GetStatus(), s_protection->GetValue());
-		/*object->SetHp(sw_breakable->GetStatus(), s_hp->GetValue());
-		object->SetKg(sw_pushable->GetStatus(), s_kg->GetValue());
 		object->SetHeal(sw_healing->GetStatus(), s_heal->GetValue());
-		object->SetDamage(sw_damaging->GetStatus(), s_dmg->GetValue());*/
+		object->SetSpeed(sw_speed->GetStatus(), s_speed->GetValue());
+		object->SetAttack(sw_attack->GetStatus(), s_attack->GetValue());
 	}
 
 }
 
 void Window_Editor::MouseDragged(int x, int y)
 {
-	if (s_protection->TestClick(x, y) && sw_protection->GetStatus())
+	if (s_protection->TestClick(x, y) && sw_protection->GetStatus()) //se o switch de objeto destrutivel estiver ativo
 		s_protection->MouseDragged(x, y);
-	
-	/*if (s_hp->TestClick(x, y) && sw_breakable->GetStatus()) //se o switch de objeto destrutivel estiver ativo
-		s_hp->MouseDragged(x, y);
 
-	else if (s_kg->TestClick(x, y) && sw_pushable->GetStatus())
-		s_kg->MouseDragged(x, y);
-
-	else if (s_heal->TestClick(x, y) && sw_healing->GetStatus())
+	if (s_heal->TestClick(x, y) && sw_healing->GetStatus())
 		s_heal->MouseDragged(x, y);
 
-	else if (s_dmg->TestClick(x, y) && sw_damaging->GetStatus())
-		s_dmg->MouseDragged(x, y);*/
+	if (s_speed->TestClick(x, y) && sw_speed->GetStatus())
+		s_speed->MouseDragged(x, y);
+	
+	if (s_attack->TestClick(x, y) && sw_attack->GetStatus()) 
+		s_attack->MouseDragged(x, y);
 }
 
 void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
@@ -170,16 +158,14 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 				ofstream arquivo(imgPath + ".txt"); //cria um novo arquivo com o nome que o usuario der pro objeto
 				ofSaveImage(object->m_image.getPixelsRef(), imgPath + ".png");
 				arquivo << imgPath + ".png" << endl //salva o path da imagem no arquivo
-					/*<< sw_healing->GetStatus() << endl //salva o status de healing no arquivo
-					<< s_heal->GetValue() << endl // salva o valor de heal
-					<< sw_breakable->GetStatus() << endl // status de quebravel
-					<< s_hp->GetValue() << endl //hp do objeto
-					<< sw_damaging->GetStatus() << endl //status de causador de dano
-					<< s_dmg->GetValue() << endl //dano causado
-					<< sw_pushable->GetStatus() << endl //status de empurravel
-					<< s_kg->GetValue() << endl //peso*/
-					<< sw_protection->GetStatus() << endl
-					<< s_protection->GetValue() << endl;
+					<< sw_protection->GetStatus() << endl //salva status protecao
+					<< s_protection->GetValue() << endl   //salva valor protecao
+					<< sw_healing->GetStatus() << endl    //salva status healing
+					<< s_heal->GetValue() << endl         //salva valor heal
+					<< sw_speed->GetStatus() << endl      //salva status velocidade
+					<< s_speed->GetValue() << endl		  //salva valor velocidade
+					<< sw_attack->GetStatus() << endl     //salva status ataque
+					<< s_attack->GetValue() << endl;      //salva valor ataque
 				arquivo.close(); //fecha o arquivo
 				// save your file to `path`
 				ofSystemAlertDialog("Object saved successfully!");
@@ -210,58 +196,6 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 		}
 
 		/*-----  ATRIBUTOS  -----*/
-		//if (sw_breakable->TestClick(x, y)) // Se o click for no botao 
-		//{
-		//	sw_breakable->MouseClicked(x, y);
-		//	if (!sw_breakable->GetStatus())
-		//		s_hp->DeactivateSlider();
-		//}
-		//else if (s_hp->TestClick(x, y)) //se o click for no slider...
-		//{
-		//	if (sw_breakable->GetStatus()) //...e o switch de objeto destrutivel estiver ativo
-		//		s_hp->MouseClicked(x, y);
-		//}
-		////EMPURRAVEL
-		//else if (sw_pushable->TestClick(x, y))
-		//{
-		//	sw_pushable->MouseClicked(x, y);
-		//	if (!sw_pushable->GetStatus())
-		//		s_kg->DeactivateSlider();
-		//}
-		////PESO
-		//else if (s_kg->TestClick(x, y))
-		//{
-		//	if (sw_pushable->GetStatus()) //...e o switch de objeto destrutivel estiver ativo
-		//		s_kg->MouseClicked(x, y);
-		//}
-
-		////DA HEAL
-		//else if (sw_healing->TestClick(x, y))
-		//{
-		//	sw_healing->MouseClicked(x, y);
-		//	if (!sw_healing->GetStatus())
-		//		s_heal->DeactivateSlider();
-		//}
-		////QUANTO DE HEAL
-		//else if (s_heal->TestClick(x, y))
-		//{
-		//	if (sw_healing->GetStatus()) //...e o switch de objeto destrutivel estiver ativo
-		//		s_heal->MouseClicked(x, y);
-		//}
-
-		////MACHUCA PORRA
-		//else if (sw_damaging->TestClick(x, y))
-		//{
-		//	sw_damaging->MouseClicked(x, y);
-		//	if (!sw_damaging->GetStatus())
-		//		s_dmg->DeactivateSlider();
-		//}
-		////QUANTO DE DMG
-		//else if (s_dmg->TestClick(x, y))
-		//{
-		//	if (sw_damaging->GetStatus()) //...e o switch de objeto destrutivel estiver ativo
-		//		s_dmg->MouseClicked(x, y);
-		//}
 		//proteção
 		if (sw_protection->TestClick(x, y)) {
 			sw_protection->MouseClicked(x, y);
@@ -270,8 +204,41 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 		}
 		//qntde de proteção
 		else if (s_protection->TestClick(x, y))
-			if (sw_protection->GetStatus())
+			if (sw_protection->GetStatus()) //...e o switch de objeto destrutivel estiver ativo
 				s_protection->MouseClicked(x, y);
+
+		//DA HEAL
+		if (sw_healing->TestClick(x, y)) {
+			sw_healing->MouseClicked(x, y);
+			if (!sw_healing->GetStatus())
+				s_heal->DeactivateSlider();
+		}
+		//QUANTO DE HEAL
+		else if (s_heal->TestClick(x, y))
+			if (sw_healing->GetStatus()) 
+				s_heal->MouseClicked(x, y);
+
+		//velocidade
+		if (sw_speed->TestClick(x, y)) {
+			sw_speed->MouseClicked(x, y);
+			if (!sw_speed->GetStatus())
+				s_speed->DeactivateSlider();
+		}
+		//qtde de velocidade
+		else if (s_speed->TestClick(x, y))
+			if (sw_speed->GetStatus())
+				s_speed->MouseClicked(x, y);
+
+		//ataque
+		if (sw_attack->TestClick(x, y)) {
+			sw_attack->MouseClicked(x, y);
+			if (!sw_attack->GetStatus())
+				s_attack->DeactivateSlider();
+		}
+		//qtde de ataque
+		else if (s_attack->TestClick(x, y))
+			if (sw_attack->GetStatus())
+				s_attack->MouseClicked(x, y);	
 	}
 }
 
@@ -299,35 +266,25 @@ void Window_Editor::Draw()
 			SetImageOnScreen(false);
 		}
 
-		
 		s_protection->Draw();
 		sw_protection->Draw();
-
-		/*s_hp->Draw();
-		sw_breakable->Draw();
-		s_kg->Draw();
-		sw_pushable->Draw();
 		s_heal->Draw();
 		sw_healing->Draw();
-		s_dmg->Draw();
-		sw_damaging->Draw();*/
+		s_speed->Draw();
+		sw_speed->Draw();
+		s_attack->Draw();
+		sw_attack->Draw();
 
 		colorPicker.draw();
 	}
-
-	/* DRAW DA PALETA DE CORES */
-	//meshGradient.draw();
 }
 
 void Window_Editor::Update()
 {
 	/*update da paleta de cores*/
 	colorPicker.update();
-
 	ofColor colorTop = colorPicker.getColor();
-
-	/*meshGradient.setColor(0, colorTop);
-	meshGradient.setColor(1, colorTop);*/
+	//---------------------------------------
 }
 
 void Window_Editor::SetImageOnScreen(bool imageOnScreen)

@@ -6,31 +6,29 @@ Object::Object(std::string path)
 	backup.loadImage(path);
 
 	isProtec = true;
-	isDestructable = true;
-	isPushable = true;
 	isHealing = true;
-	isDamaging = true;
+	isSpeed = true;
+	isAttack = true;
 
 	m_protection = 1000;
-	m_hp = 1000;
-	m_kg = 1000;
-	m_heal = 500;
-	m_dmg = 500;
+	m_heal = 1000;
+	m_speed = 500;
+	m_attack = 500;
 }
 
-Object::Object(bool protec, int protection, bool healing, int heal, bool breakable, int hp, bool damaging, int dmg, bool pushable, int kg)
+Object::Object(bool protec, int protection, bool healing, int heal, bool spd, int speed, bool atk, int attack)
 {
 	isProtec = protec;
 	m_protection = protection;
 
 	isHealing = healing;
 	m_heal = heal;
-	isDestructable = breakable;
-	m_hp = hp;
-	isDamaging = damaging;
-	m_dmg = dmg;
-	isPushable = pushable;
-	m_kg = kg;
+
+	isSpeed = spd;
+	m_speed = speed;
+
+	isAttack = atk;
+	m_attack = attack;
 }
 
 Object::~Object()
@@ -48,7 +46,7 @@ void Object::Draw(ofVec2f position)
 
 }
 
-void Object::Destruct(bool breakable, ofVec2f positionShot)
+/*void Object::Destruct(bool breakable, ofVec2f positionShot)
 {
 	if (breakable)
 	{
@@ -57,7 +55,7 @@ void Object::Destruct(bool breakable, ofVec2f positionShot)
 			m_hp = 0;
 		}
 	}
-}
+}*/
 
 void Object::SetPosition(ofVec2f position)
 {
@@ -89,6 +87,8 @@ void Object::SetY(int y)
 	m_y = y;
 }
 
+/* funções de cada slider */
+
 void Object::SetProtection(bool protec, int protection)
 {
 	isProtec = protec;
@@ -98,34 +98,31 @@ void Object::SetProtection(bool protec, int protection)
 		m_protection = 0;
 }
 
-void Object::SetHp(bool destructable, int hp)
-{
-	isDestructable = destructable;
-	if (isDestructable) // I.e. o objeto é destrutivel
-		m_hp = hp;
-	else
-		m_hp = 0;
-}
-
-void Object::SetKg(bool pushable, int kg)
-{
-	isPushable = pushable;
-	m_kg = kg;
-}
-
 void Object::SetHeal(bool healing, int heal)
 {
 	isHealing = healing;
 	m_heal = heal;
 }
 
-void Object::SetDamage(bool damaging, int dmg)
+void Object::SetSpeed(bool spd, int speed)
 {
-	isDamaging = damaging;
-	m_dmg = dmg;
-	std::cout << "meep dmg:" + ofToString(isDamaging) + " - " + ofToString(m_dmg) << std::endl;
-
+	isSpeed = spd;
+	if (isSpeed)
+		m_speed = speed;
+	else
+		m_speed = 0;
 }
+
+void Object::SetAttack(bool atk, int attack)
+{
+	isAttack = atk;
+	if (isAttack)
+		m_attack = attack;
+	else
+		m_attack = 0;
+}
+
+/* ---------------------- */
 
 void Object::PlusColor()
 {
