@@ -57,6 +57,7 @@ private:
 
 	// -- Obstáculos
 
+
 public:
 	Window_Editor();
 	~Window_Editor();
