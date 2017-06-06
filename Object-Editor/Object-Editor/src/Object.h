@@ -27,6 +27,7 @@ private:
 	bool isLessHP;
 	bool isLessSpeed;
 	bool isLessAttack;
+	bool isObstacle;
 
 	int m_protection; //qtde de protecao
 	int m_heal; //qtde de heal
@@ -36,11 +37,12 @@ private:
 	int m_lessHP; 
 	int m_lessSpeed;
 	int m_lessAttack;
+	int m_obstacleHP;
 
 public:
 	Object(std::string path); //construtor para editor
 	Object(bool protec, int protection, bool healing, int heal, bool spd, int speed, bool atk, int attack, bool time, int seconds,
-		   bool lessHP, int hp, bool lessSpeed, int lessSpd, bool lessAttack, int lessAtk); //construtor pro jogo
+		   bool lessHP, int hp, bool lessSpeed, int lessSpd, bool lessAttack, int lessAtk, bool obstacle, int obstacleHP); //construtor pro jogo
 	
 	~Object();
 
@@ -67,6 +69,7 @@ public:
 	void SetLessHP(bool lessHP, int hp);
 	void SetLessSpeed(bool lessSpeed, int lessSpd);
 	void SetLessAttack(bool lessAttack, int lessAtk);
+	void SetObstacle(bool obstacle, int obstacelHP);
 
 	void PlusColor();
 	void ChangeColor(ofColor color);

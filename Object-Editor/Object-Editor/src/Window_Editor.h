@@ -55,8 +55,10 @@ private:
 	UI_Switch *sw_lessAttack; //objeto que tira ataque
 	UI_Slider *s_lessAttack;
 
-	// -- Obstáculos
 
+	// -- Obstáculos
+	UI_Switch *sw_obstacle; //objeto fixo
+	UI_Slider *s_obstacleHP;
 
 public:
 	Window_Editor();

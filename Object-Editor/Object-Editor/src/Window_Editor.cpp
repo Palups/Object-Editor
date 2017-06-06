@@ -57,6 +57,12 @@ Window_Editor::Window_Editor()
 	sw_lessAttack->SetLabel("Less Attack");
 	s_lessAttack = new UI_Slider(700, 500, 300, 25, 500);
 	s_lessAttack->SetLabel("Amount");
+
+	/* -- OBSTACLE -- */
+	sw_obstacle = new UI_Switch(520, 400, 80, 20);
+	sw_obstacle->SetLabel("Static?");
+	s_obstacleHP = new UI_Slider(700, 400, 300, 25, 500);
+	s_obstacleHP->SetLabel("Obstacle HP");
 	/* ---------------------------  ---------------------------  --------------------------- */
 
 	/* ---------------------------- PALETA DE CORES ---------------------------- */
@@ -128,6 +134,9 @@ void Window_Editor::MouseReleased(int x, int y)
 		break;
 
 	case 3:
+		if (s_obstacleHP->TestClick(x, y) && sw_obstacle->GetStatus())
+			s_obstacleHP->MouseReleased(x, y);
+
 		break;
 	default:
 		break;
@@ -145,6 +154,8 @@ void Window_Editor::MouseReleased(int x, int y)
 		object->SetLessHP(sw_lessHP->GetStatus(), s_lessHP->GetValue());
 		object->SetLessSpeed(sw_lessSpeed->GetStatus(), s_lessSpeed->GetValue());
 		object->SetLessAttack(sw_lessAttack->GetStatus(), s_lessAttack->GetValue());
+
+		object->SetObstacle(sw_obstacle->GetStatus(), s_obstacleHP->GetValue());
 	}
 
 }
@@ -183,6 +194,8 @@ void Window_Editor::MouseDragged(int x, int y)
 		break;
 
 	case 3:
+		if (s_obstacleHP->TestClick(x, y) && sw_obstacle->GetStatus())
+			s_obstacleHP->MouseDragged(x, y);
 		break;
 	default:
 		break;
@@ -212,17 +225,17 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 	}
 
 	if (btn_cancel->TestClick(x, y)) {  //se click dentro do botão CANCEL
-		//bool result = ofSystemYesNoDialoge("Boop", "Are you sure you want to cancel?");
-		//if (result) {
+		bool result = ofSystemYesNoDialoge("Boop", "Are you sure you want to cancel?");
+		if (result) {
 			if (GetImageOnScreen()) {  //se tiver imagem de objeto na tela, deleta objeto e volta pro menu
 				delete object;
 				SetImageOnScreen(false);
 				window_manager->SetState(0);
 				//cout << result;
 			}
-			/*else
-				window_manager->SetState(0);*/
-		//}
+			else
+				window_manager->SetState(0);
+		}
 	}
 
 	if (btn_saveObject->TestClick(x, y)) {
@@ -248,7 +261,9 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 					<< sw_lessSpeed->GetStatus() << endl  //salva status tirar velocidade
 					<< s_lessSpeed->GetValue() << endl    //salva valor tirar velocidade
 					<< sw_lessAttack->GetStatus() << endl //salva status tirar ataque
-					<< s_lessAttack->GetValue() << endl;  //salva valor tirar ataque 
+					<< s_lessAttack->GetValue() << endl   //salva valor tirar ataque
+					<< sw_obstacle->GetStatus() << endl   //salva status objeto fixo
+					<< s_obstacleHP->GetValue() << endl;  //salva valor objeto fixo 
 				arquivo.close(); //fecha o arquivo
 				// save your file to `path`
 				ofSystemAlertDialog("Object saved successfully!");
@@ -375,6 +390,16 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 			break;
 
 		case 3:
+			//tirar ataque
+			if (sw_obstacle->TestClick(x, y)) {
+				sw_obstacle->MouseClicked(x, y);
+				if (!sw_obstacle->GetStatus())
+					s_obstacleHP->DeactivateSlider();
+			}
+			//qtde de ataque tirada
+			else if (s_obstacleHP->TestClick(x, y))
+				if (sw_obstacle->GetStatus())
+					s_obstacleHP->MouseClicked(x, y);
 			break;
 		default:
 			break;
@@ -431,6 +456,8 @@ void Window_Editor::Draw()
 			sw_lessAttack->Draw();
 			break;
 		case 3:
+			s_obstacleHP->Draw();
+			sw_obstacle->Draw();
 			break;
 		default:
 			break;
