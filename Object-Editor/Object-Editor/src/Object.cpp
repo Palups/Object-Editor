@@ -24,10 +24,11 @@ Object::Object(std::string path)
 	m_lessSpeed = 500;
 	m_lessAttack = 500;
 	m_obstacleHP = 1000;
+	m_amountObs = 100;
 }
 
 Object::Object(bool protec, int protection, bool healing, int heal, bool spd, int speed, bool atk, int attack, bool time, int seconds,
-			   bool lessHP, int hp, bool lessSpeed, int lessSpd, bool lessAttack, int lessAtk, bool obstacle, int obstacleHP)
+			   bool lessHP, int hp, bool lessSpeed, int lessSpd, bool lessAttack, int lessAtk, bool obstacle, int obstacleHP, int amt)
 {
 	isProtec = protec;
 	m_protection = protection;
@@ -55,6 +56,7 @@ Object::Object(bool protec, int protection, bool healing, int heal, bool spd, in
 
 	isObstacle = obstacle;
 	m_obstacleHP = obstacleHP;
+	m_amountObs = amt;
 }
 
 Object::~Object()
@@ -181,13 +183,19 @@ void Object::SetLessAttack(bool lessAttack, int lessAtk)
 		m_lessAttack = 0;
 }
 
-void Object::SetObstacle(bool obstacle, int obstacelHP)
+void Object::SetObstacle(bool obstacle, int obstacelHP, int amt)
 {
 	isObstacle = obstacle;
-	if (isObstacle)
+	if (isObstacle) {
 		m_obstacleHP = obstacelHP;
-	else
+		m_amountObs = amt;
+	}
+		
+	else {
 		m_obstacleHP = 0;
+		m_amountObs = 0;
+	}
+		
 }
 
 /* ---------------------- */

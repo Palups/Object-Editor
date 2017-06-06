@@ -63,6 +63,9 @@ Window_Editor::Window_Editor()
 	sw_obstacle->SetLabel("Static?");
 	s_obstacleHP = new UI_Slider(700, 400, 300, 25, 500);
 	s_obstacleHP->SetLabel("Obstacle HP");
+	s_obs = new UI_Slider(700, 450, 300, 25, 500);
+	s_obs->SetLabel("Amout of itens inside");
+
 	/* ---------------------------  ---------------------------  --------------------------- */
 
 	/* ---------------------------- PALETA DE CORES ---------------------------- */
@@ -155,7 +158,7 @@ void Window_Editor::MouseReleased(int x, int y)
 		object->SetLessSpeed(sw_lessSpeed->GetStatus(), s_lessSpeed->GetValue());
 		object->SetLessAttack(sw_lessAttack->GetStatus(), s_lessAttack->GetValue());
 
-		object->SetObstacle(sw_obstacle->GetStatus(), s_obstacleHP->GetValue());
+		object->SetObstacle(sw_obstacle->GetStatus(), s_obstacleHP->GetValue(), s_obs->GetValue());
 	}
 
 }
@@ -196,6 +199,9 @@ void Window_Editor::MouseDragged(int x, int y)
 	case 3:
 		if (s_obstacleHP->TestClick(x, y) && sw_obstacle->GetStatus())
 			s_obstacleHP->MouseDragged(x, y);
+
+		if (s_obs->TestClick(x, y) && sw_obstacle->GetStatus())
+			s_obs->MouseDragged(x, y);
 		break;
 	default:
 		break;
@@ -263,7 +269,8 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 					<< sw_lessAttack->GetStatus() << endl //salva status tirar ataque
 					<< s_lessAttack->GetValue() << endl   //salva valor tirar ataque
 					<< sw_obstacle->GetStatus() << endl   //salva status objeto fixo
-					<< s_obstacleHP->GetValue() << endl;  //salva valor objeto fixo 
+					<< s_obstacleHP->GetValue() << endl   //salva valor objeto fixo 
+					<< s_obs->GetValue() << endl;  //salva valor objeto fixo
 				arquivo.close(); //fecha o arquivo
 				// save your file to `path`
 				ofSystemAlertDialog("Object saved successfully!");
@@ -400,6 +407,9 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 			else if (s_obstacleHP->TestClick(x, y))
 				if (sw_obstacle->GetStatus())
 					s_obstacleHP->MouseClicked(x, y);
+			else if (s_obs->TestClick(x, y))
+				if (sw_obstacle->GetStatus())
+					s_obs->MouseClicked(x, y);
 			break;
 		default:
 			break;
@@ -458,6 +468,7 @@ void Window_Editor::Draw()
 		case 3:
 			s_obstacleHP->Draw();
 			sw_obstacle->Draw();
+			s_obs->Draw();
 			break;
 		default:
 			break;

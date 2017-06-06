@@ -59,6 +59,7 @@ private:
 	// -- Obstáculos
 	UI_Switch *sw_obstacle; //objeto fixo
 	UI_Slider *s_obstacleHP;
+	UI_Slider *s_obs;
 
 public:
 	Window_Editor();
