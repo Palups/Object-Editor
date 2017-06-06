@@ -9,14 +9,23 @@ Object::Object(std::string path)
 	isHealing = true;
 	isSpeed = true;
 	isAttack = true;
+	isTime = true;
+	isLessHP = true;
+	isLessSpeed = true;
+	isLessAttack = true;
 
 	m_protection = 1000;
 	m_heal = 1000;
 	m_speed = 500;
 	m_attack = 500;
+	m_time = 500;
+	m_lessHP = 1000;
+	m_lessSpeed = 500;
+	m_lessAttack = 500;
 }
 
-Object::Object(bool protec, int protection, bool healing, int heal, bool spd, int speed, bool atk, int attack)
+Object::Object(bool protec, int protection, bool healing, int heal, bool spd, int speed, bool atk, int attack, bool time, int seconds,
+			   bool lessHP, int hp, bool lessSpeed, int lessSpd, bool lessAttack, int lessAtk)
 {
 	isProtec = protec;
 	m_protection = protection;
@@ -29,6 +38,18 @@ Object::Object(bool protec, int protection, bool healing, int heal, bool spd, in
 
 	isAttack = atk;
 	m_attack = attack;
+
+	isTime = time;
+	m_time = seconds;
+
+	isLessHP = lessHP;
+	m_lessHP = hp;
+
+	isLessSpeed = lessSpeed;
+	m_lessSpeed = lessSpd;
+
+	isLessAttack = lessAttack;
+	m_lessAttack = lessAtk;
 }
 
 Object::~Object()
@@ -120,6 +141,39 @@ void Object::SetAttack(bool atk, int attack)
 		m_attack = attack;
 	else
 		m_attack = 0;
+}
+
+void Object::SetTime(bool time, int seconds)
+{
+	isTime = time;
+	if (isTime)
+		m_time = seconds;
+	else
+		m_time = 0;
+}
+
+void Object::SetLessHP(bool lessHP, int hp)
+{
+	isLessHP = lessHP;
+	m_lessHP = hp;
+}
+
+void Object::SetLessSpeed(bool lessSpeed, int lessSpd)
+{
+	isLessSpeed = lessSpeed;
+	if (isLessSpeed)
+		m_lessSpeed = lessSpd;
+	else
+		m_lessSpeed = 0;
+}
+
+void Object::SetLessAttack(bool lessAttack, int lessAtk)
+{
+	isLessAttack = lessAttack;
+	if (isLessAttack)
+		m_lessAttack = lessAtk;
+	else
+		m_lessAttack = 0;
 }
 
 /* ---------------------- */

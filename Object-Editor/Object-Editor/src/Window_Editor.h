@@ -14,6 +14,7 @@ class Window_Editor
 private:
 
 	bool m_imageOnScreen; //checa se a imagem que representa o objeto está na tela
+	int m_sliderControl; //define quais sliders serão mostrados - 1 = buffs / 2 = debuffs / 3 = obstáculos
 
 	string input;
 
@@ -22,11 +23,12 @@ private:
 	Button *btn_changeObjectColor; //teste pra mudar a cor
 	Button *btn_changeObjectSat; //teste pra mudar a saturação
 	Button *btn_saveObject; //salva o objeto criado
+	Button *btn_changeSliders; //altera os sliders que aparecem
 
 	Object *object; //objeto que será criado ao clicar em LOAD SPRITE
 
-	/*User interface -- Atributos*/
-	// -- Buffers
+	/* -- User interface -- Atributos -- */
+	// -- Buffs
 	UI_Switch *sw_protection; //objeto que da proteção
 	UI_Slider *s_protection;
 
@@ -39,7 +41,19 @@ private:
 	UI_Switch *sw_attack; //objeto que aumenta ataque
 	UI_Slider *s_attack;
 
-	// -- Debuffers
+	UI_Switch *sw_time; //objeto que diminui tempo
+	UI_Slider *s_time;
+
+
+	// -- Debuffs
+	UI_Switch *sw_lessHP; //objeto que tira vida
+	UI_Slider *s_lessHP;
+
+	UI_Switch *sw_lessSpeed; //objeto que tira velocidade
+	UI_Slider *s_lessSpeed;
+
+	UI_Switch *sw_lessAttack; //objeto que tira ataque
+	UI_Slider *s_lessAttack;
 
 	// -- Obstáculos
 

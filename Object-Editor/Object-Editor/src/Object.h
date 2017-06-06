@@ -23,15 +23,24 @@ private:
 	bool isHealing;
 	bool isSpeed;
 	bool isAttack;
+	bool isTime;
+	bool isLessHP;
+	bool isLessSpeed;
+	bool isLessAttack;
 
 	int m_protection; //qtde de protecao
 	int m_heal; //qtde de heal
 	int m_speed; //qtde de velocidade
 	int m_attack; //qtde de ataque
+	int m_time; //qtded de segundos
+	int m_lessHP; 
+	int m_lessSpeed;
+	int m_lessAttack;
 
 public:
 	Object(std::string path); //construtor para editor
-	Object(bool protec, int protection, bool healing, int heal, bool spd, int speed, bool atk, int attack); //construtor pro jogo
+	Object(bool protec, int protection, bool healing, int heal, bool spd, int speed, bool atk, int attack, bool time, int seconds,
+		   bool lessHP, int hp, bool lessSpeed, int lessSpd, bool lessAttack, int lessAtk); //construtor pro jogo
 	
 	~Object();
 
@@ -51,13 +60,13 @@ public:
 	void SetY(int y);
 
 	void SetProtection(bool protec, int protection);
-	void SetHp(bool destructable, int hp);
+	void SetHeal(bool healing, int heal);
 	void SetSpeed(bool spd, int speed);
 	void SetAttack(bool atk, int attack);
-
-	void SetKg(bool pushable, int kg);
-	void SetHeal(bool healing, int heal);
-	void SetDamage(bool damaging, int dmg);
+	void SetTime(bool time, int seconds);
+	void SetLessHP(bool lessHP, int hp);
+	void SetLessSpeed(bool lessSpeed, int lessSpd);
+	void SetLessAttack(bool lessAttack, int lessAtk);
 
 	void PlusColor();
 	void ChangeColor(ofColor color);
