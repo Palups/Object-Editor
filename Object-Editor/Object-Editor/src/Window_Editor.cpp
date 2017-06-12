@@ -249,28 +249,44 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 			ofFileDialogResult result = ofSystemSaveDialog("default.png", "Save");
 			if (result.bSuccess) {
 				string imgPath = result.getPath();
-				ofstream arquivo(imgPath + ".txt"); //cria um novo arquivo com o nome que o usuario der pro objeto
+				ofstream arquivo(imgPath + ".json"); //cria um novo arquivo com o nome que o usuario der pro objeto
 				ofSaveImage(object->m_image.getPixelsRef(), imgPath + ".png");
-				arquivo << imgPath + ".png" << endl //salva o path da imagem no arquivo
-					<< sw_protection->GetStatus() << endl //salva status protecao
-					<< s_protection->GetValue() << endl   //salva valor protecao
-					<< sw_healing->GetStatus() << endl    //salva status healing
-					<< s_heal->GetValue() << endl         //salva valor heal
-					<< sw_speed->GetStatus() << endl      //salva status velocidade
-					<< s_speed->GetValue() << endl		  //salva valor velocidade
-					<< sw_attack->GetStatus() << endl     //salva status ataque
-					<< s_attack->GetValue() << endl       //salva valor ataque
-					<< sw_time->GetStatus() << endl       //salva status tempo
-					<< s_time->GetValue() << endl         //salva valor tempo
-					<< sw_lessHP->GetStatus() << endl     //salva status tirar vida
-					<< s_lessHP->GetValue() << endl       //salva valor tirar vida
-					<< sw_lessSpeed->GetStatus() << endl  //salva status tirar velocidade
-					<< s_lessSpeed->GetValue() << endl    //salva valor tirar velocidade
-					<< sw_lessAttack->GetStatus() << endl //salva status tirar ataque
-					<< s_lessAttack->GetValue() << endl   //salva valor tirar ataque
-					<< sw_obstacle->GetStatus() << endl   //salva status objeto fixo
-					<< s_obstacleHP->GetValue() << endl   //salva valor objeto fixo 
-					<< s_obs->GetValue() << endl;  //salva valor objeto fixo
+
+				if (GetSliderControl() == 1) {
+					arquivo << "{" << endl
+						<< " \"SpriteName\": " << imgPath + ".png" << endl //salva o path da imagem no arquivo
+						<< sw_protection->GetStatus() << endl //salva status protecao
+						<< s_protection->GetValue() << endl   //salva valor protecao
+						<< sw_healing->GetStatus() << endl    //salva status healing
+						<< s_heal->GetValue() << endl         //salva valor heal
+						<< sw_speed->GetStatus() << endl      //salva status velocidade
+						<< s_speed->GetValue() << endl		  //salva valor velocidade
+						<< sw_attack->GetStatus() << endl     //salva status ataque
+						<< s_attack->GetValue() << endl       //salva valor ataque
+						<< sw_time->GetStatus() << endl       //salva status tempo
+						<< s_time->GetValue() << endl;         //salva valor tempo
+					arquivo << "}" << endl;
+				}
+				else if (GetSliderControl() == 2) {
+					arquivo << "{" << endl
+						<< imgPath + ".png" << endl //salva o path da imagem no arquivo
+						<< sw_lessHP->GetStatus() << endl     //salva status tirar vida
+						<< s_lessHP->GetValue() << endl       //salva valor tirar vida
+						<< sw_lessSpeed->GetStatus() << endl  //salva status tirar velocidade
+						<< s_lessSpeed->GetValue() << endl    //salva valor tirar velocidade
+						<< sw_lessAttack->GetStatus() << endl //salva status tirar ataque
+						<< s_lessAttack->GetValue() << endl;  //salva valor tirar ataque
+					arquivo << "}" << endl;
+				}
+				else {
+					arquivo << "{" << endl
+						<< imgPath + ".png" << endl //salva o path da imagem no arquivo
+						<< sw_obstacle->GetStatus() << endl   //salva status objeto fixo
+						<< s_obstacleHP->GetValue() << endl   //salva valor vida objeto fixo 
+						<< s_obs->GetValue() << endl;         //salva valor qtde de itens que cabem num objeto fixo
+					arquivo << "}" << endl;
+				}
+
 				arquivo.close(); //fecha o arquivo
 				// save your file to `path`
 				ofSystemAlertDialog("Object saved successfully!");
@@ -494,6 +510,11 @@ void Window_Editor::SetImageOnScreen(bool imageOnScreen)
 bool Window_Editor::GetImageOnScreen()
 {
 	return m_imageOnScreen;
+}
+
+int Window_Editor::GetSliderControl()
+{
+	return m_sliderControl;
 }
 
 void Window_Editor::InputText()

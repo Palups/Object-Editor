@@ -75,6 +75,8 @@ public:
 	void SetImageOnScreen(bool imageOnScreen);
 	bool GetImageOnScreen();
 
+	int GetSliderControl();
+
 	void InputText();
 
 	string m_imgPath;
