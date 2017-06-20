@@ -12,7 +12,7 @@ UI_Switch::UI_Switch(int x, int y, int w, int h)
 	status = true;
 	image_on.loadImage("images/swt_on.png");
 	image_off.loadImage("images/swt_off.png");
-	image_status = image_on;
+	image_status = image_off;
 
 	label = "";
 }
