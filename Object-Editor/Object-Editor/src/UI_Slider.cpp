@@ -13,6 +13,7 @@ UI_Slider::UI_Slider(int x, int y, int w, int h, int d)
 	label = "";
 
 	ResetSlider();
+	DeactivateSlider();
 }
 
 int UI_Slider::GetValue()
@@ -24,7 +25,7 @@ int UI_Slider::GetValue()
 
 void UI_Slider::Draw()
 {
-	ofSetColor(0, 0, 0);
+	ofSetColor(255, 255, 255);
 	ofDrawBitmapString(label + ": " + ofToString(m_data), m_x, m_y - 5);
 	ofSetColor(15, 130, 130);
 	ofDrawRectangle(r_total);

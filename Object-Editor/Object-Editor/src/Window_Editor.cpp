@@ -424,7 +424,7 @@ void Window_Editor::Draw()
 	ofDrawRectangle(0, 0, 502, 768); //retangulo preto representando onde o desenho do objeto ficará
 	ofSetColor(255, 255, 255); //voltando cores ao normal
 
-	ofSetBackgroundColor(255, 228, 225);
+	ofSetBackgroundColor(35, 35, 35);
 
 	btn_cancel->Draw(); //chamando função de desenho do botão CANCEL
 	btn_loadSprite->Draw(); //chamando função de desenho do botão LOAD SPRITE

@@ -38,7 +38,7 @@ bool UI_Switch::TestClick(int x, int y) //Testa o click do mouse
 void UI_Switch::Draw() //Desenha	
 {
 	image_status.draw(m_x, m_y, m_w, m_h);
-	ofSetColor(0, 0, 0);
+	ofSetColor(255, 255, 255);
 	ofDrawBitmapString(label, m_x, m_y - 5);
 	ofSetColor(255);
 }
