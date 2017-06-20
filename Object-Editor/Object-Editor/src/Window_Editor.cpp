@@ -18,44 +18,44 @@ Window_Editor::Window_Editor()
 	/* -- BUFFS -- */
 	sw_protection = new UI_Switch(520, 400, 80, 20);
 	sw_protection->SetLabel("Protection");
-	s_protection = new UI_Slider(700, 400, 300, 25, 1000);
+	s_protection = new UI_Slider(700, 400, 300, 25, 20);
 	s_protection->SetLabel("Amount of protection");
 
 	sw_healing = new UI_Switch(520, 450, 80, 20);
 	sw_healing->SetLabel("Healing object");
-	s_heal = new UI_Slider(700, 450, 300, 25, 1000);
+	s_heal = new UI_Slider(700, 450, 300, 25, 100);
 	s_heal->SetLabel("Healing amount");
 
 	sw_speed = new UI_Switch(520, 500, 80, 20);
 	sw_speed->SetLabel("Speed");
-	s_speed = new UI_Slider(700, 500, 300, 25, 1000);
+	s_speed = new UI_Slider(700, 500, 300, 25, 200);
 	s_speed->SetLabel("Speed amount");
 
 	sw_attack = new UI_Switch(520, 550, 80, 20);
 	sw_attack->SetLabel("Increase attack");
-	s_attack = new UI_Slider(700, 550, 300, 25, 500);
+	s_attack = new UI_Slider(700, 550, 300, 25, 50);
 	s_attack->SetLabel("Attack value");
 
 	sw_time = new UI_Switch(520, 600, 80, 20);
 	sw_time->SetLabel("Decrease time");
-	s_time = new UI_Slider(700, 600, 300, 25, 500);
+	s_time = new UI_Slider(700, 600, 300, 25, 10);
 	s_time->SetLabel("Seconds");
 
 
 	/* -- DEBUFFS -- */
 	sw_lessHP = new UI_Switch(520, 400, 80, 20);
 	sw_lessHP->SetLabel("Less HP");
-	s_lessHP = new UI_Slider(700, 400, 300, 25, 500);
+	s_lessHP = new UI_Slider(700, 400, 300, 25, 10);
 	s_lessHP->SetLabel("Amount");
 
 	sw_lessSpeed = new UI_Switch(520, 450, 80, 20);
 	sw_lessSpeed->SetLabel("Less Speed");
-	s_lessSpeed = new UI_Slider(700, 450, 300, 25, 500);
+	s_lessSpeed = new UI_Slider(700, 450, 300, 25, 50);
 	s_lessSpeed->SetLabel("Amount");
 
 	sw_lessAttack = new UI_Switch(520, 500, 80, 20);
 	sw_lessAttack->SetLabel("Less Attack");
-	s_lessAttack = new UI_Slider(700, 500, 300, 25, 500);
+	s_lessAttack = new UI_Slider(700, 500, 300, 25, 25);
 	s_lessAttack->SetLabel("Amount");
 
 	/* -- OBSTACLE -- */
@@ -252,40 +252,24 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 				ofstream arquivo(imgPath + ".json"); //cria um novo arquivo com o nome que o usuario der pro objeto
 				ofSaveImage(object->m_image.getPixelsRef(), imgPath + ".png");
 
-				if (GetSliderControl() == 1) {
-					arquivo << "{" << endl
-						<< " \"SpriteName\": " << imgPath + ".png" << endl //salva o path da imagem no arquivo
-						<< sw_protection->GetStatus() << endl //salva status protecao
-						<< s_protection->GetValue() << endl   //salva valor protecao
-						<< sw_healing->GetStatus() << endl    //salva status healing
-						<< s_heal->GetValue() << endl         //salva valor heal
-						<< sw_speed->GetStatus() << endl      //salva status velocidade
-						<< s_speed->GetValue() << endl		  //salva valor velocidade
-						<< sw_attack->GetStatus() << endl     //salva status ataque
-						<< s_attack->GetValue() << endl       //salva valor ataque
-						<< sw_time->GetStatus() << endl       //salva status tempo
-						<< s_time->GetValue() << endl;         //salva valor tempo
-					arquivo << "}" << endl;
-				}
-				else if (GetSliderControl() == 2) {
-					arquivo << "{" << endl
-						<< imgPath + ".png" << endl //salva o path da imagem no arquivo
-						<< sw_lessHP->GetStatus() << endl     //salva status tirar vida
-						<< s_lessHP->GetValue() << endl       //salva valor tirar vida
-						<< sw_lessSpeed->GetStatus() << endl  //salva status tirar velocidade
-						<< s_lessSpeed->GetValue() << endl    //salva valor tirar velocidade
-						<< sw_lessAttack->GetStatus() << endl //salva status tirar ataque
-						<< s_lessAttack->GetValue() << endl;  //salva valor tirar ataque
-					arquivo << "}" << endl;
-				}
-				else {
-					arquivo << "{" << endl
-						<< imgPath + ".png" << endl //salva o path da imagem no arquivo
-						<< sw_obstacle->GetStatus() << endl   //salva status objeto fixo
-						<< s_obstacleHP->GetValue() << endl   //salva valor vida objeto fixo 
-						<< s_obs->GetValue() << endl;         //salva valor qtde de itens que cabem num objeto fixo
-					arquivo << "}" << endl;
-				}
+				arquivo << "{" << endl
+					<< "\"SpriteName\": " << imgPath << "," << endl //salva o path da imagem no arquivo
+
+					<< "\"ObjType\": " << m_sliderControl << "," << endl //salva o tipo de objeto
+
+					//<< "\"Duration\": " << s_ << "," << endl
+					<< "\"Protection\": " << s_protection->GetValue() << "," << endl      //salva valor protecao
+					<< "\"Healing\": " << s_heal->GetValue() << "," << endl               //salva valor heal
+					<< "\"SpeedIncrease\": " << s_speed->GetValue() << "," << endl		  //salva valor velocidade
+					<< "\"AtackIncrease\": " << s_attack->GetValue() << "," << endl       //salva valor ataque
+					<< "\"TimeDecrease\": " << s_time->GetValue() << "," << endl          //salva valor tempo
+
+					<< "\"HPDecrease\": " << s_lessHP->GetValue() << "," << endl          //salva valor tirar vida
+					<< "\"SpeedDecrease\": " << s_lessSpeed->GetValue() << "," << endl    //salva valor tirar velocidade
+					<< "\"AtackDecrease\": " << s_lessAttack->GetValue() << "," << endl   //salva valor tirar ataque
+
+					//<< "\"Damage\": " << s_obstacleHP->GetValue() << endl   //salva valor vida objeto fixo 
+				<< "}" << endl;
 
 				arquivo.close(); //fecha o arquivo
 				// save your file to `path`
