@@ -74,6 +74,8 @@ public:
 
 	void PlusColor();
 	void ChangeColor(ofColor color);
+	int GetColor(); //Verifica cor com maior incidencia
+	void GrayImage();
 	float CheckHue(float hue, float n);
 
 	void PlusSatu();

@@ -209,32 +209,113 @@ void Object::PlusColor()
 
 void Object::ChangeColor(ofColor color)
 {
+	GrayImage();
+
+	int cor = GetColor();
+
 	for (int y = 0; y < m_image.getHeight(); y++)
 	{
 		for (int x = 0; x < m_image.getWidth(); x++)
 		{
-			/* float h;
-			ofColor color = backup.getColor(x, y);
-			h = color.getHue();
-			color.setHue(CheckHue(h, inc));
-			m_image.setColor(x, y, color);
-			//m_image.setColor(x, y, boop);*/
+			ofColor outraColor = m_image.getColor(x, y);
+			int h = outraColor.r;
+			if (h == cor)
+			{
+				m_image.setColor(x, y, color);
+			}
+			
+			else
+			{
+				ofColor maisOutraColor = backup.getColor(x, y);
+				m_image.setColor(x, y, maisOutraColor);
+		}
 
-			m_image.setColor(x, y, color);
+			// color.setHue(CheckHue(h, inc));
+			//m_image.setColor(x, y, color);
+			//m_image.setColor(x, y, boop);
+			//color.a = 90.0f;
 		}
 	}
 	m_image.update();
 }
+void Object::GrayImage()
+{
+	for (int y = 0; y < m_image.getHeight(); y++)
+	{
+		for (int x = 0; x < m_image.getWidth(); x++)
+		{
+			ofColor cor = backup.getColor(x, y);
+
+			if (cor.a == 1 && cor.getSaturation() != 100 && cor.getSaturation() != 0)
+			{
+				int r = cor.r;
+
+				cor.set(r, r, r, 1.0f);
+				m_image.setColor(x, y, cor);
+			}
+		}
+	}
+}
+
+int Object::GetColor()
+{
+	std::vector<float> colors; //hue de cores
+	std::vector<int> numbers; //numero de incidencias
+	bool flag = false;
+
+	for (int y = 0; y < m_image.getHeight(); y++)
+	{
+		for (int x = 0; x < m_image.getWidth(); x++)
+		{
+			ofColor cor = backup.getColor(x, y);
+
+			if (cor.a == 1 && cor.getSaturation() != 100 && cor.getSaturation() != 0)
+			{
+				int r = cor.r;
+
+				for (int i = 0; i < colors.size(); i++)
+				{
+					if (colors[i] == r)
+					{
+						numbers[i] = numbers[i] + 1;
+						flag = true;
+					}
+				}
+
+				if (!flag)
+				{
+					colors.push_back(r);
+					numbers.push_back(0);
+				}
+			}
+		}
+	}
+	
+	//Verifica incidencia de cores no vetor de cores
+	int maiorInc = 0; //maior incidencia de cor
+	float corMaiorInc; //cor de maior incidencia
+	for (int i = 0; i < numbers.size(); i++)
+	{
+		if (numbers[i] > maiorInc)
+		{
+			maiorInc = numbers[i];
+			corMaiorInc = colors[i];
+		}
+	}
+
+	return corMaiorInc;
+}
 
 float Object::CheckHue(float hue, float n)
 {
-	float m = hue * n;
 	
+	//float m = hue * n;
+	float m = hue - n;
+
 	if (m < 0)
-		return 0;
-	if (m > 360)
-		return 360;
+		return n - hue;
 	return m;
+
 }
 
 void Object::PlusSatu()
