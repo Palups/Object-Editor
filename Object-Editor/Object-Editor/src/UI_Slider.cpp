@@ -9,7 +9,7 @@ UI_Slider::UI_Slider(int x, int y, int w, int h, int d)
 
 	m_data = d;
 	data_backup = m_data;
-	isActive = true;
+	isActive = false;
 	label = "";
 
 	ResetSlider();
