@@ -226,9 +226,9 @@ void Window_Editor::MouseDragged(int x, int y)
 void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 {
 	if (btn_changeSliders->TestClick(x, y)) { //alterar sliders que são vistos na tela
-		m_sliderControl++;
-		if (m_sliderControl == 3) {
-			m_sliderControl = 0;
+		m_sliderControl--;
+		if (m_sliderControl == -1) {
+			m_sliderControl = 2;
 		}
 
 		ResetSwitchesAndSliders();
