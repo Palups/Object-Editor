@@ -4,7 +4,7 @@ Window_Editor::Window_Editor()
 {
 	m_imageOnScreen = false; //se imagem está na tela
 	m_sliderControl = 2;
-	label_type = "Buffs";
+	label_type = "Debuffs";
 
 	//-----------------------------------------------------------------------------------------
 
@@ -92,10 +92,10 @@ void Window_Editor::SetLabelType()
 {
 	switch (m_sliderControl)
 	{
-	case 2:
+	case 1:
 		label_type = "Buffs";
 		break;
-	case 1:
+	case 2:
 		label_type = "Debuffs";
 		break;
 	case 0:
@@ -123,7 +123,7 @@ void Window_Editor::KeyPressed(int key)
 void Window_Editor::MouseReleased(int x, int y)
 {
 	switch (m_sliderControl) {
-	case 2:
+	case 1:
 		if (s_protection->TestClick(x, y) && sw_protection->GetStatus()) //se o switch de objeto destrutivel estiver ativo
 			s_protection->MouseReleased(x, y);
 
@@ -141,7 +141,7 @@ void Window_Editor::MouseReleased(int x, int y)
 
 		break;
 
-	case 1:
+	case 2:
 		if (s_lessHP->TestClick(x, y) && sw_lessHP->GetStatus())
 			s_lessHP->MouseReleased(x, y);
 
@@ -183,7 +183,7 @@ void Window_Editor::MouseReleased(int x, int y)
 void Window_Editor::MouseDragged(int x, int y)
 {
 	switch (m_sliderControl) {
-	case 2:
+	case 1:
 		if (s_protection->TestClick(x, y) && sw_protection->GetStatus()) //se o switch de objeto destrutivel estiver ativo
 			s_protection->MouseDragged(x, y);
 
@@ -201,7 +201,7 @@ void Window_Editor::MouseDragged(int x, int y)
 
 		break;
 
-	case 1:
+	case 2:
 		if (s_lessHP->TestClick(x, y) && sw_lessHP->GetStatus())
 			s_lessHP->MouseDragged(x, y);
 
@@ -321,7 +321,7 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 
 		/*-----  ATRIBUTOS  -----*/
 		switch (m_sliderControl) {
-		case 2:
+		case 1:
 			//proteção
 			if (sw_protection->TestClick(x, y)) {
 				sw_protection->MouseClicked(x, y);
@@ -379,7 +379,7 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 
 			break;
 
-		case 1:
+		case 2:
 			//tirar vida
 			if (sw_lessHP->TestClick(x, y)) {
 				sw_lessHP->MouseClicked(x, y);
@@ -463,7 +463,7 @@ void Window_Editor::Draw()
 		}
 
 		switch (m_sliderControl) {
-		case 2:
+		case 1:
 			s_protection->Draw();
 			sw_protection->Draw();
 			s_heal->Draw();
@@ -475,7 +475,7 @@ void Window_Editor::Draw()
 			s_time->Draw();
 			sw_time->Draw();
 			break;
-		case 1:
+		case 2:
 			s_lessHP->Draw();
 			sw_lessHP->Draw();
 			s_lessSpeed->Draw();
