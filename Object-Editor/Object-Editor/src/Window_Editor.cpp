@@ -3,7 +3,7 @@
 Window_Editor::Window_Editor()
 {
 	m_imageOnScreen = false; //se imagem está na tela
-	m_sliderControl = 0;
+	m_sliderControl = 2;
 	label_type = "Buffs";
 
 	//-----------------------------------------------------------------------------------------
@@ -92,13 +92,13 @@ void Window_Editor::SetLabelType()
 {
 	switch (m_sliderControl)
 	{
-	case 0:
+	case 2:
 		label_type = "Buffs";
 		break;
 	case 1:
 		label_type = "Debuffs";
 		break;
-	case 2:
+	case 0:
 		label_type = "Obstacles";
 		break;
 	default:
@@ -123,7 +123,7 @@ void Window_Editor::KeyPressed(int key)
 void Window_Editor::MouseReleased(int x, int y)
 {
 	switch (m_sliderControl) {
-	case 0:
+	case 2:
 		if (s_protection->TestClick(x, y) && sw_protection->GetStatus()) //se o switch de objeto destrutivel estiver ativo
 			s_protection->MouseReleased(x, y);
 
@@ -153,7 +153,7 @@ void Window_Editor::MouseReleased(int x, int y)
 
 		break;
 
-	case 2:
+	case 0:
 		if (s_duration->TestClick(x, y) && sw_obstacle->GetStatus())
 			s_duration->MouseReleased(x, y);
 
@@ -183,7 +183,7 @@ void Window_Editor::MouseReleased(int x, int y)
 void Window_Editor::MouseDragged(int x, int y)
 {
 	switch (m_sliderControl) {
-	case 0:
+	case 2:
 		if (s_protection->TestClick(x, y) && sw_protection->GetStatus()) //se o switch de objeto destrutivel estiver ativo
 			s_protection->MouseDragged(x, y);
 
@@ -213,7 +213,7 @@ void Window_Editor::MouseDragged(int x, int y)
 
 		break;
 
-	case 2:
+	case 0:
 		if (s_duration->TestClick(x, y) && sw_obstacle->GetStatus())
 			s_duration->MouseDragged(x, y);
 
@@ -272,7 +272,7 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 				ofSaveImage(object->m_image.getPixelsRef(), imgPath + ".png");
 
 				arquivo << "{" << endl
-					<< "\"SpriteName\": " << "\"" << name << "\"" << "," << endl //salva o path da imagem no arquivo
+					<< "\"SpriteName\": " << "\"" << name << "_sprite" << "\"" << "," << endl //salva o path da imagem no arquivo
 
 					<< "\"ObjType\": " << m_sliderControl << "," << endl //salva o tipo de objeto
 
@@ -321,7 +321,7 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 
 		/*-----  ATRIBUTOS  -----*/
 		switch (m_sliderControl) {
-		case 0:
+		case 2:
 			//proteção
 			if (sw_protection->TestClick(x, y)) {
 				sw_protection->MouseClicked(x, y);
@@ -415,7 +415,7 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 
 			break;
 
-		case 2:
+		case 0:
 			//tirar ataque
 			if (sw_obstacle->TestClick(x, y)) {
 				sw_obstacle->MouseClicked(x, y);
@@ -463,7 +463,7 @@ void Window_Editor::Draw()
 		}
 
 		switch (m_sliderControl) {
-		case 0:
+		case 2:
 			s_protection->Draw();
 			sw_protection->Draw();
 			s_heal->Draw();
@@ -483,7 +483,7 @@ void Window_Editor::Draw()
 			s_lessAttack->Draw();
 			sw_lessAttack->Draw();
 			break;
-		case 2:
+		case 0:
 			s_duration->Draw();
 			sw_obstacle->Draw();
 			break;
