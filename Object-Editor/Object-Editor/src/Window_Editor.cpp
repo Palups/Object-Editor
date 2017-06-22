@@ -272,7 +272,7 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 				ofSaveImage(object->m_image.getPixelsRef(), imgPath + ".png");
 
 				arquivo << "{" << endl
-					<< "\"SpriteName\": " << name << "," << endl //salva o path da imagem no arquivo
+					<< "\"SpriteName\": " << "\"" << name << "\"" << "," << endl //salva o path da imagem no arquivo
 
 					<< "\"ObjType\": " << m_sliderControl << "," << endl //salva o tipo de objeto
 
@@ -285,7 +285,7 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 
 					<< "\"HPDecrease\": " << s_lessHP->GetValue() << "," << endl          //salva valor tirar vida
 					<< "\"SpeedDecrease\": " << s_lessSpeed->GetValue() << "," << endl    //salva valor tirar velocidade
-					<< "\"AtackDecrease\": " << s_lessAttack->GetValue() << "," << endl   //salva valor tirar ataque
+					<< "\"AtackDecrease\": " << s_lessAttack->GetValue() << endl          //salva valor tirar ataque
 
 					//<< "\"Damage\": " << s_obstacleHP->GetValue() << endl   //salva valor vida objeto fixo 
 				<< "}" << endl;
@@ -447,6 +447,8 @@ void Window_Editor::Draw()
 
 	if (GetImageOnScreen()) //se a imagem estiver na tela
 	{
+		//object->GetImg().resize(100, 100);
+
 		btn_saveObject->Draw();
 		btn_changeObjectColor->Draw();
 		//btn_changeObjectSat->Draw();

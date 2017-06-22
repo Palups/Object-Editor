@@ -5,6 +5,8 @@ Object::Object(std::string path)
 	m_image.loadImage(path);
 	backup.loadImage(path);
 
+	m_image.resize(100, 100);
+
 	isProtec = true;
 	isHealing = true;
 	isSpeed = true;
@@ -93,6 +95,11 @@ void Object::SetPosition(ofVec2f position)
 ofVec2f Object::GetPosition()
 {
 	return m_position;
+}
+
+ofImage Object::GetImg()
+{
+	return m_image;
 }
 
 int Object::GetW()
@@ -191,6 +198,12 @@ void Object::SetObstacle(bool obstacle, int obstacelHP)
 	else
 		m_obstacleHP = 0;
 		
+}
+
+void Object::SetSize(ofImage img)
+{
+	m_image = img;
+	img.resize(100, 100);
 }
 
 /* ---------------------- */

@@ -55,6 +55,7 @@ public:
 	//void Destruct(bool breakable, ofVec2f positionShot);
 	void SetPosition(ofVec2f position);
 	ofVec2f GetPosition();
+	ofImage GetImg();
 
 	int GetW();
 	int GetH();
@@ -71,6 +72,8 @@ public:
 	void SetLessSpeed(bool lessSpeed, int lessSpd);
 	void SetLessAttack(bool lessAttack, int lessAtk);
 	void SetObstacle(bool obstacle, int obstacelHP);
+
+	void SetSize(ofImage img);
 
 	void PlusColor();
 	void ChangeColor(ofColor color);
