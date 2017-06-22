@@ -267,11 +267,12 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 			ofFileDialogResult result = ofSystemSaveDialog("default.png", "Save");
 			if (result.bSuccess) {
 				string imgPath = result.getPath();
+				string name = result.getName();
 				ofstream arquivo(imgPath + ".json"); //cria um novo arquivo com o nome que o usuario der pro objeto
 				ofSaveImage(object->m_image.getPixelsRef(), imgPath + ".png");
 
 				arquivo << "{" << endl
-					<< "\"SpriteName\": " << imgPath << "," << endl //salva o path da imagem no arquivo
+					<< "\"SpriteName\": " << name << "," << endl //salva o path da imagem no arquivo
 
 					<< "\"ObjType\": " << m_sliderControl << "," << endl //salva o tipo de objeto
 
