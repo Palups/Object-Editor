@@ -17,6 +17,7 @@ private:
 	int m_sliderControl; //define quais sliders serão mostrados - 1 = buffs / 2 = debuffs / 3 = obstáculos
 
 	string input;
+	string label_type;
 
 	Button *btn_cancel; //declarando botão CANCEL
 	Button *btn_loadSprite; //declarando botão LOAD SPRITE
@@ -57,9 +58,8 @@ private:
 
 
 	// -- Obstáculos
-	UI_Switch *sw_obstacle; //objeto fixo
-	UI_Slider *s_obstacleHP;
-	UI_Slider *s_obs;
+	UI_Switch *sw_obstacle; //é objeto?
+	UI_Slider *s_duration; //duração do objeto
 
 public:
 	Window_Editor();
@@ -71,6 +71,8 @@ public:
 	void MousePressed(int x, int y, Window_Manager *window_manager); //faz o TestClick em botões
 	void Draw();
 	void Update();
+	void ResetSwitchesAndSliders();
+	void SetLabelType();
 
 	void SetImageOnScreen(bool imageOnScreen);
 	bool GetImageOnScreen();

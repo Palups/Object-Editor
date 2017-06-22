@@ -183,18 +183,13 @@ void Object::SetLessAttack(bool lessAttack, int lessAtk)
 		m_lessAttack = 0;
 }
 
-void Object::SetObstacle(bool obstacle, int obstacelHP, int amt)
+void Object::SetObstacle(bool obstacle, int obstacelHP)
 {
 	isObstacle = obstacle;
-	if (isObstacle) {
+	if (isObstacle)
 		m_obstacleHP = obstacelHP;
-		m_amountObs = amt;
-	}
-		
-	else {
+	else
 		m_obstacleHP = 0;
-		m_amountObs = 0;
-	}
 		
 }
 

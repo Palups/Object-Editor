@@ -21,6 +21,7 @@ private:
 public:
 	UI_Switch(int x, int y, int w, int h);
 	void Draw();
+	void ResetSwitch();
 	void MouseClicked(int x, int y);
 
 	void SetLabel(std::string name);

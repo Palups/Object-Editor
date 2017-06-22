@@ -43,6 +43,12 @@ void UI_Switch::Draw() //Desenha
 	ofSetColor(255);
 }
 
+void UI_Switch::ResetSwitch()
+{
+	status = false;
+	image_status = image_off;
+}
+
 void UI_Switch::MouseClicked(int x, int y) //Chama no mouseclicked 
 {
 	ClickSwitch();

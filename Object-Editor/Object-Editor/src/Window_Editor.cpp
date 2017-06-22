@@ -4,6 +4,7 @@ Window_Editor::Window_Editor()
 {
 	m_imageOnScreen = false; //se imagem está na tela
 	m_sliderControl = 1;
+	label_type = "Buffs";
 
 	//-----------------------------------------------------------------------------------------
 
@@ -60,11 +61,9 @@ Window_Editor::Window_Editor()
 
 	/* -- OBSTACLE -- */
 	sw_obstacle = new UI_Switch(520, 400, 80, 20);
-	sw_obstacle->SetLabel("Static?");
-	s_obstacleHP = new UI_Slider(700, 400, 300, 25, 500);
-	s_obstacleHP->SetLabel("Obstacle HP");
-	s_obs = new UI_Slider(700, 450, 300, 25, 500);
-	s_obs->SetLabel("Amout of itens inside");
+	sw_obstacle->SetLabel("Is it a obstacle?");
+	s_duration = new UI_Slider(700, 400, 300, 25, 50);
+	s_duration->SetLabel("Duration");
 
 	/* ---------------------------  ---------------------------  --------------------------- */
 
@@ -87,6 +86,24 @@ Window_Editor::Window_Editor()
 	//gui = new ofxUISuperCanvas("tela de edicao"); //Creates a canvas at (0,0) using the default width	
 	//gui.setup();
 	//gui.add(m_hp.setup("HP", 0, 0, 100));
+}
+
+void Window_Editor::SetLabelType()
+{
+	switch (m_sliderControl)
+	{
+	case 1:
+		label_type = "Buffs";
+		break;
+	case 2:
+		label_type = "Debuffs";
+		break;
+	case 3:
+		label_type = "Obstacles";
+		break;
+	default:
+		break;
+	}
 }
 
 Window_Editor::~Window_Editor()
@@ -137,8 +154,8 @@ void Window_Editor::MouseReleased(int x, int y)
 		break;
 
 	case 3:
-		if (s_obstacleHP->TestClick(x, y) && sw_obstacle->GetStatus())
-			s_obstacleHP->MouseReleased(x, y);
+		if (s_duration->TestClick(x, y) && sw_obstacle->GetStatus())
+			s_duration->MouseReleased(x, y);
 
 		break;
 	default:
@@ -158,7 +175,7 @@ void Window_Editor::MouseReleased(int x, int y)
 		object->SetLessSpeed(sw_lessSpeed->GetStatus(), s_lessSpeed->GetValue());
 		object->SetLessAttack(sw_lessAttack->GetStatus(), s_lessAttack->GetValue());
 
-		object->SetObstacle(sw_obstacle->GetStatus(), s_obstacleHP->GetValue(), s_obs->GetValue());
+		object->SetObstacle(sw_obstacle->GetStatus(), s_duration->GetValue());
 	}
 
 }
@@ -197,11 +214,9 @@ void Window_Editor::MouseDragged(int x, int y)
 		break;
 
 	case 3:
-		if (s_obstacleHP->TestClick(x, y) && sw_obstacle->GetStatus())
-			s_obstacleHP->MouseDragged(x, y);
+		if (s_duration->TestClick(x, y) && sw_obstacle->GetStatus())
+			s_duration->MouseDragged(x, y);
 
-		if (s_obs->TestClick(x, y) && sw_obstacle->GetStatus())
-			s_obs->MouseDragged(x, y);
 		break;
 	default:
 		break;
@@ -215,6 +230,9 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 		if (m_sliderControl == 4) {
 			m_sliderControl = 1;
 		}
+
+		ResetSwitchesAndSliders();
+		SetLabelType();
 	} 
 
 	if (btn_loadSprite->TestClick(x, y)) { //se click dentro do botão LOAD SPRITE, novo objeto é criado (após selecionar imagem)
@@ -257,7 +275,7 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 
 					<< "\"ObjType\": " << m_sliderControl << "," << endl //salva o tipo de objeto
 
-					//<< "\"Duration\": " << s_ << "," << endl
+					<< "\"Duration\": " << s_duration->GetValue() << "," << endl          //salva a duração do obstáculo
 					<< "\"Protection\": " << s_protection->GetValue() << "," << endl      //salva valor protecao
 					<< "\"Healing\": " << s_heal->GetValue() << "," << endl               //salva valor heal
 					<< "\"SpeedIncrease\": " << s_speed->GetValue() << "," << endl		  //salva valor velocidade
@@ -401,15 +419,12 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 			if (sw_obstacle->TestClick(x, y)) {
 				sw_obstacle->MouseClicked(x, y);
 				if (!sw_obstacle->GetStatus())
-					s_obstacleHP->DeactivateSlider();
+					s_duration->DeactivateSlider();
 			}
 			//qtde de ataque tirada
-			else if (s_obstacleHP->TestClick(x, y))
+			else if (s_duration->TestClick(x, y))
 				if (sw_obstacle->GetStatus())
-					s_obstacleHP->MouseClicked(x, y);
-			else if (s_obs->TestClick(x, y))
-				if (sw_obstacle->GetStatus())
-					s_obs->MouseClicked(x, y);
+					s_duration->MouseClicked(x, y);
 			break;
 		default:
 			break;
@@ -466,15 +481,18 @@ void Window_Editor::Draw()
 			sw_lessAttack->Draw();
 			break;
 		case 3:
-			s_obstacleHP->Draw();
+			s_duration->Draw();
 			sw_obstacle->Draw();
-			s_obs->Draw();
 			break;
 		default:
 			break;
 		}
 
 		colorPicker.draw();
+
+		ofSetColor(255, 255, 255);
+		ofDrawBitmapString(label_type, 521, 340);
+		ofSetColor(255);
 	}
 }
 
@@ -484,6 +502,49 @@ void Window_Editor::Update()
 	colorPicker.update();
 	ofColor colorTop = colorPicker.getColor();
 	//---------------------------------------
+}
+
+void Window_Editor::ResetSwitchesAndSliders()
+{
+	sw_protection->ResetSwitch();
+	s_protection->ResetSlider();
+	s_protection->DeactivateSlider();
+
+	sw_healing->ResetSwitch();
+	s_heal->ResetSlider();
+	s_heal->DeactivateSlider();
+
+	sw_speed->ResetSwitch();
+	s_speed->ResetSlider();
+	s_speed->DeactivateSlider();
+
+	sw_attack->ResetSwitch();
+	s_attack->ResetSlider();
+	s_attack->DeactivateSlider();
+
+	sw_time->ResetSwitch();
+	s_time->ResetSlider();
+	s_time->DeactivateSlider();
+
+	//---
+
+	sw_lessHP->ResetSwitch();
+	s_lessHP->ResetSlider();
+	s_lessHP->DeactivateSlider();
+
+	sw_lessSpeed->ResetSwitch();
+	s_lessSpeed->ResetSlider();
+	s_lessSpeed->DeactivateSlider();
+
+	sw_lessAttack->ResetSwitch();
+	s_lessAttack->ResetSlider();
+	s_lessAttack->DeactivateSlider();
+
+	//---
+
+	sw_obstacle->ResetSwitch();
+	s_duration->ResetSlider();
+	s_duration->DeactivateSlider();
 }
 
 void Window_Editor::SetImageOnScreen(bool imageOnScreen)

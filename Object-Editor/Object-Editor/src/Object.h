@@ -70,7 +70,7 @@ public:
 	void SetLessHP(bool lessHP, int hp);
 	void SetLessSpeed(bool lessSpeed, int lessSpd);
 	void SetLessAttack(bool lessAttack, int lessAtk);
-	void SetObstacle(bool obstacle, int obstacelHP, int amt);
+	void SetObstacle(bool obstacle, int obstacelHP);
 
 	void PlusColor();
 	void ChangeColor(ofColor color);
