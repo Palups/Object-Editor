@@ -7,12 +7,12 @@ Window_Editor::Window_Editor()
 
 	//-----------------------------------------------------------------------------------------
 
-	btn_cancel = new Button(520, 700, 200, 50, "images/btn_cancel.png"); //cancela
-	btn_loadSprite = new Button(520, 25, 200, 50, "images/btn_loadSprite.png"); //carrega sprite
-	btn_changeObjectColor = new Button(520, 100, 200, 50, "images/meep.png"); //mexe na cor do objeto
-	btn_changeObjectSat = new Button(520, 150, 200, 50, "images/meep2.png"); //mexe na saturação do objeto
-	btn_saveObject = new Button(800, 700, 200, 50, "images/btn_save.png"); //salva
-	btn_changeSliders = new Button(520, 250, 200, 50, "images/btn_changeSliders.png"); //altera sliders
+	btn_cancel = new Button(520, 700, 200, 50, "imgs-editor/btn_cancel.png"); //cancela
+	btn_loadSprite = new Button(520, 25, 200, 50, "imgs-editor/btn_loadSprite.png"); //carrega sprite
+	btn_changeObjectColor = new Button(520, 150, 200, 50, "imgs-editor/meep.png"); //mexe na cor do objeto
+	//btn_changeObjectSat = new Button(520, 150, 200, 50, "imgs-editor/meep2.png"); //mexe na saturação do objeto
+	btn_saveObject = new Button(800, 700, 200, 50, "imgs-editor/btn_save.png"); //salva
+	btn_changeSliders = new Button(520, 275, 200, 50, "imgs-editor/btn_changeSliders.png"); //altera sliders
 
 	/* --------------------------- AS PORRA DOS SLIDERS PODE CRE --------------------------- */
 	/* -- BUFFS -- */
@@ -294,11 +294,11 @@ void Window_Editor::MousePressed(int x, int y, Window_Manager * window_manager)
 			object->ChangeColor(colorPicker.getColor());
 		}
 
-		if (btn_changeObjectSat->TestClick(x, y)) //se click for no botão CHANGE e objeto estiver na tela
+		/*if (btn_changeObjectSat->TestClick(x, y)) //se click for no botão CHANGE e objeto estiver na tela
 		{
 			object->PlusSatu();
 			object->ChangeSatu();
-		}
+		}*/
 
 		/*-----  ATRIBUTOS  -----*/
 		switch (m_sliderControl) {
@@ -433,7 +433,7 @@ void Window_Editor::Draw()
 	{
 		btn_saveObject->Draw();
 		btn_changeObjectColor->Draw();
-		btn_changeObjectSat->Draw();
+		//btn_changeObjectSat->Draw();
 		btn_changeSliders->Draw();
 
 		if (object->GetH() < MAX_HEIGHT && object->GetW() < MAX_WIDTH) //se a imagem estiver dentro das medidas máximas

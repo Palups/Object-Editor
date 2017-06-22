@@ -2,7 +2,7 @@
 
 Window_Menu::Window_Menu()
 {
-	btn_newObject = new Button(520, 706, 200, 50, "images/btn_newObject.png"); //criando botão NEW OBJECT
+	btn_newObject = new Button(520, 706, 200, 50, "imgs-editor/btn_newObject.png"); //criando botão NEW OBJECT
 }
 
 Window_Menu::~Window_Menu()

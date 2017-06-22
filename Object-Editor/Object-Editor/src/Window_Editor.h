@@ -21,7 +21,7 @@ private:
 	Button *btn_cancel; //declarando botão CANCEL
 	Button *btn_loadSprite; //declarando botão LOAD SPRITE
 	Button *btn_changeObjectColor; //teste pra mudar a cor
-	Button *btn_changeObjectSat; //teste pra mudar a saturação
+	//Button *btn_changeObjectSat; //teste pra mudar a saturação
 	Button *btn_saveObject; //salva o objeto criado
 	Button *btn_changeSliders; //altera os sliders que aparecem
 

@@ -9,9 +9,9 @@ UI_Switch::UI_Switch(int x, int y, int w, int h)
 	m_w = w;
 	m_h = h;
 
-	status = true;
-	image_on.loadImage("images/swt_on.png");
-	image_off.loadImage("images/swt_off.png");
+	status = false;
+	image_on.loadImage("imgs-editor/swt_on.png");
+	image_off.loadImage("imgs-editor/swt_off.png");
 	image_status = image_off;
 
 	label = "";
